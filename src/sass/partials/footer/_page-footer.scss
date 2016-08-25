@@ -1,0 +1,96 @@
+﻿@import "../../modules/_base.scss";
+/*Last section footer*/
+$page-footer-color:#afafaf;
+.page__footer{
+    padding:30px 0 10px;
+    background:#fafafa;
+    line-height:1;
+    text-align:center;
+
+    @include media($tablet){
+        text-align:left;
+    }
+}
+
+.p-footer__column{
+    @extend .g-column;
+
+    @include media($tablet){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($desktop){
+        @include omega-reset(2n);
+        @include span-columns(3);
+
+        &.p-footer__column--wide{
+            @include span-columns(6);
+        }
+    }
+}
+
+.p-footer__title{
+    display:block;
+    margin-bottom:25px;
+    @include font-size(17px);
+    color:$title-color;
+    text-transform:uppercase;
+    font-family:$font-medium;
+}
+
+//меню
+.p-menu,
+.p-social{
+    list-style-type:none;
+    padding:0;
+}
+.p-menu__item{
+    display:block;
+    @include font-size(14px);
+}
+
+.p-menu__link{
+    line-height:1.2857;
+    color:$page-footer-color;
+    text-decoration:none;
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}
+
+//соц. линки
+.p-social{
+    font-size:0;
+}
+.p-social__item{
+    display:inline-block;
+    margin-left:10px;
+    @include font-size(17px);
+
+    &:first-child{
+        margin-left:0;
+    }
+}
+
+.p-social__link{
+    @extend .p-menu__link;
+}
+
+.p-footer__copyright,
+.p-footer__link{
+    display:block;
+    line-height:1.2857;
+    color:$page-footer-color;
+    @include font-size(14px);
+}
+
+.p-footer__link{
+    text-decoration:none;
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}

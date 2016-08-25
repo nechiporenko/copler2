@@ -1,0 +1,21 @@
+﻿@import "../../modules/_base.scss";
+/*Section What We Do*/
+.b-values{
+    @include media($desktop){
+        background-image:url(../img/bg-what-we-do.png);
+        background-repeat:no-repeat;
+        background-position:-200px bottom;
+        background-size:contain;
+    }
+    
+    @include media($large){
+        background-position:-100px bottom;
+    }
+    
+    @include media($extra-large){
+        background-position:0 bottom;
+    }
+    @include media($wide){
+        background-size:unset;
+    }
+}

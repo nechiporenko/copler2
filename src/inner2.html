@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Copler - inner page2</title>
+    @@include('templates/head.html')
+</head>
+<body class="page">
+    <!--header-->
+    @@include('templates/header-static.html')
+
+    <!--main content-->
+    <main class="page__content">
+        <!--page section-->
+        <section class="page__section page__section--inner">
+            <header class="page__header">
+                <h1 class="g-title">ODC Service levels</h1>
+                <p>
+                    Leverage our proven ODC model, expand development<br />
+                    bandwidth and convert fixed costs to variable
+                </p>
+            </header>
+            <div class="g-container">
+                <div class="g-container__inner">
+                    <!--price list-->
+                    <ul class="p-list">
+                        <li class="p-list__item">
+                            <div class="p-list__inner">
+                                <div class="p-list__header">
+                                    <span class="p-list__title" data-title="Basic Service">
+                                        Basic<br />
+                                        Service
+                                    </span>
+                                    <span class="p-list__price">
+                                        <b>$680</b>
+                                        per/month
+                                    </span>
+                                </div>
+                                <div class="p-list__content">
+                                    <ol class="g-styled-list">
+                                        <li>IT infrastructure</li>
+                                        <li>Workplace</li>
+                                        <li>Basic C&B</li>
+                                        <li>Recruitment</li>
+                                        <li>Payroll, PE accounting</li>
+                                        <li>Office management</li>
+                                    </ol>
+                                </div>
+                                <div class="p-list__footer">
+                                    <button type="button" class="g-btn" data-form="#bcontact">Buy Now <i class="icon-slim-right"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-list__item">
+                            <div class="p-list__inner">
+                                <div class="p-list__header">
+                                    <span class="p-list__title" data-title="Standart Service">
+                                        Standart<br />
+                                        Service
+                                    </span>
+                                    <span class="p-list__price">
+                                        <b>$950</b>
+                                        per/month
+                                    </span>
+                                </div>
+                                <div class="p-list__content">
+                                    <ol class="g-styled-list">
+                                        <li>IT infrastructure</li>
+                                        <li>Workplace</li>
+                                        <li>Basic C&B</li>
+                                        <li>Recruitment</li>
+                                        <li>Payroll, PE accounting</li>
+                                        <li>Office management</li>
+                                        <li>Retention</li>
+                                        <li>PE accounting</li>
+                                        <li>Timesheets</li>
+                                    </ol>
+                                </div>
+                                <div class="p-list__footer">
+                                    <button type="button" class="g-btn" data-form="#bcontact">Buy Now <i class="icon-slim-right"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-list__item">
+                            <div class="p-list__inner">
+                                <div class="p-list__header">
+                                    <span class="p-list__title" data-title="Premium Service">
+                                        Premium<br />
+                                        Service
+                                    </span>
+                                    <span class="p-list__price">
+                                        <b>$1300</b>
+                                        per/month
+                                    </span>
+                                </div>
+                                <div class="p-list__content">
+                                    <ol class="g-styled-list">
+                                        <li>IT infrastructure</li>
+                                        <li>Workplace</li>
+                                        <li>Basic C&B</li>
+                                        <li>Recruitment</li>
+                                        <li>Payroll, PE accounting</li>
+                                        <li>Office management</li>
+                                        <li>Retention</li>
+                                        <li>PE accounting</li>
+                                        <li>Timesheets</li>
+                                        <li>Separate office space</li>
+                                        <li>Team extra benefits</li>
+                                        <li>Corporate culture</li>
+                                        <li>Scrum Master</li>
+                                    </ol>
+                                </div>
+                                <div class="p-list__footer">
+                                    <button type="button" class="g-btn" data-form="#bcontact">Buy Now <i class="icon-slim-right"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--/price list-->
+                    <p class="g-big-text">If you need more information — learn&emsp;<a href="#">ODC Service Levels</a></p>
+                </div>
+            </div>
+            <a href="index.html#services" class="page__backbtn">
+                <i class="icon-arrow-left"></i>
+                <br />
+                Back
+            </a>
+        </section>
+
+        <!--modals-->
+        <div class="g-hidden">
+            @@include('templates/modals.html')
+
+            <!--business contact-->
+            <form class="box-modal box-modal--large js-form-validate" id="bcontact">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner">
+                    <span class="box-modal__title">Business contact information</span>
+                    <div class="g-row">
+                        <div class="g-col g-col--two-thirds">
+                            <div class="g-row">
+                                <div class="g-col g-col--one-half">
+                                    <div class="g-validate">
+                                        <label class="g-visuallyhidden">First name</label>
+                                        <div class="g-validate__inner">
+                                            <input type="text" class="g-input" id="bc_name1" name="bc_name1" placeholder="First name*" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="g-col g-col--one-half">
+                                    <div class="g-validate">
+                                        <label class="g-visuallyhidden">Last name</label>
+                                        <div class="g-validate__inner">
+                                            <input type="text" class="g-input" id="bc_name" name="bc_name" placeholder="Last name" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/g-row-->
+                            <div class="g-row">
+                                <div class="g-col g-col--one-half">
+                                    <div class="g-validate">
+                                        <label class="g-visuallyhidden">Business email</label>
+                                        <div class="g-validate__inner">
+                                            <input type="email" class="g-input" id="bc_mail" name="bc_mail" placeholder="Business email*" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="g-col g-col--one-half">
+                                    <div class="g-validate">
+                                        <label class="g-visuallyhidden">Business phone number</label>
+                                        <div class="g-validate__inner">
+                                            <input type="text" class="g-input" id="bc_phone" name="bc_phone" placeholder="Business phone number" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/g-row-->
+                            <div class="g-row">
+                                <div class="g-col g-col--one-half">
+                                    <div class="g-validate">
+                                        <label class="g-visuallyhidden">Job title</label>
+                                        <div class="g-validate__inner">
+                                            <input type="text" class="g-input" id="bc_job" name="bc_job" placeholder="Job title" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="g-col g-col--one-half">
+                                    <div class="g-validate">
+                                        <label class="g-visuallyhidden">Company</label>
+                                        <div class="g-validate__inner">
+                                            <input type="text" class="g-input" id="bc_company" name="bc_company" placeholder="Company" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/g-row-->
+                            <div class="g-row">
+                                <div class="g-col g-col--one-half">
+                                    <div class="g-validate">
+                                        <label class="g-visuallyhidden">Industry</label>
+                                        <div class="g-validate__inner">
+                                            <input type="text" class="g-input" id="bc_industry" name="bc_industry" placeholder="Industry" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="g-col g-col--one-half">
+                                    <div class="g-validate">
+                                        <label class="g-visuallyhidden">Business Plan</label>
+                                        <div class="g-validate__inner">
+                                            <input type="text" class="g-input" id="bc_plan" name="bc_plan" data-title placeholder="Business Plan*" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/g-row-->
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">Your question</label>
+                                <div class="g-validate__inner">
+                                    <textarea class="g-textarea" id="bc_query" name="bc_query" placeholder="Please let us know how we can help"></textarea>
+                                </div>
+                            </div>
+                            <fieldset>
+                                <legend class="g-legend">How would you like to be contacted?</legend>
+                                <br />
+                                <div class="g-row">
+                                    <div class="g-col g-col--one-third">
+                                        <p>
+                                            <input type="checkbox" class="css-checkbox" id="chk01" checked />
+                                            <label for="chk01" class="css-label">Phone</label>
+                                        </p>
+                                    </div>
+                                    <div class="g-col g-col--one-third">
+                                        <p>
+                                            <input type="checkbox" class="css-checkbox" id="chk02" checked />
+                                            <label for="chk02" class="css-label">Email</label>
+                                        </p>
+                                    </div>
+                                </div><!--/g-row-->
+                            </fieldset>
+                            <fieldset>
+                                <legend class="g-legend">Privacy</legend>
+                                <p class="g-light-text">
+                                    Please keep me informed of services and offerings from Copler.<br />
+                                    Check the boxes below to receive more information about:
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="css-checkbox" id="chk03" checked />
+                                    <label for="chk03" class="css-label">Offshore Development Center</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="css-checkbox" id="chk04" />
+                                    <label for="chk04" class="css-label">I would also like to receive information about other Copler services</label>
+                                </p>
+                            </fieldset>
+                        </div><!--/left column-->
+                        <div class="g-col g-col--one-third">
+                            <fieldset class="g-text-center g-hide-on-small">
+                                <legend class="g-legend">Our experts on ODC:</legend>
+                                <p>&nbsp;</p>
+                                <figure class="b-card">
+                                    <img src="img/expert03.png" class="b-card__img" alt="Expert" />
+                                    <figcaption class="b-card__caption">
+                                        <span class="b-card__name">Name, CTO</span>
+                                        <a href="mailto:mail@gmail.com" class="b-card__mail">mail@gmail.com</a>
+                                    </figcaption>
+                                </figure>
+                                <figure class="b-card">
+                                    <img src="img/expert04.png" class="b-card__img" alt="Expert" />
+                                    <figcaption class="b-card__caption">
+                                        <span class="b-card__name">Name, CTO</span>
+                                        <a href="mailto:mail@gmail.com" class="b-card__mail">mail@gmail.com</a>
+                                    </figcaption>
+                                </figure>
+                            </fieldset>
+                        </div><!--/right column-->
+                    </div><!--/g-row-->
+                    <button type="submit" class="g-btn g-btn--wide">Submit</button>
+                </div>
+            </form>
+            <!--/business contact-->
+        </div>
+        <!--/modals-->
+    </main>
+    <!--/main content-->
+
+    <!--sticky footer-->
+    @@include('templates/footer-static.html')
+
+    <!--scripts-->
+    @@include('templates/scripts.html')
+</body>
+</html>

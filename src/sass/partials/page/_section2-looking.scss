@@ -1,0 +1,28 @@
+﻿@import "../../modules/_base.scss";
+/*Section 2*/
+.b-look{
+    @include media($desktop){
+        background-image:url(../img/bg-look.png);
+        background-repeat:no-repeat;
+        background-position:-200px top;
+        background-size:contain;
+    }
+    
+    @include media($large){
+        background-position:-100px 30px;
+    }
+    
+    @include media($extra-large){
+        background-position:0 bottom;
+    }
+
+    @include media($wide){
+        background-size:unset;
+    }       
+}
+
+
+
+
+
+

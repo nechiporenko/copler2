@@ -1,0 +1,523 @@
+﻿@import "../../modules/_base.scss";
+/*Infograph*/
+.b-info{
+    position:relative;
+    overflow:hidden;//чтобы скрыть возможные полосы скролла во время анимации
+}
+.b-info__quote{
+    padding:30px 20px;
+    margin:$project-line-height auto 2*$project-line-height;
+    border:none;
+    position:relative;
+    font-size:rem(18px);
+    line-height:2;
+    text-transform:uppercase;
+    font-family:$font-bold;
+    background:#fff;
+    box-sizing:border-box;
+
+    &:before{//верхняя кавычка
+        content:'\e918';
+        font-family:'icomoon';
+        @include font-size(45px);
+        color:#e6e6e6;
+        position:absolute;
+        top:-15px; left:5px;
+        line-height:1;
+    }
+
+    @include media($tablet){
+        padding:30px 50px;
+        @include font-size(30px);
+        line-height:1.2;
+    }
+}
+
+.b-info__part{}
+.i-header{
+    margin-bottom:2*$project-line-height;
+    line-height:1;
+}
+.i-header__date{
+    display:block;
+    @include font-size(24px);
+    color:$primary;
+    font-family:$font-medium;
+}
+
+.i-header__date--xl{
+    display:none;
+}
+
+.i-header__logo{
+    margin:$project-line-height/2 0 $project-line-height;
+}
+.i-header__caption{
+    @include font-size(16px);
+    line-height:1.125;
+    color:#afafaf;
+    text-transform:uppercase;
+}
+
+.i-list{
+    padding:0;
+    list-style-type:none;
+    position:relative;
+    @extend .g-clearfix;
+
+    &:before{//левая пунктирная полоса (на маленьких разрешениях)
+        content:'';
+        display:block;
+        width:1px;
+        position:absolute;
+        top:-2*$project-line-height;
+        bottom:2*$project-line-height;
+        left:7px;
+        z-index:-1;
+        border-left:1px dashed $primary;
+    }
+}
+.i-list__item{
+    @extend .g-column;
+    position:relative;
+    padding-left:30px;
+
+    &:before{//dot 16x16
+        content:"\e917";
+        display:block;
+        font-family:'icomoon';
+        @include font-size(16px);
+        color:$primary;
+        position:absolute;
+        left:0; top:5px;
+        line-height:1;
+        background:#fff;
+        border-radius:50%;
+        z-index:2;//нужно перекрыть пунктирную линию
+    }
+}
+
+.i-inner{
+    margin-bottom:2*$project-line-height;
+    line-height:1;
+}
+.i-inner__title{
+    display:block;
+    margin-bottom:$project-line-height/2;
+    @include font-size(24px);
+    font-family:$font-medium;
+    color:#000;
+    white-space:nowrap;
+}
+.i-inner__caption{
+    @include font-size(14px);
+    line-height:1.28;
+
+    b, strong{
+        @include font-size(18px);
+        color:#000;
+    }
+}
+
+@include media($tablet){
+    .b-info__quote{
+        width:600px;
+    }
+    .i-list{
+        &:before{
+            display:none; //скрыли левую полосу
+        }
+    }
+
+    .i-list__item{
+        @include span-columns(3);
+
+        &:after{//пунктирная линия
+            content:'';
+            display:block;
+            width:1px;
+            height:2*$project-line-height;
+            border-left:1px dashed $primary;
+            position:absolute;
+            left:7px; top:12px;
+            margin-top:-2*$project-line-height;
+        }
+    }
+
+    .i-list--3col{
+        .i-list__item{
+            @include span-columns(4);
+        }
+    }
+
+    //анимация списков и лого
+    //начиная с этого разрешения, сделаем блоки невидимыми - покажем при анимации
+    .js.cssanimations{
+        .i-list__item,
+        .i-header{
+            visibility:hidden;
+
+        &.animated{
+            visibility:visible;
+        }
+        }
+    }
+}
+
+
+@include media($desktop){
+    .b-info{
+        height:680px;
+    }
+
+    .b-info__part{
+        position:absolute;
+        width:50%;
+        height:340px;
+    }
+
+    .i-header{
+        position:absolute;
+    }
+
+    .i-header__date--xs{
+        display:none;
+    }
+    .i-header__date--xl{
+        display:block;
+        margin-bottom:$project-line-height/2;
+    }
+
+
+    .i-list__item{
+        position:absolute;
+        width:auto;
+        margin:0;
+
+        &:after{
+            margin-top:0;
+            @include transform-origin(100% 0);
+        }
+    }
+
+    .i-inner__line{//перенос строк в нужных местах
+        display:block;
+        white-space:nowrap;
+    }
+
+    //Блок 2009
+    .b-info__part--1{
+        left:50%;
+        top:0;
+
+        .i-header{
+            left:110px;
+            top:180px;
+        }
+
+        .i-header__logo{
+            margin-bottom:$project-line-height/2;
+        }
+
+        .i-list__item:first-child{
+            left:110px;
+            top:75px;
+
+            &:after{
+                height:80px;
+            }
+        }
+        .i-list__item:nth-child(2){
+            left:295px;
+            top:0;
+
+            &:after{
+                height:160px;
+                @include transform(rotate(15deg));
+            }
+        }
+
+        .i-list__item:nth-child(3){
+            right:60px;
+            top:130px;
+            &:after{
+                height:80px;
+                @include transform(rotate(45deg));
+            }
+        }
+
+        .i-list__item:nth-child(4){
+            right:0;
+            top:235px;
+            &:after{
+                top:15px;
+                height:80px;
+                @include transform(rotate(100deg));
+            }
+        }
+    }
+
+    //Блок 2013
+    .b-info__part--2{
+        left:0;
+        top:50%;
+
+        .i-header{
+            right:15px;
+            top:40px;
+        }
+
+        .i-header__logo{
+            margin-top:0;
+        }
+
+        .i-header__date{
+            padding-left:55px;
+        }
+
+        .i-list__item:first-child{
+            right:10px;
+            top:260px;
+
+            &:after{
+                height:90px;
+                @include transform(translateY(-90px));
+            }
+        }
+
+
+        .i-list__item:nth-child(2),
+        .i-list__item:nth-child(3){
+            padding-left:0;
+            padding-right:30px;
+
+            &:before{//dot
+                left:auto;
+                right:5px;
+            }
+
+            &:after{//line
+                left:auto;
+                right:7px;
+            }
+        }
+
+        .i-list__item:nth-child(2){
+            left:45px;
+            top:90px;
+
+            &:after{
+                height:80px;
+                @include transform(rotate(-90deg));
+            }
+        }
+
+        .i-list__item:nth-child(3){
+            top:235px;
+            left:65px;
+
+            &:after{
+                height:90px;
+                top:7px;
+                @include transform(rotate(-135deg));
+            }
+        }
+    }
+
+
+    //Блок 2015
+    .b-info__part--3{
+        left:0;
+        top:0;
+
+        .i-header{
+            left:270px;
+            top:145px;
+        }
+
+        .i-header__logo{
+            margin-bottom:0
+        }
+
+        .i-header__date{
+            text-align:right;
+        }
+        .i-list__item:first-child{
+            right:40px;
+            top:40px;
+
+            &:after{
+                height:80px;
+            }
+        }
+
+        .i-list__item:nth-child(2),
+        .i-list__item:nth-child(3),
+        .i-list__item:nth-child(4){
+            padding-left:0;
+            padding-right:30px;
+
+            &:before{//dot
+                left:auto;
+                right:5px;
+            }
+
+            &:after{//line
+                left:auto;
+                right:7px;
+            }
+        }
+
+        .i-list__item:nth-child(2){
+            top:0;
+            left:85px;
+
+            &:before{
+                top:60px;
+            }
+            &:after{
+                height:70px;
+                @include transform(translateY(60px) rotate(-28deg));
+            }
+        }
+
+        .i-list__item:nth-child(3){
+            left:15px;
+            top: 110px;
+
+            &:after{
+                height:80px;
+                top:15px;
+                @include transform(rotate(-65deg));
+            }
+        }
+        .i-list__item:nth-child(4){
+            top:300px;
+            left:0;
+
+            &:before{
+                top:-15px;
+            }
+
+            &:after{
+                height:70px;
+                @include transform(translateY(-22px) rotate(-115deg));
+            }
+        }
+
+    }
+
+
+    //Цитата
+    .b-info__quote{
+        position:absolute;
+        right:0;
+        top:390px;
+        width:400px;
+    }
+}
+
+@include media($large){
+    .b-info__quote{
+        right:-30px;
+        width:450px;
+    }
+}
+
+
+
+//Gears
+.b-info__map{
+    width:166px;
+    height:162px;
+    background:url(../img/i-map.png) no-repeat;
+    position:absolute;
+    top:220px;
+    left:50%;
+    margin-left:-83px;
+    display:none;
+
+    @include media($desktop){
+        display:block;
+    }
+}
+
+.i-gears-img{
+    position:absolute;
+    @include transform-origin(center center);
+}
+
+.i-gears-img--top{//верхняя шестеренка (самая маленькая)
+    top:23px;
+    left:67px;
+    @include size(46px);
+}
+
+.i-gears-img--right{//правая (самая большая)
+    top:71px;
+    left:66px;
+    @include size(72px);
+}
+
+.i-gears-img--left{//левая (средняя)
+    top:44px;
+    left:15px;
+    @include size(63px);
+}
+
+.i-gears-center{//центральные круги
+    position:absolute;
+    top:40px;
+    left:38px;
+}
+
+//анимация шестеренок
+.i-gears-right{//по часовой стрелке
+    @include animation-name(i-gears-right);
+}
+
+@include keyframes(i-gears-right){
+    0%{
+        @include transform(rotate(0deg));
+    }
+    100%{
+        @include transform(rotate(360deg));
+    }
+}
+
+.i-gears-left{//против часовой стрелки
+    @include animation-name(i-gears-left);
+}
+
+@include keyframes(i-gears-left){
+    0%{
+        @include transform(rotate(0deg));
+    }
+    100%{
+        @include transform(rotate(-360deg));
+    }
+}
+
+
+@include media($desktop){//запустим анимацию на десктопе
+    .i-gears-img--top,
+    .i-gears-img--right{
+        @include animation-name(i-gears-right);
+    }
+    .i-gears-img--left{
+        @include animation-name(i-gears-left);
+    }
+
+    .i-gears-img--top,
+    .i-gears-img--right,
+    .i-gears-img--left{
+        @include animation-timing-function(linear);
+        @include animation-iteration-count(infinite);
+        @include animation-duration(10s);
+    }
+}
+
+
+
+
+

@@ -1,0 +1,54 @@
+﻿@import "../../modules/_base.scss";
+/*Desktop Font-size fix*/
+@include media(min-width 1280px max-width 1440px){
+     .page__content{
+         font-size:90%;
+     }
+
+     .page__section{
+         padding-top:80px;
+     }
+
+     .b-intro{
+         padding-top:15px;
+
+         .page__header{
+             margin-bottom:0;
+         }
+
+         .b-slider__form{
+             margin-bottom:15px;
+         }
+     }
+
+     .b-intro--card{
+         padding-top:77px;
+
+         .page__header{
+             margin-bottom:18px;
+         }
+     }
+
+     .b-intro__title,
+     .g-title{
+         font-size:rem(32px);
+     }
+     .b-intro__subtitle{
+         font-size:rem(18px);
+     }
+
+     .b-list__title,
+     .p-list__title,
+     .g-subtitle,
+     .b-feature__title,
+     .b-career__title{
+         font-size:rem(22px);
+     }
+
+     .b-feature__caption,
+     .b-drop__inner,
+     .p-list__content,
+     .g-styled-list{
+         font-size:rem(14px);
+     } 
+}

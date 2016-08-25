@@ -1,0 +1,41 @@
+﻿@import "../../modules/_base.scss";
+/*Header Callback button*/
+.b-header__call{
+    @extend .g-clearbutton;
+    @include size(36px);
+    margin:11px 0; //58 - высота контейнера
+    line-height:36px;
+    border-radius:50%;
+    background:$primary;
+    @include font-size(20px);
+    color:#fff;
+    visibility:hidden;
+
+    [class^="icon-"], [class*=" icon-"]{
+        @include transition(transform .3s ease);
+    }
+
+
+    &:hover,
+    &:active{
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+        [class^="icon-"], [class*=" icon-"]{
+            @include transform(rotate(-25deg));
+        }
+    }
+
+    &:active{
+        @include transform(translateY(3px));
+    }
+
+    @include media($desktop){
+        position:absolute;
+        right:10px;
+        top:0;
+    }
+}
+
+.b-header.visible .b-header__call{
+    visibility:visible;
+}

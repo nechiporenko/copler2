@@ -1,0 +1,32 @@
+﻿@import "../../modules/_base.scss";
+/*Card*/
+.b-card{
+    max-width:260px;
+    margin:0 auto 2*$project-line-height;
+    text-align:center;
+}
+
+.b-card__img{
+    display:block;
+    @include size(144px);
+    margin:0 auto $project-line-height;
+    border-radius:50%;
+}
+
+.b-card__caption{
+    @include font-size(16px);
+    line-height:1.1;
+}
+.b-card__name,
+.b-card__mail{
+    display:block;
+    color:$text-color;
+}
+
+.b-card__mail{
+    text-decoration:none;
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}

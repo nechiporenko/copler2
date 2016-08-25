@@ -1,0 +1,247 @@
+@import "base";
+html,
+button,
+input,
+select,
+textarea {
+    color: $text-color;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Base Styles */
+html{
+    height:100%;
+    line-height: 1;
+}
+
+
+.page{//body style
+    height:100%;
+    line-height: 1;
+    font-family: $font-regular, "Helvetica CY", "Nimbus Sans L", sans-serif;
+    background:#fafafa url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAADFBMVEXu7u7v7+/39/f6+vpg6JLLAAAAFElEQVQI12OY9v8/gyMUg9j/8WMA/nAhj6Aj1y8AAAAASUVORK5CYII=) repeat;
+}
+
+/* Typography*/
+h1, h2, h3, h4, h5, h6, .g-title, .g-subtitle{
+  margin-top: 0;
+  margin-bottom: 8px;
+  line-height:1.1;
+  color:$title-color;
+  font-family:$font-medium;
+  font-weight:normal;
+}
+.g-title{
+    display:block;
+    font-size:rem(32px);
+    text-transform:uppercase;
+    text-align:center;
+
+    @include media($tablet){
+        //@include font-size(47px);
+        @include font-size(36px);
+    }
+}
+
+.g-subtitle{
+    display:block;
+    @include font-size(24px);
+    font-family:$font-regular;
+    text-align:center;
+}
+
+b, strong{
+    font-family:$font-bold;
+    font-weight:normal;
+}
+
+em, i{
+    font-family:$font-italic;
+}
+
+.g-brand-color{
+    color:$primary;
+}
+
+.g-light-text{
+    color:#afafaf;
+}
+
+.g-big-text{
+    @include font-size(16px);
+    text-transform:uppercase;
+}
+
+/* Links */
+a {
+  color: $primary; }
+
+
+/* Lists */
+ul {
+    list-style: disc outside; }
+ol {
+    list-style: decimal outside; }
+ol, ul {
+    margin-top: 0; }
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin: $project-line-height/2 0 $project-line-height/2 30px;
+}
+
+.g-clearlist{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+.g-styled-list{
+    list-style-type:none;
+    padding:0;
+    margin:0 0 $project-line-height;
+    @include font-size(16px);
+    line-height:1.5;
+    text-align:left;
+
+    li{
+        position:relative;
+        padding-left:30px;
+
+        &:before{
+            content: "\e902";
+            font-family:'icomoon';
+            font-size:15px;
+            position:absolute;
+            top:0; left:0;
+            color:$primary;
+        }
+    }
+}
+
+/* Blockquote */
+blockquote{
+    font-size:120%;
+    line-height:1.6;
+    font-style: normal;
+    font-family:$font-italic;
+    padding: 0 0 0 30px;
+    border-left:2px solid $primary;
+}
+cite{
+    display:block;
+    font-size:75%;
+}
+
+/* Code */
+code {
+    padding:2px 5px;
+    margin:0 2px;
+    font-size: 90%;
+    white-space: nowrap;
+    background: #F1F1F1;
+    border: 1px solid $border-color;
+    border-radius:$border-radius;
+}
+pre > code {
+  display: block;
+  padding:10px 15px;
+  white-space: pre;
+}
+
+
+/* Spacing */
+p {
+  margin-top: 0; }
+
+
+pre,
+blockquote,
+dl,
+figure,
+fieldset,
+table,
+p,
+ul,
+ol{
+    margin-bottom: $project-line-height;
+}
+
+/* Misc */
+hr {
+    margin: $project-line-height 0;
+    border-width: 0;
+    border-top: 1px solid $border-color;
+}
+
+/* Transitions */
+a, button, input[type="button"], input[type="submit"],
+#{$all-text-inputs}, select{
+    @include transition-property(border-color,color,background-color, box-shadow, transform);
+    @include transition-duration(.2s);
+    @include transition-timing-function(ease-in);
+}
+
+
+/*Helper classes*/
+.g-hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.g-visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.g-invisible {
+    visibility: hidden;
+}
+
+.g-clearfix{
+    @include clearfix; //bourbon clearfix
+}
+//.lt-ie9{
+//    .g-clearfix{
+//        @include clear-fix();
+//    }
+//}

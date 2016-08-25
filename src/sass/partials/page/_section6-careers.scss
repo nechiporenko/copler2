@@ -1,0 +1,95 @@
+﻿@import "../../modules/_base.scss";
+/*Section Careers*/
+.b-career{
+    margin:4*$project-line-height 0 $project-line-height;
+
+    @include media(max-width 650px){
+        .bx-wrapper .bx-controls-direction a{
+            top:0;
+            margin-top:0;
+        }
+    }
+}
+.b-career__list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+}
+
+.b-career__item{
+    @extend .g-column;
+}
+.b-career__inner{
+    max-width:620px;
+    margin:0 auto;
+    @extend .g-clearfix;
+}
+.b-career__col{
+    @extend .g-column;
+    text-align:center;
+
+    @include media($small){
+        text-align:left;
+        width:(100%-$grid-gutter*2)/3;
+
+        &.b-career__col--wide{
+            width: 2*(100%-$grid-gutter*2)/3 + $grid-gutter;
+            margin-left:$grid-gutter;
+        }
+    }
+}
+
+.b-career__thumb{
+    @include size(180px);
+    margin:0 auto $project-line-height;
+    text-align:center;
+}
+.b-career__img{
+    display:inline-block;
+    height:180px;
+    width:auto;
+}
+
+.b-career__title{
+    display:block;
+    margin-bottom:15px;
+    @include font-size(24px);
+    line-height:1.1;
+    font-family:$font-medium;
+    color:$title-color;
+    text-transform:uppercase;
+}
+
+
+.b-career-nav{
+    margin:2*$project-line-height 0;
+    font-size:0;
+    text-align:center;
+}
+
+
+.b-career-nav__btn{
+    display:inline-block;
+    vertical-align:middle;
+    @include size(50px);
+    margin:0 25px $project-line-height;
+    @include font-size(14px);
+    @include transition(opacity .3s ease);
+    opacity:0.5;
+    cursor:pointer;
+
+    &.active,
+    &:hover,
+    &:active{
+        opacity:1;
+    }
+
+    &.active{
+        cursor:default;
+    }
+}
+
+.b-career-nav__img{
+    display:inline-block;
+    height:50px;
+    width:auto;
+}

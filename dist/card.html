@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Copler - card page</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Page Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <link rel="stylesheet" href="css/app.min.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body class="page">
+    <!--header-->
+    <header class="b-header visible">
+        <div class="b-header__wrapper">
+            <div class="b-header__container">
+                <nav class="b-header__inner">
+                    <a href="index.html" class="b-header__logo">Copler</a>
+                    <ul class="h-menu">
+                        <li class="h-menu__item">
+                            <a href="index.html#services" class="h-menu__link current">Services</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="index.html#who-we-are" class="h-menu__link">Who we are</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="index.html#what-we-do" class="h-menu__link">What we do</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="index.html#careers" class="h-menu__link">Careers</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="index.html#contacts" class="h-menu__link">Contact us</a>
+                        </li>
+                    </ul>
+                    <button type="button" class="b-header__call" data-modal="#callback"><i class="icon-telephone"></i></button>
+                </nav>
+            </div>
+        </div>
+        <label class="b-header__label">Scroll »</label>
+    </header>
+    <!--/header-->
+
+    <!--main content-->
+    <main class="page__content">
+        <!--page section-->
+        <section class="page__section b-intro b-intro--card">
+            <header class="page__header">
+                <h1 class="b-intro__title">Your cars <strong>is created!</strong></h1>
+                <span class="b-intro__subtitle">Have fun!</span>
+            </header>
+
+            <div class="g-container">
+                <figure class="b-cardthumb">
+                    <img src="http://placehold.it/566x575" alt="" />
+                </figure>
+            </div>
+
+            <footer class="b-intro__footer">
+                <div class="g-container">
+                    <a href="index.html" class="b-intro__save">
+                        <i class="icon-arrow-left"></i>
+                        Back to home page
+                    </a>
+
+                    <ul class="b-social">
+                        <li class="b-social__item">
+                            Share your card in
+                        </li>
+                        <li class="b-social__item">
+                            <a href="#" class="b-social__link"><i class="icon-facebook"></i></a>
+                        </li>
+                        <li class="b-social__item">
+                            <a href="#" class="b-social__link"><i class="icon-instagram"></i></a>
+                        </li>
+                        <li class="b-social__item">
+                            <a href="#" class="b-social__link"><i class="icon-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </section>
+
+        <!--modals-->
+        <div class="g-hidden">
+            <!--callback-->
+            <form class="box-modal js-form-validate" id="callback">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner">
+                    <span class="box-modal__title">Request a callback</span>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your name</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="clbc_name" name="clbc_name" placeholder="Your name*" required />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your phone</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="clbc_phone" name="clbc_phone" placeholder="Business phone number*" required />
+                        </div>
+                    </div>
+                    <div class="g-text-center">
+                        <button type="submit" class="g-btn">Create request</button>
+                    </div>
+                </div>
+            </form>
+            <!--/callback-->
+
+            <!--contact a Sales Expert-->
+            <form class="box-modal js-form-validate" id="expert">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner">
+                    <span class="box-modal__title">Contact a sales expert</span>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your name</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="exp_name" name="exp_name" placeholder="Your name*" required />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your email</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="exp_mail" name="exp_mail" placeholder="Business email*" required />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your phone</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="exp_phone" name="exp_phone" placeholder="Business phone number" />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Company</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="exp_company" name="exp_company" placeholder="Company" />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your question</label>
+                        <div class="g-validate__inner">
+                            <textarea class="g-textarea" id="exp_msg" name="exp_msg" placeholder="Your question*" required></textarea>
+                        </div>
+                    </div>
+                    <div class="g-text-center">
+                        <button type="submit" class="g-btn g-btn--wide">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <!--/contact a Sales Expert-->
+
+            <!--thank you-->
+            <div class="box-modal box-modal--thin" id="thankyou">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner g-text-center">
+                    <span class="box-modal__title"><img src="img/head.svg" alt="Thank you" /> Thank you!</span>
+                    <p>
+                        We've received your submission<br />
+                        and a representative will be in touch with you soon
+                    </p>
+                </div>
+            </div>
+            <!--/thank you-->
+        </div>
+        <!--/modals-->
+    </main>
+    <!--/main content-->
+
+    <!--scripts-->
+    <script src="js/vendor/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/app.min.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/forms.js"></script>
+    <!--/scripts-->
+</body>
+</html>

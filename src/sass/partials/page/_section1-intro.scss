@@ -1,0 +1,173 @@
+﻿@import "../../modules/_base.scss";
+/*Section: Intro*/
+.b-intro{
+    position:relative;
+    padding-top:77px;
+    background:#fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURf////f3951tpu4AAAAYSURBVAjXY2BgZGSAA0ZGJB4KB0UZnQAABuQADTNQxycAAAAASUVORK5CYII=) repeat;
+
+    @include media($tall){
+        padding-top:95px;
+    }
+}
+//header
+.b-intro__title{
+    @extend .g-title;
+    font-family:$font-regular;
+}
+
+.b-intro__subtitle{
+    display:block;
+    line-height:1.1;
+    font-family:$font-bold;
+    color:$primary;
+    text-transform:uppercase;
+    @include font-size(21px);
+}
+
+
+//footer
+.b-intro__footer{
+    width:100%;
+    text-align:center;
+
+    .g-container{
+        position:relative;
+    }
+}
+.b-intro__save{
+    @extend .g-clearbutton;
+    color:$text-color;
+    @include font-size(17px);
+    text-decoration:none;
+
+    [class^="icon-"], [class*=" icon-"]{
+        @include font-size(24px);
+    }
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}
+
+.b-intro__next{//кнопка скролла к следующей секции
+    @extend .g-clearbutton;
+    display:block;
+    width:70px;
+    margin:0 auto;
+    color:#afafaf;
+    @include font-size(12px);
+
+    svg{
+        display:block;
+        margin:0 auto 10px;
+        @include transition(fill .2s ease-in);
+    }
+
+    .st0{
+        fill:#afafaf;
+    }
+
+    &:hover,
+    &:active{
+        color:$primary;
+        .st0{
+            fill:$primary;
+        }
+
+        .st1{
+            @include animation-name(b-intro__next-animate);
+            @include animation-duration(1s);
+            @include animation-timing-function(linear);
+            @include animation-iteration-count(infinite);
+            @include animation-fill-mode(none);
+        }
+    }
+}
+
+@include keyframes(b-intro__next-animate){
+    0%{
+        opacity:1;
+        @include transform(translateY(none));
+    }
+    100%{
+        opacity:0;
+        @include transform(translateY(-10px));
+    }
+}
+
+
+//расшарить картинку
+.b-social{
+    @extend .g-clearfix;
+    list-style-type:none;
+    padding:0;
+    margin:20px 0;
+    font-size:0;
+}
+.b-social__item{
+    display:inline-block;
+    vertical-align:middle;
+    @include font-size(17px);
+    margin:0 5px;
+}
+.b-social__link{
+    color:$text-color;
+    text-decoration:none;
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}
+
+
+
+@include media($tablet){
+    .b-intro{
+        padding-bottom:114px; //высота футера секции 78 + 2 * 18
+    }
+    .b-intro__footer{
+        position:absolute;
+        bottom:$project-line-height;
+        left:0;
+        .g-container{
+            min-height:78px;
+        }
+    }
+    .b-intro__save,
+    .b-social{
+        position:absolute;
+        top:50%;
+        @include transform(translateY(-50%));
+    }
+    .b-intro__save{
+        left:10px;
+    }
+    .b-social{
+        margin:0;
+        right:10px;
+    }
+
+    .b-social__item{
+        margin:0 0 0 10px;
+        &:first-child{
+            margin-left:0;
+        }
+    }
+}
+
+
+//контейнер для созданной картинки
+.b-cardthumb{
+    max-width:360px;
+    margin:0 auto 2*$project-line-height;
+    padding:10px;
+    box-sizing:border-box;
+    background:#fff;
+    border:dashed 2px $border-color;
+    text-align:center;
+    
+    @include media($wide){
+        max-width:586px;
+    }
+}

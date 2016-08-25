@@ -1,0 +1,135 @@
+﻿@import "../../modules/_base.scss";
+/*Contacts section*/
+$contacts-color:#afafaf;
+.b-contacts{
+    @include media($desktop){
+        background-image:url(../img/bg-contacts.png);
+        background-repeat:no-repeat;
+        background-position:-200px 170px;
+    }
+    
+    @include media($large){
+        background-position:-100px 170px;
+       
+    }
+    
+    @include media($extra-large){
+        background-position:0 170px;
+
+    }       
+}
+
+.b-contacts__row{
+    width:100%;
+    margin:2*$project-line-height 0 $project-line-height;
+    text-align:center;
+}
+
+.b-contacts__col{
+    box-sizing:border-box;
+}
+
+.b-contacts__col--thin{
+    padding:10px 0;
+    text-align:center;
+}
+
+@include media($tablet){
+    .b-contacts__row{
+        display:table;
+        table-layout:fixed;
+        text-align:left;
+    }
+
+    .b-contacts__col{
+        display:table-cell;
+        vertical-align:top;
+        width:40%;
+
+        &.b-contacts__col--thin{
+            width:20%;
+            padding:10px;
+            vertical-align:middle;
+        }
+    }
+}
+
+
+
+
+.b-contacts__title{
+    @extend .g-title;
+    margin-bottom:2*$project-line-height;
+    color:$primary;
+    @include font-size(24px);
+
+    @include media($tablet){
+        text-align:left;
+    }
+}
+
+.b-contacts__list{
+    max-width:400px;
+    padding:0;
+    margin:0 auto $project-line-height;
+    @extend .g-clearfix;
+    line-height:1.82;
+
+    dt, dd{
+        float:left;
+        margin-bottom:$project-line-height;
+    }
+
+    dt{
+        margin-right:10px;
+        clear:both;
+        color:$contacts-color;
+        text-transform:uppercase;
+    }
+    dd{
+        margin-left:0;
+        color:$title-color;
+    }
+
+    a{
+        color:$title-color;
+        text-decoration:none;
+
+        &:hover,
+        &:active{
+            color:$primary;
+            text-decoration:underline;
+        }
+    }
+}
+
+.b-contacts__map{
+    height:306px;
+    background:#e9e5dc;
+
+    @include media($tall){
+        height:360px;
+    }
+
+    .g-subtitle {
+        margin:0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+.b-contacts__divider{
+    max-width:140px;
+    margin:0 auto $project-line-height;
+    color:$contacts-color;
+    @include font-size(24px);
+    line-height:1.5;
+    text-transform:uppercase;
+    text-align:center;
+
+    figcaption{
+        padding-top:10px;
+        line-height:1.28;
+        @include font-size(14px);
+    }
+}

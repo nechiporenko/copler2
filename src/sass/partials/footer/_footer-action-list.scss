@@ -1,0 +1,130 @@
+﻿@import "../../modules/_base.scss";
+/*Footer Action List*/
+.f-action{
+    @extend .g-clearlist;
+    float:right;
+    font-size:0;
+}
+
+.f-action__item{
+    display:inline-block;
+    @include font-size(14px);
+    position:relative;
+
+    &:after{
+        content:'';
+        display:block;
+        position:absolute;
+        width:1px;
+        top:0; bottom:0; left:0;
+        background:$border-color;
+    }
+
+    &:first-child,
+    &:last-child{
+        &:after{
+            display:none;
+        }
+    }
+}
+
+.f-action__btn{
+    @extend .g-clearbutton;
+    padding:0 18px;
+    height:24px;
+    line-height:24px;
+    white-space:nowrap;
+
+    [class^="icon-"], [class*=" icon-"]{
+        color:$primary;
+        margin-right:10px;
+    }
+
+    &:hover,
+    &:active{
+        color:$primary;
+        .f-action__border{
+            border-color:$primary;
+        }
+    }
+
+    &:active{
+        @include transform(translateY(3px));
+    }
+}
+
+.f-action__title{
+    display:none;
+
+    @include media($small){
+        display:inline-block;
+    }
+}
+
+
+.f-action__title--border{
+    vertical-align:middle;
+    border-bottom:2px dotted #afafaf;
+    line-height:1.2;
+    @include transition(border-color .2s ease-in);
+
+    @include media($mobile){
+        display:inline-block;
+    }
+}
+
+
+//другая кнопка
+.f-action__wrapper{//скроем на мелких экранах
+    vertical-align:middle;
+    width:180px;
+    height:24px;
+    position:relative;
+    display:none;
+
+    @include media($desktop){
+        display:inline-block;
+    }
+}
+
+.f-action__btn--last{
+    position:absolute;
+    width:100%;
+    left:0; bottom:-10px;
+    height:54px;
+    line-height:54px;
+    @include font-size(17px);
+    background:$primary;
+    color:#fff !important;
+    border-top-left-radius:80px;
+    border-bottom-left-radius:20px;
+
+
+    &:after{
+        content:'';
+        display:block;
+        height:100%;
+        width:100px;
+        position:absolute;
+        top:0;
+        right:2px;
+        background:$primary;
+        @include transform(translateX(100px));
+        @include transition(background .2s ease-in);
+    }
+
+    &:hover,
+    &:active{
+        background:darken($primary, 10%);
+
+        &:after{
+            background:darken($primary, 10%);
+        }
+    }
+}
+
+.no-csstransforms .f-action__btn--last{
+    &:after{
+        display:none;
+    }
+}

@@ -1,0 +1,73 @@
+﻿@import "base";
+/* Buttons */
+.g-btn{
+    display:inline-block;
+    vertical-align:middle;
+    margin-bottom:$project-line-height;
+    height:2*$project-line-height;
+    line-height:2*$project-line-height;
+    padding:0 30px;
+    color:#fff;
+    text-align: center;
+    @include font-size(17px);
+    text-decoration: none;
+    white-space: nowrap;
+    background: $primary;
+    border-radius:$project-line-height;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline:0;
+
+    &:hover,
+    &:focus,
+    &:active{
+        color:#fff;
+        background:darken($primary, 10%);
+    }
+
+
+    &:active{
+        @include transform(translateY(3px));
+    }
+
+    &:disabled,
+    &.disabled{
+        background:#afafaf !important;
+    }
+
+    .icon-slim-right{
+        @include transform(translateY(2px)); //icon arrow fix
+    }
+}
+
+
+.g-btn--wide{
+    padding:0 70px;
+}
+
+
+.g-clearbutton{
+    display:inline-block;
+    vertical-align:middle;
+    border:none;
+    background:none;
+    padding:0;
+    cursor: pointer;
+    text-align:center;
+    box-sizing: border-box;
+    outline:0;
+}
+
+.g-btn--clear{
+    background:none !important;
+    color:$text-color;
+    text-decoration:underline;
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}
+
+

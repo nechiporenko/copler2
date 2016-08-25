@@ -1,0 +1,98 @@
+﻿@import "../../modules/_base.scss";
+/*Header Menu*/
+.h-menu{
+    display:inline-block;
+    visibility:hidden;
+    opacity:0;
+    height:58px;
+    list-style-type:none;
+    padding:0;
+    margin:0 40px;
+    font-size:0;
+    @include transition(opacity .3s linear);
+}
+
+.b-header.visible .h-menu{
+    visibility:visible;
+    opacity:1;
+}
+
+.h-menu__item{
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:40px;
+    @include font-size(17px);
+
+    &:first-child{
+        margin-left:0;
+    }
+}
+.h-menu__link{
+    display:block;
+    height:58px;
+    line-height:58px;
+    white-space:nowrap;
+    color:$text-color;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:$font-medium;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.current{
+        color:$primary;
+    }
+
+    &.current{
+        cursor:default;
+    }
+}
+
+
+@include media($desktop){
+    .h-menu{
+        display:block;
+        width:650px;
+        margin:0 auto;
+        text-align:justify;
+        font-size:1px;
+        text-align-last:justify;
+
+        &:after{
+            content:'';
+            display:inline-block;
+            width:100%;
+            height:0;
+            overflow:hidden;
+            visibility:hidden;
+        }
+    }
+
+    .h-menu__item{
+        margin:0;
+        text-align:center;
+        text-align-last:center;
+
+        &:first-child{
+            margin-left:40px;
+        }
+    }
+}
+
+@include media($large){
+    .h-menu{
+        width:800px;
+    }
+}
+
+@include media($extra-large){
+    .h-menu{
+        width:1000px;
+    }
+    .h-menu__item{
+        &:first-child{
+            margin-left:0;
+        }
+    }
+}

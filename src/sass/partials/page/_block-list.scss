@@ -1,0 +1,224 @@
+﻿@import "../../modules/_base.scss";
+/*Block-list*/
+.b-list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+    margin-top:3*$project-line-height;
+}
+
+.b-list__item{
+    @extend .g-column;
+    position:relative;
+
+    &:hover,
+    &.active{
+        .b-list__icon{
+            border-color:$primary;
+            @include transform(translateY(-10px));
+        }
+
+        .b-list__img{
+            .st1{
+                fill:$primary;
+            }
+            .st2{
+                stroke:$primary;
+            }
+        }
+        .b-list__title,
+        .b-list__label{
+            color:$primary;
+        }
+    }
+
+    &.active{
+        .b-list__label{
+            @include transform(translateY(-10px));
+        }
+    }
+
+    @include media($small){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($desktop){
+        @include omega-reset(2n);
+        @include span-columns(3);
+        @include omega(4n);
+        padding-top:2*$project-line-height;
+
+        &:nth-child(2){
+            padding-top:0;
+        }
+    }
+}
+
+.b-list__inner{
+    max-width:320px;
+    margin:0 auto $project-line-height;
+    line-height:1;
+    cursor:pointer;
+}
+
+
+.b-list__icon{
+    @include size(108px);
+    margin:0 auto 22px;
+    box-sizing:border-box;
+    border:2px solid #afafaf;
+    border-radius:50%;
+    background:#fff;
+    position:relative;
+    @include transition-property(border-color, transform);
+}
+
+.b-list__img{
+    @extend .g-align;
+    path{
+        @include transition-property(fill, stroke);
+    }
+
+    .st0{
+        fill:none;
+    }
+    .st1{
+        fill:#afafaf;
+    }
+    .st2{
+        stroke:#afafaf;
+    }
+}
+
+
+.b-list__caption{
+    text-align:center;
+}
+
+.b-list__title{
+    display:block;
+    margin-bottom:22px;
+    @include font-size(24px);
+    text-transform:uppercase;
+    @include transition-property(color);
+    @include user-select(none);
+}
+
+.b-list__label{
+    @include font-size(24px);
+    color:#ccc;
+    @include transition-property(color, transform);
+}
+
+//transition
+.b-list__icon,
+.b-list__img path,
+.b-list__title,
+.b-list__label{
+    @include transition-timing-function(ease);
+    @include transition-duration(.3s);
+}
+
+//Block-list dropdown
+.b-drop{
+    width:280px;
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-140px;
+    background:#fff;
+    padding:3px;
+    border-radius:8px;
+    z-index:120;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.12), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-sizing:border-box;
+    display:none; //покажем скриптом
+
+    &:before{
+        @include triangle(40px, #fff, up);
+        top:-18px;
+    }
+
+    @include media($mobile){
+        width:320px;
+        margin-left:-160px;
+    }
+
+    .g-btn{
+        margin-bottom:0;
+    }
+}
+
+.no-js .b-drop{
+    display:block;
+}
+
+.b-drop__border{
+    padding:8px;
+    border-radius:8px;
+    background:$primary;
+    position:relative;
+
+    &:before{
+        @include triangle(40px, $primary, up);
+        top:-16px;
+    }
+}
+
+.b-drop,
+.b-drop__border{//треугольники - указатели
+    &:before{
+        content:'';
+        display:block;
+        position:absolute;
+        left:50%;
+        margin-left:-20px;
+    }
+}
+
+
+@include media(min-width 640px max-width 820px){//скорректируем положение (на крайних элементах - возможно появление скролла - фиксим)
+    .b-list__item{
+        .b-drop{
+            margin-left:0;
+        }
+
+        &:nth-child(odd){
+            .b-drop{
+                left:0;
+            }
+        }
+
+        &:nth-child(even){
+            .b-drop{
+                left:auto;
+                right:0;
+            }
+        }
+    }
+}
+
+@include media(min-width 992px max-width 1200px){
+    .b-list__item{
+        &:nth-child(4n-3){
+            .b-drop{
+                left:0;
+                margin-left:0;
+            }
+        }
+        &:nth-child(4n){
+            .b-drop{
+                left:auto;
+                margin-left:0;
+                right:0;
+            }
+        }
+    }
+}
+
+.b-drop__inner{
+    padding:30px 15px 18px;
+    background:#fff;
+    border-radius:8px;
+    @include font-size(16px);
+}

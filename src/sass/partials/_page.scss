@@ -1,0 +1,100 @@
+﻿@import "../modules/_base.scss";
+
+/*Page structure*/
+.page__content{
+    height:100%;
+    line-height:strip-units($project-line-height/$project-font-size);
+    @extend .g-resp-text;
+
+    @include media($desktop){
+        line-height:1.2353;
+    }
+}
+
+.page__section{
+    box-sizing:border-box;
+    min-height:50%;
+    position:relative;
+
+    padding:(72 + 10px) 0 0;
+
+    @include media($desktop){
+        min-height:100%;
+        padding:(72 + 27px) 0 0;
+    }
+}
+
+//section header
+.page__header{
+    @extend .g-container;
+    margin-bottom:$project-line-height;
+    text-align:center;
+
+    p{
+        max-width:600px;
+        margin:0 auto $project-line-height;
+    }
+}
+
+
+//page tab back button
+.page__section--inner{
+    padding-bottom:120px;
+    @include media($desktop){
+        padding-bottom:60px;
+    }
+}
+
+.page__backbtn{
+    @extend .g-clearbutton;
+    position:absolute;
+    left:50%;
+    margin-left:-27px;
+    bottom:55px;
+    @include font-size(12px);
+    text-transform:uppercase;
+    text-decoration:none;
+    line-height:1.5;
+    color:$text-color;
+
+    [class^="icon-"], [class*=" icon-"]{
+        @include font-size(36px);
+    }
+
+    &:hover{
+        color:$primary;
+    }
+
+    @include media($desktop){
+        left:-10px;
+        margin-left:0;
+        bottom:auto;
+        top:50%;
+        margin-top:-28px;
+    }
+
+    @include media($large){
+        left:20px;
+    }
+}
+
+
+
+
+
+@import "page/_section1-intro.scss";//первая секция
+@import "page/_slider.scss"; //слайдер в первой секции
+@import "page/_block-list.scss";//список с выпадайками
+@import "page/_section2-looking.scss";//вторая секция
+@import "page/_section3-services.scss";//третья секция, список осн.услуг
+@import "page/_price-list.scss";//список ценовых предложений
+@import "page/_infograph.scss";//блок инфографики в секции 4
+@import "page/_section5-what-we-do.scss";
+@import "page/_section6-careers.scss";//секция 6, слайдер вакансий
+@import "page/_section7-contacts.scss"; //секция контакты
+@import "page/_pager.scss"; //пейджер страниц
+@import "page/_card.scss"; //карточка сотрудника (фото + подпись)
+@import "page/_scroll-up.scss";
+
+
+

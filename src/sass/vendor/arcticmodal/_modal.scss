@@ -1,0 +1,101 @@
+﻿@import "../../modules/_base.scss";
+/*Arcticmodal*/
+.arcticmodal-overlay,
+.arcticmodal-container { position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 2000; }
+.arcticmodal-container { overflow: auto; margin: 0; padding: 0; border: 0; border-collapse: collapse; }
+*:first-child+html .arcticmodal-container { height: 100% }
+.arcticmodal-container_i { height: 100%; margin: 0 auto; }
+.arcticmodal-container_i2 { padding: 0; margin: 0; border: 0; vertical-align: middle; }
+.arcticmodal-error { padding: 20px; border-radius: 10px; background: #000; color: #fff; }
+.arcticmodal-loading { width: 80px; height: 80px; border-radius: 10px; background: #000 url(../img/loader.gif) no-repeat 50% 50%; }
+
+
+.box-modal{
+	position: relative;
+    width:280px;
+	padding: 25px;
+	background: #fff;
+	color: #3c3c3c;
+	box-shadow: 0 0 0 6px rgba(153, 153, 153, .3);
+	border-radius: 6px;
+    box-sizing:border-box;
+
+    @include media($mobile){
+        width:440px;
+    }
+
+    @include media($small){
+        width:500px;
+    }
+
+    .g-btn{
+        margin-bottom:0;
+    }
+}
+
+.box-modal_close { position: absolute; right: 10px; top: 6px; font-size: 16px; line-height: 22px; color: #999; cursor: pointer; }
+.box-modal_close:hover { color: #666; }
+
+.box-modal__title{
+    @extend .g-subtitle;
+    margin-bottom:20px;
+    text-align:left;
+    text-transform:uppercase;
+    @include font-size(18px);
+    font-family:$font-medium;
+}
+
+
+.box-modal__header{
+    margin-bottom:20px;
+    @include font-size(14px);
+    line-height:1.3;
+    .box-modal__title{
+        margin-bottom:0;
+    }
+}
+
+.box-modal__inner{
+    max-width:360px;
+    margin:0 auto;
+
+    &.g-text-center{
+        .box-modal__title{
+            text-align:center;
+        }
+    }
+}
+
+.box-modal--thin{
+    @include media($mobile){
+        width:360px;
+    }
+
+    .box-modal__inner{
+        max-width:280px;
+    }
+}
+
+.box-modal--wide{
+    @include media($tablet){
+        width:660px;
+    }
+
+    .box-modal__inner{
+        max-width:500px;
+    }
+}
+
+.box-modal--large{
+    @include media($tablet){
+        width:720px;
+    }
+
+    @include media($desktop){
+        width:920px;
+    }
+
+    .box-modal__inner{
+        max-width:780px;
+    }
+}

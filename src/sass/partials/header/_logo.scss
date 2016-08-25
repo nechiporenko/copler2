@@ -1,0 +1,17 @@
+﻿@import "../../modules/_base.scss";
+
+/*Site Logo*/
+.b-header__logo{
+    float:left;
+    width:138px;
+    height:58px;
+    @include hide-text;
+    background:url(../img/logo.svg) left center no-repeat;
+
+    @include media($desktop){
+        float:none;
+        position:absolute;
+        left:10px;
+        top:0;
+    }
+}

@@ -1,0 +1,311 @@
+﻿@import "base";
+/* Forms */
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea{
+    @include appearance(none);
+}
+
+.g-input,
+.g-select,
+.g-textarea{
+    display:inline-block;
+    vertical-align:middle;
+    width:100%;
+    margin-bottom: 22px;
+    padding:6px 15px;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius:$border-radius;
+    color:$title-color;
+    text-transform:uppercase;
+    box-shadow: none;
+    font-size:rem(15px);
+    box-sizing: border-box;
+
+    @include media($large){
+        @include font-size(17px);
+    }
+
+    @include placeholder{
+        color:#ccc;
+        text-overflow:ellipsis;
+    }
+
+    &:hover,
+    &:focus{
+        border-color:$primary;
+        outline:0;
+    }
+
+    &:focus{
+        box-shadow:inset 0 0 4px rgba($primary, .5);
+    }
+
+    &:disabled{
+        border-color:$border-color;
+        box-shadow:inset 0 0 4px rgba($border-color, .8);
+    }
+
+    &.error{
+        border-color:red;
+        box-shadow:inset 0 0 4px rgba(red, .5);
+
+        @include placeholder{
+            color:red;
+        }
+    }
+}
+
+.g-input,
+.g-select{
+    height:50px;
+}
+
+.g-textarea{
+    min-height:105px;
+}
+
+.g-label{
+    display: block;
+    margin-bottom:5px;
+    font-family:$font-medium;
+
+    &.error{
+        color:red;
+    }
+}
+.g-label__body{
+    display: inline-block;
+    margin-left:10px;
+    font-weight: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+
+.g-legend{
+    display:block;
+    line-height:1.1;
+    @include font-size(16px);
+    text-transform:uppercase;
+    color:$title-color;
+}
+
+
+
+//валидация полей
+$valid-color:#69aa3a;
+.g-validate{
+    .g-input,
+    .g-select,
+    .g-textarea{
+        &.error{//классы для jquery validate
+            border-color:red;
+            box-shadow:inset 0 0 4px rgba(red, .8);
+
+            @include placeholder{
+                color:red;
+            }
+        }
+
+        &.valid{
+            border-color:$valid-color;
+            box-shadow:inset 0 0 4px rgba($valid-color, .8);
+        }
+    }
+}
+.g-validate__inner{//обертка для отображения сообщений валидации jquery validate
+    position:relative;
+    line-height:1;
+
+
+    label.error{//сообщение об ошибке - покажет jquery validate
+        display:inline-block;
+        min-width:20px;
+        max-width:240px;
+        padding:10px;
+        background:#fcebe7;
+        color:red;
+        @include font-size(13px);
+        line-height:1.1;
+        position:absolute;
+        bottom:100%; right:0;
+        margin-bottom:12px;
+        z-index:5;
+
+        &:after{
+            content:'';
+            @include triangle(16px, #fcebe7, down);
+            position:absolute;
+            right:10px;
+            bottom:-8px;
+        }     
+    }
+}
+
+.g-validate__inner--has-icon{
+    &:before,
+    &:after{//иконки статуса valid - error
+        display:none;
+        @include font-size(36px);
+        font-family:'icomoon';
+        position:absolute;
+        right:0; top:7px;
+    }
+
+    &:before{
+        content:'\e905';//valid
+        color:$valid-color;
+    }
+
+    &:after{
+        content: "\e907";
+        color:red; //error
+    }
+}
+
+@include media($desktop){
+    .g-validate__inner--has-icon{
+        padding-right:70px;
+
+        label.error{
+            right:70px;
+        }
+    }
+
+
+    .g-novalidate{ //обертка для полей, которые не требуют валидации - нужна для того чтобы был одинаковый отступ справа
+        padding-right:70px; 
+    }
+
+    .g-validate.valid{
+        .g-validate__inner--has-icon{
+            &:before{
+                display:block;
+            }
+        }
+    }
+
+    .g-validate.error{
+        .g-validate__inner--has-icon{
+            &:after{
+                display:block;
+            }
+        }
+    }
+}
+
+
+
+//File input
+.g-input-file{
+    position:relative;
+    margin-bottom:22px;
+
+    input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 17px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }
+}
+
+.g-input-file__btn{
+    float:left;
+    @include size(36px);
+    border-radius:50%;
+    line-height:36px;
+    text-align:center;
+    background:$primary;
+    color:#fff;
+    @include font-size(17px);
+    @include transition(background .2s ease-out);
+
+    &:hover{
+        background:darken($primary, 10%);
+    }
+}
+.g-input-file__wrapper{
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.g-input-file__path{
+    display:inline-block;
+    vertical-align:middle;
+    width:100%;
+    box-sizing:border-box;
+    height:36px;
+    @include font-size(17px);
+    background:none;
+    border:none;
+
+    @include placeholder{
+        color:#555;
+        text-transform:uppercase;
+    }
+}
+
+
+/*Custom checkboxes & radio*/
+input[type=checkbox].css-checkbox,
+input[type=radio].css-radio {
+	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:28px;
+	display:inline-block;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURczMzP///8zMzGaprVcAAAABdFJOU5ZZiu4XAAAAGElEQVQI12NgYEICDAxMjEiAaWhwUb0AAGNCAPF7K9UGAAAAAElFTkSuQmCC) left 3px no-repeat;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label,
+label.css-label {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURWzT3f///2zT3d72+Of4+n/Z4o3d5brq70AGJKIAAAABdFJOU5ZZiu4XAAAAPUlEQVQI14XPwQoAIAgDUNNp///HlXZYULTbE4coohQRbRR904JpbsSlZFgKu4s5L9UyvJd2F4Hv3RvPFwaHRwFJKTRctgAAAABJRU5ErkJggg==) left 3px no-repeat;
+    color:$primary;
+}
+
+
+label.css-label,
+label.css-radio-label {
+    display:inline-block;
+    @include font-size(16px);
+    @include px2rem(line-height, 18px);
+    -webkit-touch-callout: none;
+    @include user-select(none);
+    color:$text-color;
+}
+
+
+input[type=radio].css-radio + label.css-radio-label {
+	padding-left:28px;
+	display:inline-block;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAAIVBMVEUAAABt095r091s0txs095t1N1s1Nxt0d5t0dt00ehs093tI0zjAAAAC3RSTlMAtPLl3YF2PRwL/Tva0DAAAABFSURBVAjXY2DgTDQWm8DAwFCiGCrkzsDAvrCBgUOqgGGKAFCM0ZMhqQFIc6gxCDIAAZA0BdPBMBomDlMH0wczB2YuzB4ACpEN0WV1eecAAAAASUVORK5CYII=) left 3px no-repeat;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=radio].css-radio:checked + label.css-radio-label,
+label.css-radio-label {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAAKlBMVEUAAABs091s1N5r0ttr091s0txs095t0t5t1N1s1Nxt1N5t0d500ehs0917uZ8/AAAADnRSTlMA/rIf8uXdt4F2ZT0LaNAx1aAAAABNSURBVAjXY2DgmRSqeYCBgWGbU4dKNgMDt7gBA3PhBoZjBcyrDNhzGKYYXBSUZfZkUGIWFBQ0UGKI4ALSC1phNEwcpg6mD2YOzFyYPQBlwxi1HRmBDwAAAABJRU5ErkJggg==) left 3px no-repeat;
+}
+

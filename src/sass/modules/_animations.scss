@@ -1,0 +1,64 @@
+﻿@import "_base.scss";
+/*Animations*/
+.animated{
+    @include animation-duration(1s);
+    @include animation-fill-mode(both);
+}
+.fade-in{
+    @include animation-name(fade-in);
+}
+
+@include keyframes(fade-in){
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+    opacity: 1;
+    }
+}
+
+.fade-in-left{
+    @include animation-name(fade-in-left);
+}
+
+@include keyframes(fade-in-left){
+    0%{
+        opacity:0;
+        @include transform(translate3d(-25%, 0, 0));
+    }
+    100%{
+        opacity:1;
+        @include transform(none);
+    }
+}
+
+.fade-in-right{
+    @include animation-name(fade-in-right);
+}
+
+@include keyframes(fade-in-right){
+    0%{
+        opacity:0;
+        @include transform(translate3d(25%, 0, 0));
+    }
+    100%{
+        opacity:1;
+        @include transform(none);
+    }
+}
+
+.fade-in-up{
+    @include animation-name(fade-in-up);
+}
+
+@include keyframes(fade-in-up){
+    0%{
+        opacity:0;
+        @include transform(translate3d(0, 25%, 0));
+    }
+    100%{
+        opacity:1;
+        @include transform(none);
+    }
+}

@@ -1,0 +1,47 @@
+﻿@import "../../modules/_base.scss";
+/*Pager*/
+.b-pager{
+    position:fixed;
+    top:0; bottom:0; right:25px;
+    z-index:900;
+    display:none;
+
+    @include media($wide){
+        right:50px;
+    }
+
+    @include media($desktop){
+        display:block;
+    }
+}
+
+.b-pager__list{
+    @extend .g-clearlist;
+    position:absolute;
+    @extend .g-valign;
+}
+
+.no-csstransforms .b-pager{
+    display:none;
+}
+
+.b-pager__item{
+    display:block;
+    margin:15px 0;
+    @include font-size(12px);
+}
+.b-pager__link{
+    color:$text-color;
+    text-decoration:none;
+
+    &:hover,
+    &:active,
+    &.current{
+        color:$primary;
+        font-family:$font-bold;
+    }
+
+    &.current{
+        cursor:default;
+    }
+}

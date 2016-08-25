@@ -1,0 +1,80 @@
+@import "../modules/base";
+/*Site Header*/
+.b-header{
+    position:fixed;
+    top:0; left:0;
+    width:100%;
+    z-index:1000;
+    padding:7px 10px;//58px - внутр.высота
+    height:72px;
+    box-sizing:border-box;
+    @include transition(background .3s linear);
+
+    &.visible{
+        background:#fff;
+    }
+}
+
+.b-header__wrapper{}//обертка, нужна для предотвращения подергивания элементов хидера при открытии модального окна
+
+.b-header__container{//задает макс. ширину элементам хидера, позиционирует лого и кнопку каллбак на десктопе, + скролл на мобильных
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.b-header.visible{
+    .b-header__container{
+        overflow-x: auto;
+        overflow-y: hidden;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.b-header__inner{//внутренний контент (скроллится на мобильных)
+    display:inline-block;
+    width:auto;
+    white-space:nowrap;
+    vertical-align:middle;
+    font-size:0;
+}
+
+@include media($desktop){
+    .b-header.visible .b-header__container,
+    .b-header__container{
+        overflow:hidden;
+        max-width:1840px;
+        margin:0 auto;
+        -webkit-overflow-scrolling: unset;
+    }
+
+    .b-header__inner{
+        display:block;
+        white-space:normal;
+        font-size:1em;
+    }
+}
+
+
+.b-header__label{//подсказака о скролле на мобилках
+    @include font-size(12px);
+    color:$border-color;
+    text-transform:uppercase;
+    position:absolute;
+    top:7px; right:10px;
+    visibility:hidden;
+
+    @include media(min-width 850px){
+        display:none;
+    }
+}
+
+.b-header.visible .b-header__label{
+    visibility:visible;
+}
+
+
+@import "header/_logo.scss";
+@import "header/_header-callback-button.scss";
+@import "header/_menu.scss";

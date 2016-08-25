@@ -1,0 +1,137 @@
+﻿@import "../../modules/_base.scss";
+/*Slider*/
+$slider-color:#cfcfcf;
+
+.b-slider{
+    max-width:530px;
+    margin:0 auto $project-line-height;
+}
+
+.b-slider__list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+    visibility:hidden;
+}
+
+.b-slider__item{
+    float:left;
+}
+
+.b-slider__inner{
+    width:200px;
+    margin:0 auto;
+    position:relative;
+    text-align:center;
+}
+
+.b-slider__img{
+    position:absolute;
+    max-width:200px;
+    height:auto;
+    left:50%;
+    @include transform(translateX(-50%));
+}
+
+.no-csstransforms{
+    .b-slider__img{
+        position:static;
+    }
+}
+
+.b-slider__caption{
+    display:none;
+    position:absolute;
+    top:50%;
+    margin-top:-18px;
+    height:36px;
+    line-height:36px;
+    white-space:nowrap;
+    @include font-size(12px);
+    text-transform:uppercase;
+    color:$slider-color;
+    @include transition(color .2s ease-in);
+    outline:0;
+    cursor:pointer;
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+
+    @include media($desktop){
+        display:block;
+    }
+}
+
+//на десктопе покажем кнопки - подписи к стрелкам
+.b-slider__caption--prev{
+    padding-right:15px;
+    left:0;
+    @include transform(translateX(-100%));
+}
+.b-slider__caption--next{
+    padding-left:15px;
+    right:0;
+    @include transform(translateX(100%));
+}
+
+//контейнер
+.b-slider__wrapper{
+    margin-bottom:$project-line-height;
+    position:relative;
+}
+
+.b-slider__wrapper--top{//верхняя часть
+    .b-slider__inner{
+        height:160px;
+    }
+    .b-slider__img{
+        bottom:0;
+    }
+    .b-slider__item{
+        border-bottom:1px solid $slider-color;
+    }
+
+    .b-slider__caption,
+    .bx-wrapper .bx-controls-direction a{
+        top:auto;
+        margin-top:0;
+        bottom:$project-line-height;
+    }
+}
+
+.b-slider__wrapper--middle{//середина
+    .b-slider__inner{
+        height:83px;
+    }
+    .b-slider__img{
+        @extend .g-align;
+    }
+    .b-slider__item{
+        border-top:1px solid $slider-color;
+        border-bottom:1px solid $slider-color;
+    }
+}
+
+.b-slider__wrapper--bottom{//нижняя часть
+    .b-slider__inner{
+        height:100px;
+    }
+    .b-slider__img{
+        top:0;
+    }
+    .b-slider__item{
+        border-top:1px solid $slider-color;
+    }
+
+    .b-slider__caption,
+    .bx-wrapper .bx-controls-direction a{
+        top:$project-line-height;
+        margin-top:0;
+    }
+}
+
+
+.b-slider__form{
+    margin:2*$project-line-height 0;
+}
