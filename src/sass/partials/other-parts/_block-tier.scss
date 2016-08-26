@@ -1,0 +1,93 @@
+﻿@import "../../modules/_base.scss";
+/*Tier List*/
+.b-tier{
+    margin:30px 0;
+    @extend .g-clearfix;
+
+    @include media($large){
+        margin:50px 0;
+    }
+
+    @include media($extra-large){
+        margin:70px 0;
+    }
+}
+.b-tier__list{
+    @extend .g-clearlist;
+}
+
+.b-tier__item{
+    display:block;
+    padding-left:35px;
+    margin-bottom:$project-line-height;
+    position:relative;
+
+    &:before,
+    &:after{
+        position:absolute;
+    }
+
+    &:before{
+        content:'';
+        @include size(22px);
+        left:0; top:2px;
+        border-radius:50%;
+        background:$primary;
+    }
+
+    &:after{
+        content:'\e914';
+        font-family:'icomoon';
+        color:#fff;
+        font-size:rem(10px);
+        top:7px;
+        left:9px;
+    }
+
+    p{
+        margin:7px 0;
+    }
+
+    @include media($tablet){
+        margin-left:-3.2%;
+    }
+}
+
+.b-tier__title{
+    display:block;
+    font-size:rem(24px);
+    text-transform:uppercase;
+    line-height:1.1;
+
+    b, strong{
+        color:$primary;
+    }
+}
+
+.b-tier__thumb{
+    text-align:center;
+
+    @include media($desktop){
+        padding-right:30px;
+        text-align:right;
+    }
+}
+
+.b-tier__img{
+    max-width:186px;
+    height:auto;
+
+    .st1{
+        fill:$primary;
+    }
+}
+
+
+.b-tier__thumb,
+.b-tier__list{
+    @extend .g-column;
+
+    @include media($tablet){
+        @include span-columns(6);
+    }
+}

@@ -49,7 +49,7 @@
     }
 
     &:active{
-        @include transform(translateY(3px));
+        transform:translateY(3px);
     }
 }
 
@@ -66,7 +66,8 @@
     vertical-align:middle;
     border-bottom:2px dotted #afafaf;
     line-height:1.2;
-    @include transition(border-color .2s ease-in);
+    @extend .g-transition;
+    transition-property:border-color;
 
     @include media($mobile){
         display:inline-block;
@@ -109,8 +110,9 @@
         top:0;
         right:2px;
         background:$primary;
-        @include transform(translateX(100px));
-        @include transition(background .2s ease-in);
+        transform:translateX(100px);
+        @extend .g-transition;
+        transition-property:background;
     }
 
     &:hover,

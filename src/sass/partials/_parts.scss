@@ -1,5 +1,7 @@
 ﻿@import "../modules/_base.scss";
 
+@import "other-parts/_page-section.scss";//стили для доп.секций
 @import "other-parts/_breadcrumbs.scss";//хлебные крошки
 @import "other-parts/_block-icon.scss";//блок иконка + текст (без выпадаек)
 @import "other-parts/_block-hover.scss";//блоки с ховер-эффектом (см. страницу BPO, раздел WHo is this for)
+@import "other-parts/_block-tier.scss";//стилиизованый блок со списком - см.страницу BPO, раздел WHo is this for

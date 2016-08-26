@@ -1,0 +1,22 @@
+﻿@import "../../modules/_base.scss";
+/*Other page sections*/
+.page__section--alt{
+    background:$primary;
+    color:#fff;
+    min-height:100%;
+
+    .g-title, .g-subtitle{
+        color:#fff;
+    }
+}
+
+.page__section--has-bg{
+    background-repeat:no-repeat;
+    background-position:left bottom;
+}
+
+@include media($desktop){
+    .page__section--tier{
+        background-image:url(../img/bg-tier.png);
+    }
+}

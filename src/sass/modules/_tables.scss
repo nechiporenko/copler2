@@ -6,7 +6,7 @@
     @extend .g-full-width;
     th,
     td {
-      @include px2rem(padding, $project-line-height/2 10px);
+      padding: $project-line-height/2 10px;
       border-bottom: 1px solid $border-color; 
     }
 

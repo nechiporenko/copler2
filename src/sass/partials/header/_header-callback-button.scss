@@ -13,6 +13,7 @@
 
     [class^="icon-"], [class*=" icon-"]{
         @include transition(transform .3s ease);
+        transition-property:transform;
     }
 
 
@@ -21,12 +22,12 @@
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
         [class^="icon-"], [class*=" icon-"]{
-            @include transform(rotate(-25deg));
+            transform:rotate(-25deg);
         }
     }
 
     &:active{
-        @include transform(translateY(3px));
+        transform:translateY(3px);
     }
 
     @include media($desktop){

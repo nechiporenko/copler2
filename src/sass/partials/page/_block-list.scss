@@ -14,7 +14,7 @@
     &.active{
         .b-list__icon{
             border-color:$primary;
-            @include transform(translateY(-10px));
+            transform:translateY(-10px);
         }
 
         .b-list__img{
@@ -33,7 +33,7 @@
 
     &.active{
         .b-list__label{
-            @include transform(translateY(-10px));
+            transform:translateY(-10px);
         }
     }
 
@@ -70,13 +70,13 @@
     border-radius:50%;
     background:#fff;
     position:relative;
-    @include transition-property(border-color, transform);
+    transition-property:border-color, transform;
 }
 
 .b-list__img{
     @extend .g-align;
     path{
-        @include transition-property(fill, stroke);
+        transition-property:fill, stroke;
     }
 
     .st0{
@@ -100,14 +100,14 @@
     margin-bottom:22px;
     @include font-size(24px);
     text-transform:uppercase;
-    @include transition-property(color);
+    transition-property:color;
     @include user-select(none);
 }
 
 .b-list__label{
     @include font-size(24px);
     color:#ccc;
-    @include transition-property(color, transform);
+    transition-property:color, transform;
 }
 
 //transition
@@ -115,8 +115,8 @@
 .b-list__img path,
 .b-list__title,
 .b-list__label{
-    @include transition-timing-function(ease);
-    @include transition-duration(.3s);
+    transition-timing-function:ease;
+    transition-duration:.3s;
 }
 
 //Block-list dropdown

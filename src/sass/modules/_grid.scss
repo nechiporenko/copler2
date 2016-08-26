@@ -3,7 +3,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .g-container {
     @include outer-container();
-    @include px2rem(padding, 0 10px);
+    padding:0 10px;
     box-sizing:border-box;
 }
 

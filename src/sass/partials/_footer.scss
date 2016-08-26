@@ -8,7 +8,8 @@
     left:0; bottom:-54px;
     z-index:1000;
     overflow:hidden;
-    @include transition(bottom .3s ease);
+    @extend .g-transition;
+    transition-property:bottom;
     will-change:bottom;
 
 

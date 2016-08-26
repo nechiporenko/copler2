@@ -11,6 +11,7 @@
     list-style-type:none;
     @extend .g-container;
     margin-bottom:0;
+    padding-left:12px;
     font-size:0;
 }
 .crumbs__item{
@@ -26,6 +27,7 @@
         vertical-align:middle;
         font-size:rem(10px);
     }
+
 
     &:last-child{
         &:after{

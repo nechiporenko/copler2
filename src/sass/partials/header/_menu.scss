@@ -9,7 +9,8 @@
     padding:0;
     margin:0 40px;
     font-size:0;
-    @include transition(opacity .3s linear);
+    @extend .g-transition;
+    transition-property:opacity;
 }
 
 .b-header.visible .h-menu{

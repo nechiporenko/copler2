@@ -28,7 +28,7 @@
 
 
     &:active{
-        @include transform(translateY(3px));
+        transform:translateY(3px);
     }
 
     &:disabled,
@@ -37,7 +37,7 @@
     }
 
     .icon-slim-right{
-        @include transform(translateY(2px)); //icon arrow fix
+        transform:translateY(2px);//icon arrow fix
     }
 }
 
