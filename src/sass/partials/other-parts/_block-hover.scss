@@ -1,0 +1,61 @@
+﻿@import "../../modules/_base.scss";
+/*Hover-blocks*/
+.b-hover{
+    max-width:440px;
+    margin:30px auto;
+    position:relative;
+    box-sizing:border-box;
+}
+
+.b-hover__title{
+    display:block;
+    width:190px;
+    margin:0 auto 30px;
+    font-size:rem(24px);
+    line-height:1.2;
+    text-align:center;
+}
+
+.b-hover__list{
+    @extend .g-clearlist;
+}
+
+.b-hover__item{
+    margin-bottom:45px;
+    &:hover{
+        .b-hover__thumb{
+            border-color:$primary;
+        }
+        .b-hover__img{
+            .st1{
+                fill:$primary;
+            }
+        }
+    }
+}
+
+.b-hover__thumb{
+    @extend .b-list__icon;
+    @include size(105px);
+}
+
+.b-hover__img{
+    @extend .b-icon__img;
+}
+
+.b-hover__entry{
+    font-size:rem(24px);
+    text-align:center;
+    text-transform:uppercase;
+    line-height:1.2;
+}
+
+@include media($desktop){
+    .b-hover{
+        height:220px;
+        border-bottom-left-radius:260px;
+        border-bottom-right-radius:260px;
+        border:2px dashed $primary;
+        border-top:none;
+    }
+}

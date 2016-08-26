@@ -1,0 +1,52 @@
+﻿@import "../../modules/_base.scss";
+/*Block-icon*/
+.b-icon{
+    max-width:190px;
+    margin:30px auto;
+
+    @include media($desktop){
+        margin-top:65px;
+    }
+
+    &:hover{
+        .b-icon__thumb{
+            border-color:$primary;
+            @include transform(translateY(-10px));
+        }
+        .b-icon__img{
+            .st1{
+                fill:$primary;
+            }
+            .st2{
+                stroke:$primary;
+            }
+        }
+    }
+}
+
+.b-icon--alt{
+    .b-icon__thumb{
+        border-color:$primary;
+    }
+    .b-icon__img{
+        .st1{
+            fill:$primary;
+        }
+        .st2{
+            stroke:$primary;
+        }
+    }
+}
+
+.b-icon__thumb{
+    @extend .b-list__icon;
+}
+
+.b-icon__entry{
+    text-align:center;
+}
+.b-icon__img{
+    @extend .b-list__img;
+    max-width:70%;
+    height:auto;
+}

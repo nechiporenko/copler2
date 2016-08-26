@@ -28,7 +28,13 @@
 @import "vendor/vendor";
 
 
-@import "partials/page/_desktop-font-size-fix.scss";
+
+
+//other parts
+@import "partials/_parts.scss"; //вынести в отдельный файл!!!
+
+
+@import "partials/page/_desktop-font-size-fix.scss"; //фиксы размеров шрифтов
 
 
 

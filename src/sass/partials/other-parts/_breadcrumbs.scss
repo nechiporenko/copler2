@@ -1,0 +1,66 @@
+﻿@import "../../modules/_base.scss";
+/*Breadcrumbs*/
+.crumbs{
+    padding:10px 0;
+    margin:-10px 0 30px; //уберем отступ от хидера - см.стили page__section
+    background:rgba(#fff, .3);
+    line-height:1;
+}
+
+.crumbs__list{
+    list-style-type:none;
+    @extend .g-container;
+    margin-bottom:0;
+    font-size:0;
+}
+.crumbs__item{
+    display:inline-block;
+    vertical-align:middle;
+    font-size:rem(14px);
+    line-height:1.28;
+
+    &:after{
+        content: "\e916";
+        font-family:'icomoon';
+        margin:0 4px;
+        vertical-align:middle;
+        font-size:rem(10px);
+    }
+
+    &:last-child{
+        &:after{
+            display:none;
+        }
+    }
+}
+
+.crumbs__link{
+    color:$text-color;
+    text-decoration:none;
+
+    &:hover,
+    &:active{
+        color:$primary;
+        text-decoration:underline;
+    }
+
+    .page__section--alt &{
+        color:#fff !important;
+    }
+}
+
+@include media($desktop){
+    .crumbs{
+        margin-top:-27px;
+    }
+}
+@include media(min-width 1280px max-width 1440px){
+    .crumbs{
+        margin-top:-8px; //см. desktop-font-fix
+    }
+}
+@include media($extra-large){
+    .crumbs{
+        margin-bottom:60px;
+    }
+}
