@@ -45,3 +45,15 @@
         cursor:default;
     }
 }
+
+.b-pager--alt{//на внутренних раницах, когда первая секция - зеленая
+    .b-pager__link{
+        color:#fff;
+
+        &:hover,
+        &:active,
+        &.current{
+            color:$border-color;
+        }
+    }
+}

@@ -5,29 +5,6 @@
  * Copyright 2016.
  */
 
-// Avoid `console` errors in browsers that lack a console
-(function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
-
-    while (length--) {
-        method = methods[length];
-
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }
-    }
-}());
-
 // Place any jQuery/helper plugins in here.
 /*
  * verge 1.9.1+201402130803
@@ -104,7 +81,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
 // Application Scripts:
 // Покажем / спрячем хидер и кнопку скролла страницы
-// Навигация по секциям
+// Навигация по секциям на главной странице
 // Гугл карта
 // Слайдер (головы)
 // Слайдер (вакансии)
@@ -172,7 +149,7 @@ jQuery(document).ready(function ($) {
 
 
     //
-    // Навигация по секциям
+    // Навигация по секциям на главной странице
     //---------------------------------------------------------------------------------------
     function sectionNav() {
         var $menu_link = $('.h-menu__link, .b-pager__link'),
@@ -301,6 +278,110 @@ jQuery(document).ready(function ($) {
 
     if ($('.js-navigate').length) {
         sectionNav();
+    };
+
+    //
+    // Навигация по внутренним страницам (когда ссылки в хидере ведут на главную)
+    //---------------------------------------------------------------------------------------
+    function innerPageNav() {
+        var $pager = $('.b-pager'),
+            $menu_link = $pager.find('.b-pager__link'),
+            $sections = $('.page__section'),
+            $footer = $('.b-footer'),
+            $header = $('.b-header__container'), //на мобильных когда вернемся на первый экран - прокрутим к началу, чтобы показать лого на первом экране
+            isFooterVisible = false,//будем показывать/скрывать футер с кнопками при скролле (скрывать на первой и последней секции)
+            isGoogleMapLoad = false,//будем загружать Гугл-карту когда дойдем до последней секции
+            method = {};
+
+        method.changeLinkState = function (el) {//находим и подсвечиваем линк в хидере и пейджере
+            $menu_link.removeClass('current');
+            var $current = $('.b-pager').find('a[href^="#' + el + '"]');
+            $current.addClass('current');
+        };
+
+        method.scrollToContent = function (el) {//плавный скролл к секции по клику на линк
+            $('html,body').animate({ scrollTop: $($(el).attr('href')).offset().top }, 800);
+        };
+
+        method.showFooter = function () {
+            $footer.addClass('visible');
+            isFooterVisible = true;
+        };
+
+        method.hideFooter = function () {
+            $footer.removeClass('visible');
+            isFooterVisible = false;
+        };
+
+        method.checkHeaderScroll = function () {//на мобильных при прокрутке вверх вернем хидеру "стандартное" горизонтальное положение
+            var fromLeft = $header.scrollLeft();
+            if (fromLeft != 0) {
+                $header.stop().animate({ scrollLeft: '0' }, 800);
+            };
+        };
+
+        method.makePagerLight = function () {
+            $pager.addClass('b-pager--alt');
+        };
+
+        method.makePagerDefault = function () {
+            $pager.removeClass('b-pager--alt');
+        };
+
+        var waypoints = $sections.waypoint({//подключили плагин
+            handler: function (direction) {
+                var prev = this.previous();//предыдущая секция
+
+                if (this === this.group.last() && !isGoogleMapLoad) {//когда дошли до последней секции - загрузим карту
+                    initGoogleMap();
+                    isGoogleMapLoad = true;
+                };
+
+
+                if (direction === 'down') {//скроллим вниз
+                    method.changeLinkState(this.element.id);
+
+                    if (this !== this.group.first() && !isFooterVisible) {
+                        method.showFooter();
+                        method.makePagerDefault();
+                    };
+                    if (this === this.group.last() && isFooterVisible) {
+                        method.hideFooter();
+                    };
+                };
+                if (direction === 'up') { //если скроллим вверх - подсвечиваем предыдущую секцию
+                    method.changeLinkState(prev.element.id);
+
+                    if (prev !== this.group.last() && !isFooterVisible) {
+                        method.showFooter();
+                    };
+                    if (prev === this.group.first() && isFooterVisible) {
+                        method.hideFooter();
+                        method.checkHeaderScroll();
+                        method.makePagerLight();
+                    };
+                };
+            },
+            group: 'section',
+            offset: '35%'
+        });
+
+        $pager.on('click', 'a', function (e) {//перехватываем клик по линку в пейджере
+            e.preventDefault();
+            var $el = $(this);
+            method.scrollToContent($el);
+        });
+
+
+        $('.p-menu').on('click', 'a[data-scroll-link]', function (e) {//скролл по клику в футере(в разделе Контакты)
+            e.preventDefault();
+            var $el = $(this);
+            method.scrollToContent($el);
+        });
+    };
+
+    if ($('.js-page-navigate').length) {
+        innerPageNav();
     };
 
 

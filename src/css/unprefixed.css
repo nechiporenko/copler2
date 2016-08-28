@@ -3560,6 +3560,14 @@ label.css-radio-label {
   cursor: default;
 }
 
+.b-pager--alt .b-pager__link {
+  color: #fff;
+}
+
+.b-pager--alt .b-pager__link:hover, .b-pager--alt .b-pager__link:active, .b-pager--alt .b-pager__link.current {
+  color: #ccc;
+}
+
 /*Card*/
 .b-card {
   max-width: 260px;
