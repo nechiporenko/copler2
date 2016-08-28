@@ -60,3 +60,22 @@
         margin-bottom:0;
     }
 }
+
+//значки для тултипов:
+.p-list__tip{
+    @extend .g-clearbutton;
+    margin-left:3px;
+    @include size(15px);
+    border:1px solid $primary;
+    text-align:center;
+    line-height:14px;
+    color:$primary;
+    font-size:rem(8px);
+
+    &:hover,
+    &:active,
+    &:focus{
+        background:$primary;
+        color:#fff;
+    }
+}

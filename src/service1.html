@@ -3,6 +3,10 @@
 <head>
     <title>BPO & Technical Support</title>
     @@include('templates/head.html')
+
+    <!--tooltip css-->
+    <link href="css/tooltipster.min.css" rel="stylesheet" />
+    <!--/tooltip css-->
 </head>
 <body class="page">
     <!--header-->
@@ -374,11 +378,11 @@
                                         <li>Talented Engineers & DevOps</li>
                                         <li>Comfortable workspace</li>
                                         <li>Office management</li>
-                                        <li>IT infrastructure & Tech Support</li>
+                                        <li>IT infrastructure & Tech Support <button class="p-list__tip js-tooltip" title="improved hardware, additional monitor"><i class="icon-plus"></i></button></li>
                                         <li>Finance & Legal support</li>
-                                        <li>HR support</li>
-                                        <li>Extra security</li>
-                                        <li>Social package</li>
+                                        <li>HR support <button class="p-list__tip js-tooltip" title="retention programs and integration with client's processes"><i class="icon-plus"></i></button></li>
+                                        <li>Extra security <button class="p-list__tip js-tooltip" title="separated office for dedicated team"><i class="icon-plus"></i></button></li>
+                                        <li>Social package <button class="p-list__tip js-tooltip" title="medical insurance, sports activities, language courses etc"><i class="icon-plus"></i></button></li>
                                     </ol>
                                 </div>
                                 <div class="p-list__footer">
@@ -402,16 +406,16 @@
                                         <li>Talented Engineers & DevOps</li>
                                         <li>Comfortable workspace</li>
                                         <li>Office management</li>
-                                        <li>IT infrastructure & Tech Support</li>
+                                        <li>IT infrastructure & Tech Support <button class="p-list__tip js-tooltip" title="improved hardware, additional monitor"><i class="icon-plus"></i></button></li>
                                         <li>Finance & Legal support</li>
-                                        <li>HR support</li>
-                                        <li>Extra security</li>
-                                        <li>Social package</li>
+                                        <li>HR support <button class="p-list__tip js-tooltip" title="retention programs and integration with client's processes"><i class="icon-plus"></i></button></li>
+                                        <li>Extra security <button class="p-list__tip js-tooltip" title="separated office for dedicated team"><i class="icon-plus"></i></button></li>
+                                        <li>Social package <button class="p-list__tip js-tooltip" title="medical insurance, sports activities, language courses etc"><i class="icon-plus"></i></button></li>
                                         <li>Trainings & Workshop</li>
                                         <li>HR strategy</li>
                                         <li>Shared resources</li>
                                         <li>Process & Project Management</li>
-                                        <li>ODC Start assistance</li>
+                                        <li>ODC Start assistance <button class="p-list__tip js-tooltip" title="ensures efficient ramp-up and quick time to market"><i class="icon-plus"></i></button></li>
                                     </ol>
                                 </div>
                                 <div class="p-list__footer">
@@ -815,5 +819,18 @@
 
     <!--scripts-->
     @@include('templates/scripts.html')
+
+    <!--tooltip scripts-->
+    <script src="js/vendor/tooltipster.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.js-tooltip').tooltipster({
+                trigger: 'click',
+                maxWidth: 180,
+                side: 'right'
+            });
+        });
+    </script>
+    <!--/tooltip scripts-->
 </body>
 </html>

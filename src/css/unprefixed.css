@@ -896,7 +896,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   padding: 0 70px;
 }
 
-.g-clearbutton, .b-header__call, .page__backbtn, .b-intro__save, .b-intro__next, .scroll-up-btn, .f-action__btn {
+.g-clearbutton, .b-header__call, .page__backbtn, .b-intro__save, .b-intro__next, .p-list__tip, .scroll-up-btn, .f-action__btn {
   display: inline-block;
   vertical-align: middle;
   border: none;
@@ -1406,8 +1406,8 @@ label.css-radio-label {
 /*Icon font*/
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon/icomoon.eot?9ui7k8");
-  src: url("../fonts/icomoon/icomoon.eot?9ui7k8#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?9ui7k8") format("truetype"), url("../fonts/icomoon/icomoon.woff?9ui7k8") format("woff"), url("../fonts/icomoon/icomoon.svg?9ui7k8#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.eot?s5or6t");
+  src: url("../fonts/icomoon/icomoon.eot?s5or6t#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?s5or6t") format("truetype"), url("../fonts/icomoon/icomoon.woff?s5or6t") format("woff"), url("../fonts/icomoon/icomoon.svg?s5or6t#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1428,6 +1428,18 @@ label.css-radio-label {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-left-arrow:before {
+  content: "\e919";
+}
+
+.icon-plus:before {
+  content: "\e91a";
+}
+
+.icon-right-arrow:before {
+  content: "\e91b";
 }
 
 .icon-radio:before {
@@ -2669,6 +2681,22 @@ label.css-radio-label {
 
 .p-list__footer .g-btn {
   margin-bottom: 0;
+}
+
+.p-list__tip {
+  margin-left: 3px;
+  height: 15px;
+  width: 15px;
+  border: 1px solid #6cd3dd;
+  text-align: center;
+  line-height: 14px;
+  color: #6cd3dd;
+  font-size: 0.5rem;
+}
+
+.p-list__tip:hover, .p-list__tip:active, .p-list__tip:focus {
+  background: #6cd3dd;
+  color: #fff;
 }
 
 /*Infograph*/
