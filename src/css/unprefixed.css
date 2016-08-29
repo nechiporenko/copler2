@@ -4453,47 +4453,41 @@ label.css-radio-label {
   }
 }
 
-.b-thumb {
+/*Hero Images*/
+.b-hero {
   margin: 0;
   padding: 18px 0;
 }
 
-.b-thumb__inner {
+.b-hero__inner {
   max-width: 490px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
 
-.b-thumb__inner:after {
+.b-hero__inner:after {
   content: '';
   display: block;
   padding-top: 63.2653061224%;
 }
 
-.b-thumb__img {
+.b-hero__img {
   position: absolute;
+  width: 100%;
+  height: auto;
   left: 50%;
   transform: translateX(-50%);
-  height: auto;
 }
 
-.b-thumb__img .st1 {
-  fill: #fff;
-}
-
-.b-thumb__img .st2 {
-  stroke: #fff;
-  fill: none;
-}
-
-.b-thumb__img--top {
+.b-hero__img--top {
   top: 0;
   width: 96%;
 }
 
-.b-thumb__img--bottom {
+.b-hero__img--bottom {
   bottom: 0;
-  width: 44.8979591837%;
+  max-width: 44.8979591837%;
 }
 
 /*Breadcrumbs*/
@@ -4878,6 +4872,13 @@ label.css-radio-label {
   .b-tier__list:last-child {
     margin-right: 0;
   }
+}
+
+/*Tier diagramm*/
+.b-tiered {
+  max-width: 766px;
+  margin: 0 auto;
+  position: relative;
 }
 
 /*Desktop Font-size fix*/

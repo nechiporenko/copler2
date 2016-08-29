@@ -1,0 +1,35 @@
+﻿@import "../../modules/_base.scss";
+/*Hero Images*/
+.b-hero{
+    margin:0;
+    padding: $project-line-height 0;
+}
+.b-hero__inner{
+    max-width:490px;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+
+    &:after{
+        content:'';
+        display:block;
+        padding-top:310*100%/490;
+    }
+}
+
+.b-hero__img{
+    position:absolute;
+    width:100%;
+    height:auto;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.b-hero__img--top{
+    top:0;
+    width:96%;
+}
+.b-hero__img--bottom{
+    bottom:0;
+    max-width:220*100%/490;
+}
