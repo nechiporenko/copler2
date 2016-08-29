@@ -789,6 +789,10 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
           transition-timing-function: ease-in;
 }
 
+.g-nowrap {
+  white-space: nowrap;
+}
+
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .g-container, .page__header, .crumbs__list {
@@ -4330,6 +4334,51 @@ label.css-radio-label {
   .page__section--tier {
     background-image: url(../img/bg-tier.png);
   }
+}
+
+.b-thumb {
+  margin: 0;
+  padding: 18px 0;
+}
+
+.b-thumb__inner {
+  max-width: 490px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.b-thumb__inner:after {
+  content: '';
+  display: block;
+  padding-top: 63.2653061224%;
+}
+
+.b-thumb__img {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: auto;
+}
+
+.b-thumb__img .st1 {
+  fill: #fff;
+}
+
+.b-thumb__img .st2 {
+  stroke: #fff;
+  fill: none;
+}
+
+.b-thumb__img--top {
+  top: 0;
+  width: 96%;
+}
+
+.b-thumb__img--bottom {
+  bottom: 0;
+  width: 44.8979591837%;
 }
 
 /*Breadcrumbs*/
