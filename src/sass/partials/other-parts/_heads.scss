@@ -1,0 +1,117 @@
+﻿@import "../../modules/_base.scss";
+/*Head's list*/
+.b-heads{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+    max-width:880px;
+    margin:0 auto;
+}
+
+.b-heads__item{
+    @extend .g-column;
+    @include span-columns(6);
+    @include omega(2n);
+
+    @include media($small){
+        @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega(3n);
+    }
+
+    @include media($desktop){
+        @include omega-reset(3n);
+        width: (100%-$grid-gutter*6)/7;
+        margin-right:$grid-gutter;
+
+        &:nth-child(7){
+            margin-right:0;
+        }
+    }
+}
+.b-heads__inner{
+    max-width:120px;
+    margin:0 auto $project-line-height;
+    line-height:1;
+
+    &:hover,
+    &.b-heads__inner--alt{
+        .b-heads__img{
+            .st1{
+                opacity:1;
+            }
+        }
+    }
+}
+
+.b-heads__thumb{
+    @include size(80px);
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:60px;
+    position:relative;
+
+    &:after{
+        content:'';
+        position:absolute;
+        left:50%;
+        bottom:-8px;
+        height:25px;
+        border-left:1px dashed $primary;
+        border-right:1px dashed $primary;
+        margin:0 -1px -25px 0;
+    }
+}
+
+.b-heads__img{
+    @extend.g-img-centered;
+
+    .st1{
+        fill:#665d5d;
+        @extend .g-transition;
+        transition-property:opacity;
+        opacity:.35;
+    }
+}
+
+.b-heads__entry{
+    text-align:center;
+    line-height:1.2857;
+    position:relative;
+
+    
+    &:before{
+        content:'\e917';
+        font-family:'icomoon';
+        font-size:rem(18px);
+        color:$primary;
+        position:absolute;
+        left:50%;
+        margin-left:-9px;
+        top:-20px;
+        line-height:1;
+    }
+}
+
+@include media($desktop){
+    .b-heads{
+        margin-top:35px;
+    }
+    .b-heads__item{
+        &:nth-child(even){
+            .b-heads__thumb{
+                margin-bottom:110px;
+
+                &:after{
+                    height:75px;
+                    margin:0 -1px -75px 0;
+                }
+            }
+        }
+    }
+}
+
+@include media($extra-large){
+    .b-heads{
+        margin-top:80px;
+    }
+}
