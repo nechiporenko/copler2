@@ -407,6 +407,124 @@ jQuery(document).ready(function ($) {
     })();
 
     //
+    // Слайдер (головы)
+    //---------------------------------------------------------------------------------------
+    function initNewsSlider() {
+        var $slider = $('.js-news-slider'),
+            rtime, //переменные для пересчета ресайза окна с задержкой delta - будем показывать разное кол-во слайдов на разных разрешениях
+            timeout = false,
+            delta = 200,
+            isImagesLoaded = false, //при загрузке слайдера покажем 3 первые фотки, остальные - после первой прокрутки
+            method = {};
+
+        method.getSliderSettings = function () {
+            var setting,
+                    settings1 = {
+                        maxSlides: 1,
+                        minSlides: 1,
+                    },
+                    settings2 = {
+                        maxSlides: 2,
+                        minSlides: 2,
+                    },
+                    settings3 = {
+                        maxSlides: 3,
+                        minSlides: 3,
+                    },
+                    common = {
+                        slideWidth: 280,
+                        moveSlides: 1,
+                        slideMargin: 10,
+                        auto: false,
+                        infiniteLoop: false,
+                        hideControlOnEnd: true,
+                        useCSS: false,
+                        nextText: '<i class="icon-right-arrow"></i>',
+                        prevText: '<i class="icon-left-arrow"></i>',
+                        pager: true,
+                        onSlideBefore: function () {//если картинки не загружены - загружаем
+                            if (!isImagesLoaded) {
+                                method.showAllImages();
+                            };
+                        }
+                    },
+                    winW = $.viewportW(); //ширина окна
+
+            if (winW < 640) {
+                setting = $.extend(settings1, common);
+            };
+            if (winW >= 640 && winW < 992) {
+                setting = $.extend(settings2, common);
+            };
+            if (winW >= 992) {
+                setting = $.extend(settings3, common);
+            };
+            
+            return setting;
+        };
+
+        method.reloadSliderSettings = function () {
+            $slider.reloadSlider($.extend(method.getSliderSettings(), { startSlide: $slider.getCurrentSlide() }));
+        };
+
+
+        method.endResize = function () {
+            if (new Date() - rtime < delta) {
+                setTimeout(method.endResize, delta);
+            } else {
+                timeout = false;
+                //ресайз окончен - пересчитываем
+                method.reloadSliderSettings();
+            }
+        };
+
+        method.startResize = function () {
+            rtime = new Date();
+            if (timeout === false) {
+                timeout = true;
+                setTimeout(method.endResize, delta);
+            }
+        };
+
+        method.show3images = function () {//при загрузке слайдера, сперва загрузим первые 3 картинки
+            for (var i = 0; i < 3; i++) {
+                var $img = $slider.children('li').eq(i).find('.js-slider-img');
+                if ($img.length) {
+                    method.loadSliderImage($img);
+                };
+            };
+        };
+
+        method.showAllImages = function () {//дозагрузим остальные картинки в слайдер после первой прокрутки
+            isImagesLoaded = true;
+            $slider.children('li').each(function () {
+                var $img = $(this).find('.js-slider-img');
+                if ($img.length) {
+                    method.loadSliderImage($img);
+                };
+            });
+        };
+
+        method.loadSliderImage = function (el) {
+            var source = el.data('img');
+            if (source != '') {
+                el.attr('src', source);
+                el.removeClass('js-slider-img');
+            };
+        };
+
+
+        //запускаем
+        $slider.bxSlider(method.getSliderSettings());//запускаем слайдер
+        method.show3images();//загрузили видимые картинки
+        $(window).bind('resize', method.startResize);//пересчитываем кол-во видимых элементов при ресайзе окна с задержкой .2с
+    };
+
+    if ($('.js-news-slider').length) {
+        initNewsSlider();
+    }
+
+    //
     // Список с выпадайками
     //---------------------------------------------------------------------------------------
     (function () {

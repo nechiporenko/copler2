@@ -79,3 +79,14 @@
         color:#fff;
     }
 }
+
+
+//контент колонок чуть шире, 
+.p-list--alt{
+    max-width:900px;
+    margin:0 auto;
+
+    .p-list__content{
+        padding-left:20px;
+    }
+}
