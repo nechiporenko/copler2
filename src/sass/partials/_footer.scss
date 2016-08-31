@@ -29,5 +29,17 @@
 }
 
 
+
+//статический вариант
+.prefooter{
+    @extend .b-footer;
+    position:relative;
+    bottom:0;
+}
+.prefooter__inner{
+    @extend .b-footer__inner;
+}
+
+
 @import "footer/_footer-action-list.scss";//кнопки 
 @import "footer/_page-footer.scss"; // true footer в последней секции

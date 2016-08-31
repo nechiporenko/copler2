@@ -1,0 +1,54 @@
+﻿@import "../../modules/_base.scss";
+/*Share this buttons*/
+.b-share{
+    @extend .g-clearfix;
+    line-height:1;
+}
+.b-share__title{
+    display:block;
+    height:30px;
+    line-height:30px;
+    white-space:nowrap;
+    font-size:rem(16px);
+    color:$text-color;
+}
+
+.b-share__list{
+    @extend .g-clearlist;
+    font-size:0;
+}
+.b-share__item{
+    display:inline-block;
+    vertical-align:middle;
+    font-size:rem(16px);
+    margin:0 15px 5px 0;
+
+    &:last-child{
+        margin-right:0;
+    }
+}
+
+.b-share__btn{
+    @extend .g-clearbutton;
+    width:65px;
+    height:30px;
+    line-height:30px;
+    border-radius:2px;
+    box-shadow:inset 0 0 1px 1px $border-color;
+    color:$border-color;
+    font-size:rem(15px);
+
+    &:hover,
+    &:focus{
+        background:$primary;
+        box-shadow:none;
+        color:#fff;
+    }
+}
+
+@include media($small){
+    .b-share__title{
+        float:left;
+        margin:0 65px 5px 0;
+    }
+}

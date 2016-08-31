@@ -3,8 +3,11 @@
 .crumbs{
     padding:10px 0;
     margin:-10px 0 30px; //уберем отступ от хидера - см.стили page__section
-    background:rgba(#fff, .3);
     line-height:1;
+
+    .page__section--alt &{
+        background:rgba(#fff, .3);
+    }
 }
 
 .crumbs__list{

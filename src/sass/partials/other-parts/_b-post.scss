@@ -1,0 +1,40 @@
+﻿@import "../../modules/_base.scss";
+/*Single Post Block*/
+.b-post{
+    max-width:718px;
+    margin:0 auto 3*$project-line-height;
+    padding:4px 8px;
+    background:#fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-sizing:border-box;
+    @extend .g-shadow-hover;
+}
+
+.b-post__inner{
+    border:1px solid $border-color;
+}
+
+.b-post__thumb{
+    text-align:center;
+}
+.b-post__img{
+    @extend .g-max-full-width;
+}
+
+.b-post__entry{
+    padding:0 10px 10px;
+}
+
+.b-post__date{
+    display:block;
+    margin-bottom:5px;
+    color:$border-color;
+    font-size:rem(16px);
+}
+
+.b-post__title{
+    @extend .g-subtitle;
+    margin-bottom:15px;
+    font-family:$font-bold;
+    text-align:left;
+}
