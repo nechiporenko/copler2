@@ -85,6 +85,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 // Гугл карта
 // Слайдер (головы)
 // Слайдер (вакансии)
+// Слайдер новостей
 // Список с выпадайками
 // Стилизуем input file field
 // Если браузер не знает о плейсхолдерах в формах
@@ -488,7 +489,7 @@ jQuery(document).ready(function ($) {
     })();
 
     //
-    // Слайдер (головы)
+    // Слайдер новостей
     //---------------------------------------------------------------------------------------
     function initNewsSlider() {
         var $slider = $('.js-news-slider'),
@@ -594,8 +595,14 @@ jQuery(document).ready(function ($) {
             };
         };
 
+        method.matchHeightContent = function () {//выровняем по высоте заголовки и блоки контента
+            $slider.find('.b-news__title').matchHeight({ byRow: false });
+            $slider.find('.b-news__quote').matchHeight({ byRow: false });
+        };
+
 
         //запускаем
+        method.matchHeightContent();//выровняем по высоте заголовки и блоки контента
         $slider.bxSlider(method.getSliderSettings());//запускаем слайдер
         method.show3images();//загрузили видимые картинки
         $(window).bind('resize', method.startResize);//пересчитываем кол-во видимых элементов при ресайзе окна с задержкой .2с

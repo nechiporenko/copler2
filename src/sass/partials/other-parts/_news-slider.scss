@@ -1,7 +1,47 @@
 ﻿@import "../../modules/_base.scss";
 /*News slider*/
 .b-news{
-   
+   padding-bottom:2*$project-line-height;
+
+   .bx-wrapper{
+       .bx-pager{
+           bottom:-25px;
+       }
+       .bx-prev{
+            left:-10px;
+        }
+        .bx-next{
+            right:-10px;
+        }
+   }
+
+   @include media($desktop){
+       .bx-wrapper{
+           .bx-controls-direction a{
+               @include size(46px);
+               margin-top: -23px;
+               line-height:46px;
+               font-size:rem(46px);
+           }
+           .bx-prev{
+               left:-50px;
+           }
+           .bx-next{
+               right:-50px;
+           }
+       }
+   }
+
+   @include media($large){
+       .bx-wrapper{
+           .bx-prev{
+               left:-75px;
+           }
+           .bx-next{
+               right:-75px;
+           }
+       }
+   }
 }
 
 .b-news__list{
@@ -13,13 +53,14 @@
     @extend .g-column;
     padding:10px;//box-shadow
     width:280px;
-    //margin-right:10px;
 }
 .b-news__inner{
+    width:260px;
     padding:3px;
     background:#fff;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     @extend .g-shadow-hover;
+    box-sizing:border-box;
 
     &:hover{
         .b-news__img{

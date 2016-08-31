@@ -25,14 +25,15 @@ $loader:   '../img/loader.gif';
 	.bx-controls-auto {
 		position: absolute;
         bottom: $project-line-height;
-		width: 100%;	
+		width: 100%;
+        z-index:60;
 	}
 }
 
 // LOADER
 .bx-wrapper .bx-loading {
 	min-height: 50px;
-	background: url($loader) center center no-repeat #fff;
+	background: url($loader) center center no-repeat;
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -49,26 +50,30 @@ $loader:   '../img/loader.gif';
 		font-family: Arial;
 		font-weight: bold;
 		color: #666;
-		padding-top: 20px;
+
 		&.bx-default-pager a {
-			background: #666;
+			background: #fff;
 			@include hide-text;
 			display: block;
 			width: 10px;
 			height: 10px;
 			margin: 0 5px;
 			outline: 0;
-			border-radius: 5px;
+			border-radius: 50%;
+            box-shadow:inset 0 0 1px 1px $border-color;
+
 			&:hover,
 			&.active,
 			&:focus {
-				background: #000;
+				background: $primary;
+                box-shadow:none;
 			}
 		}
 	}
 	.bx-pager-item,
 	.bx-controls-auto .bx-controls-auto-item {
 		display: inline-block;
+        vertical-align:middle;
 	}
 	.bx-pager-item {
 		font-size: 0;
@@ -103,14 +108,16 @@ $loader:   '../img/loader.gif';
             margin:0;
         }
 
-		&.disabled {
-			display: none;
-		}
-
         &:hover,
         &:active{
             color:$primary;
             opacity:1;
         }
+
+        &.disabled {
+			opacity:.3;
+            color:#cfcfcf;
+            cursor:default;
+		}
 	}
 }
