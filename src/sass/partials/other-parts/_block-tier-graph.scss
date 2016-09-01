@@ -91,14 +91,17 @@
 
         &:first-child{
             min-height:325px;
+            padding-bottom:54px;
         }
 
         &:nth-child(2){
             min-height:380px;
+            padding-bottom:108px;
         }
 
         &:nth-child(3){
             min-height:430px;
+            padding-bottom:162px;
         }
     }
     .b-tiered__title{

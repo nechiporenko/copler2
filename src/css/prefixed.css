@@ -4873,12 +4873,15 @@ label.css-radio-label {
   }
   .b-tiered__panel:first-child {
     min-height: 325px;
+    padding-bottom: 54px;
   }
   .b-tiered__panel:nth-child(2) {
     min-height: 380px;
+    padding-bottom: 108px;
   }
   .b-tiered__panel:nth-child(3) {
     min-height: 430px;
+    padding-bottom: 162px;
   }
   .b-tiered__title {
     display: none;
