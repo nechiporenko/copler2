@@ -4505,12 +4505,23 @@ label.css-radio-label {
 
 .b-hero__img--top {
   top: 0;
-  width: 96%;
 }
 
 .b-hero__img--bottom {
   bottom: 0;
   max-width: 44.8979591837%;
+}
+
+.b-hero__inner--2 {
+  max-width: 542px;
+}
+
+.b-hero__inner--2:after {
+  padding-top: 58.1180811808%;
+}
+
+.b-hero__inner--2 .b-hero__img--bottom {
+  max-width: 49.2619926199%;
 }
 
 /*Breadcrumbs*/

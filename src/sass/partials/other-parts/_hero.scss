@@ -4,7 +4,7 @@
     margin:0;
     padding: $project-line-height 0;
 }
-.b-hero__inner{
+.b-hero__inner{//для услуги №1 (картинки - hero01....)
     max-width:490px;
     margin:0 auto;
     position:relative;
@@ -27,9 +27,22 @@
 
 .b-hero__img--top{
     top:0;
-    width:96%;
 }
 .b-hero__img--bottom{
     bottom:0;
     max-width:220*100%/490;
+}
+
+//для услуги №2 (картинки - hero02...)
+.b-hero__inner--2{
+    max-width:542px;
+
+    &:after{
+        padding-top:315*100%/542;
+    }
+
+    
+    .b-hero__img--bottom{
+        max-width:267*100%/542;
+    }
 }
