@@ -1,0 +1,65 @@
+﻿@import "../../modules/_base.scss";
+/*Download block*/
+.b-download{
+    display:block;
+    max-width:360px;
+    margin:$project-line-height auto;
+    text-decoration:none;
+    text-align:center;
+    color:$text-color;
+
+    &:hover{
+        color:$primary;
+        .b-download__thumb{
+            color:$primary;
+            box-shadow:inset 0 0 1px 2px $primary, 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+        }
+        .b-download__img{
+            .st1{
+                fill:$primary;
+            }
+            .st2{
+                stroke:$primary;
+            }
+        }
+        .b-download__btn{
+            transform:translateY(-10px);
+        }
+    }
+
+    @include media($extra-large){
+        margin-top:$project-line-height*3;
+    }
+}
+
+.b-download__thumb{
+    @include size(54px);
+    margin:0 auto $project-line-height;
+    border-radius:10px;
+    background:#fff;
+    box-shadow:inset 0 0 1px 2px #afafaf;
+    line-height:54px;
+    @extend .g-transition;
+    transition-property: color, box-shadow;
+    font-size:rem(28px);
+    position:relative;
+}
+
+.b-download__img{
+    @extend .b-list__img;
+    width:28px;
+    height:auto;
+}
+
+.b-download__btn{
+    display:block;
+    @include size(32px);
+    margin:0 auto;
+    line-height:32px;
+    background:$primary;
+    border-radius:50%;
+    color:#fff;
+    font-size:rem(16px);
+    @extend .g-transition;
+    transition-property:transform;
+}

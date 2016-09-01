@@ -44,11 +44,11 @@
 /*Icon font*/
 @font-face {
     font-family: 'icomoon';
-    src:    url('../fonts/icomoon/icomoon.eot?tax7wy');
-    src:    url('../fonts/icomoon/icomoon.eot?tax7wy#iefix') format('embedded-opentype'),
-        url('../fonts/icomoon/icomoon.ttf?tax7wy') format('truetype'),
-        url('../fonts/icomoon/icomoon.woff?tax7wy') format('woff'),
-        url('../fonts/icomoon/icomoon.svg?tax7wy#icomoon') format('svg');
+    src:    url('../fonts/icomoon/icomoon.eot?m9cm3u');
+    src:    url('../fonts/icomoon/icomoon.eot?m9cm3u#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon/icomoon.ttf?m9cm3u') format('truetype'),
+        url('../fonts/icomoon/icomoon.woff?m9cm3u') format('woff'),
+        url('../fonts/icomoon/icomoon.svg?m9cm3u#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -72,6 +72,10 @@
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-download:before {
+  content: "\e91d";
 }
 
 .icon-google-plus:before {

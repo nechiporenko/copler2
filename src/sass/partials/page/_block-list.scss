@@ -51,6 +51,13 @@
         &:nth-child(2){
             padding-top:0;
         }
+
+        .b-list--alt &:nth-child(2){
+            padding-top:2*$project-line-height;
+        }
+        .b-list--alt &:nth-child(3){
+            padding-top:0;
+        }
     }
 }
 
@@ -76,6 +83,7 @@
 .b-list__img{
     @extend .g-align;
     path{
+        @extend .g-transition;
         transition-property:fill, stroke;
     }
 

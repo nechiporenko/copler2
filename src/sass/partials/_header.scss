@@ -9,6 +9,7 @@
     height:72px;
     box-sizing:border-box;
     transition:background .3s linear;
+    backface-visibility:hidden;
 
     &.visible{
         background:#fff;
