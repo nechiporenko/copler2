@@ -525,7 +525,7 @@ ol ul {
   margin: 9px 0 9px 30px;
 }
 
-.g-clearlist, .b-slider__list, .b-list, .b-feature, .p-list, .b-career__list, .b-pager__list, .f-action, .b-hover__list, .b-tier__list, .b-tiered__titles, .b-heads, .b-news__list, .b-share__list {
+.g-clearlist, .b-slider__list, .b-list, .b-feature, .p-list, .b-career__list, .b-pager__list, .f-action, .b-hover__list, .b-tier__list, .b-tiered__titles, .b-heads, .b-news__list, .b-share__list, .b-rates__list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -753,7 +753,7 @@ img.g-full-width, img.g-table {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.g-align, .b-slider__wrapper--middle .b-slider__img, .b-list__img, .b-icon__img, .b-hover__img, .b-download__img, .b-feature__img {
+.g-align, .b-slider__wrapper--middle .b-slider__img, .b-list__img, .b-icon__img, .b-hover__img, .b-link__img, .b-rates__img, .b-feature__img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -777,7 +777,7 @@ img.g-full-width, img.g-table {
 }
 
 .g-transition, a, button, input[type="button"], input[type="submit"],
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select, .g-shadow-hover, .b-news__inner, .b-post, .h-menu, .b-footer, .prefooter, .f-action__title--border, .f-action__btn--last:after, .b-heads__img .st1, .b-news__img, .b-download__thumb, .b-download__btn {
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select, .g-shadow-hover, .b-news__inner, .b-post, .h-menu, .b-footer, .prefooter, .f-action__title--border, .f-action__btn--last:after, .b-heads__img .st1, .b-news__img, .b-link .g-btn, .b-link__thumb, .b-link__btn {
   transition-duration: .2s;
   transition-timing-function: ease-in;
 }
@@ -2235,11 +2235,11 @@ label.css-radio-label {
   transform: translateY(-10px);
 }
 
-.b-list__item:hover .b-list__img .st1, .b-list__item:hover .b-icon__img .st1, .b-list__item:hover .b-hover__img .st1, .b-list__item:hover .b-download__img .st1, .b-list__item.active .b-list__img .st1, .b-list__item.active .b-icon__img .st1, .b-list__item.active .b-hover__img .st1, .b-list__item.active .b-download__img .st1 {
+.b-list__item:hover .b-list__img .st1, .b-list__item:hover .b-icon__img .st1, .b-list__item:hover .b-hover__img .st1, .b-list__item:hover .b-link__img .st1, .b-list__item:hover .b-rates__img .st1, .b-list__item.active .b-list__img .st1, .b-list__item.active .b-icon__img .st1, .b-list__item.active .b-hover__img .st1, .b-list__item.active .b-link__img .st1, .b-list__item.active .b-rates__img .st1 {
   fill: #6cd3dd;
 }
 
-.b-list__item:hover .b-list__img .st2, .b-list__item:hover .b-icon__img .st2, .b-list__item:hover .b-hover__img .st2, .b-list__item:hover .b-download__img .st2, .b-list__item.active .b-list__img .st2, .b-list__item.active .b-icon__img .st2, .b-list__item.active .b-hover__img .st2, .b-list__item.active .b-download__img .st2 {
+.b-list__item:hover .b-list__img .st2, .b-list__item:hover .b-icon__img .st2, .b-list__item:hover .b-hover__img .st2, .b-list__item:hover .b-link__img .st2, .b-list__item:hover .b-rates__img .st2, .b-list__item.active .b-list__img .st2, .b-list__item.active .b-icon__img .st2, .b-list__item.active .b-hover__img .st2, .b-list__item.active .b-link__img .st2, .b-list__item.active .b-rates__img .st2 {
   stroke: #6cd3dd;
 }
 
@@ -2324,19 +2324,19 @@ label.css-radio-label {
   transition-property: border-color, transform;
 }
 
-.b-list__img path, .b-icon__img path, .b-hover__img path, .b-download__img path {
+.b-list__img path, .b-icon__img path, .b-hover__img path, .b-link__img path, .b-rates__img path {
   transition-property: fill, stroke;
 }
 
-.b-list__img .st0, .b-icon__img .st0, .b-hover__img .st0, .b-download__img .st0 {
+.b-list__img .st0, .b-icon__img .st0, .b-hover__img .st0, .b-link__img .st0, .b-rates__img .st0 {
   fill: none;
 }
 
-.b-list__img .st1, .b-icon__img .st1, .b-hover__img .st1, .b-download__img .st1 {
+.b-list__img .st1, .b-icon__img .st1, .b-hover__img .st1, .b-link__img .st1, .b-rates__img .st1 {
   fill: #afafaf;
 }
 
-.b-list__img .st2, .b-icon__img .st2, .b-hover__img .st2, .b-download__img .st2 {
+.b-list__img .st2, .b-icon__img .st2, .b-hover__img .st2, .b-link__img .st2, .b-rates__img .st2 {
   stroke: #afafaf;
 }
 
@@ -2363,7 +2363,7 @@ label.css-radio-label {
 }
 
 .b-list__icon, .b-icon__thumb, .b-hover__thumb,
-.b-list__img path, .b-icon__img path, .b-hover__img path, .b-download__img path,
+.b-list__img path, .b-icon__img path, .b-hover__img path, .b-link__img path, .b-rates__img path,
 .b-list__title,
 .b-list__label {
   transition-timing-function: ease;
@@ -5410,7 +5410,7 @@ label.css-radio-label {
 }
 
 /*Download block*/
-.b-download {
+.b-link {
   display: block;
   max-width: 360px;
   margin: 0 auto;
@@ -5419,52 +5419,61 @@ label.css-radio-label {
   color: #555;
 }
 
-.b-download:hover {
+.b-link:hover {
   color: #6cd3dd;
 }
 
-.b-download:hover .b-download__thumb {
+.b-link:hover .b-link__thumb {
   color: #6cd3dd;
   box-shadow: inset 0 0 1px 2px #6cd3dd, 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 3px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
-.b-download:hover .b-download__img .st1 {
+.b-link:hover .b-link__img .st1 {
   fill: #6cd3dd;
 }
 
-.b-download:hover .b-download__img .st2 {
+.b-link:hover .b-link__img .st2 {
   stroke: #6cd3dd;
 }
 
-.b-download:hover .b-download__btn {
+.b-link:hover .b-link__btn {
   transform: translateY(-10px);
 }
 
+.b-link:hover .g-btn {
+  background: #43c7d3;
+}
+
+.b-link .g-btn {
+  margin-top: 18px;
+  transition-property: background;
+}
+
 @media screen and (min-width: 90em) {
-  .b-download {
+  .b-link {
     margin-top: 54px;
   }
 }
 
-.b-download__thumb {
+.b-link__thumb {
   height: 54px;
   width: 54px;
   margin: 0 auto 18px;
   border-radius: 10px;
   background: #fff;
-  box-shadow: inset 0 0 1px 2px #afafaf;
+  box-shadow: inset 0 0 1px 1px #afafaf;
   line-height: 54px;
   transition-property: color, box-shadow;
   font-size: 1.75rem;
   position: relative;
 }
 
-.b-download__img {
+.b-link__img {
   width: 28px;
   height: auto;
 }
 
-.b-download__btn {
+.b-link__btn {
   display: block;
   height: 32px;
   width: 32px;
@@ -5544,7 +5553,7 @@ label.css-radio-label {
   z-index: 1;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 30em) {
   .b-tech__col {
     float: left;
     display: block;
@@ -5597,6 +5606,100 @@ label.css-radio-label {
   content: '-';
   position: absolute;
   left: 0;
+}
+
+/*Rates list*/
+.b-rates {
+  margin: 18px 0;
+}
+
+@media screen and (min-width: 90em) {
+  .b-rates {
+    margin: 54px 0;
+  }
+}
+
+.b-rates__thumb {
+  height: 214px;
+  width: 214px;
+  margin: 0 auto 18px;
+  background: url(../img/graph/earth.svg) 100% 100% no-repeat;
+  position: relative;
+}
+
+.b-rates__thumb:hover .b-rates__img .st1 {
+  fill: #6cd3dd;
+}
+
+.b-rates__list li {
+  padding-left: 40px;
+  margin: 18px 0;
+  position: relative;
+}
+
+.b-rates__list li:before {
+  content: '';
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #6cd3dd;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.b-rates__list li:after {
+  content: '\e914';
+  font-family: 'icomoon';
+  font-size: 0.625rem;
+  color: #fff;
+  position: absolute;
+  top: 6px;
+  left: 11px;
+}
+
+@media screen and (min-width: 48em) {
+  .b-rates {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .b-rates__col {
+    width: 50%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .b-rates__thumb {
+    margin-bottom: 0;
+  }
+  .b-rates__list {
+    margin-left: -5px;
+  }
+}
+
+/*Ask block*/
+.b-ask {
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.b-ask__title {
+  display: block;
+  margin-bottom: 18px;
+  padding: 14px 0;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  color: #000;
+  text-transform: uppercase;
+  border-top: 2px dashed #6cd3dd;
+  border-bottom: 2px dashed #6cd3dd;
+}
+
+@media screen and (min-width: 90em) {
+  .b-ask p {
+    margin: 36px 0;
+  }
 }
 
 /*Desktop Font-size fix*/

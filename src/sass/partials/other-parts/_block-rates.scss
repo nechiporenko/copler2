@@ -1,0 +1,74 @@
+﻿@import "../../modules/_base.scss";
+/*Rates list*/
+.b-rates{
+    margin:$project-line-height 0;
+
+    @include media($extra-large){
+        margin:3*$project-line-height 0;
+    }
+}
+.b-rates__thumb{
+    @include size(214px);
+    margin:0 auto $project-line-height;
+    background:url(../img/graph/earth.svg) 100% 100% no-repeat;
+    position:relative;
+
+    &:hover{
+        .b-rates__img .st1{
+            fill:$primary;
+        }
+    }
+}
+
+.b-rates__img{
+    @extend .b-list__img;
+}
+
+.b-rates__list{
+    @extend .g-clearlist;
+
+    li{
+        padding-left:40px;
+        margin:$project-line-height 0;
+        position:relative;
+
+        &:before{
+            content:'';
+            @include size(24px);
+            border-radius:50%;
+            background:$primary;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+
+        &:after{
+            content:'\e914';
+            font-family:'icomoon';
+            font-size:rem(10px);
+            color:#fff;
+            position:absolute;
+            top:6px;
+            left:11px;
+        }
+    }
+}
+
+@include media($tablet){
+    .b-rates{
+        display:table;
+        width:100%;
+        table-layout:fixed;
+    }
+    .b-rates__col{
+        width:50%;
+        display:table-cell;
+        vertical-align:middle;
+    }
+    .b-rates__thumb{
+        margin-bottom:0;
+    }
+    .b-rates__list{
+        margin-left:-5px;
+    }
+}

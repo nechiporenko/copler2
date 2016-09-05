@@ -1,0 +1,26 @@
+﻿@import "../../modules/_base.scss";
+/*Ask block*/
+.b-ask{
+    max-width:660px;
+    margin:0 auto;
+    text-align:center;
+}
+.b-ask__title{
+    display:block;
+    margin-bottom:$project-line-height;
+    padding:14px 0;
+    font-size:rem(20px);
+    line-height:1.15;
+    color:$title-color;
+    text-transform:uppercase;
+    border-top:2px dashed $primary;
+    border-bottom:2px dashed $primary;
+}
+
+@include media($extra-large){
+    .b-ask{
+        p{
+            margin:2*$project-line-height 0;
+        }
+    }
+}

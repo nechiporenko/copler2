@@ -72,7 +72,8 @@
 .b-tech__col{
     @extend .g-column;
 
-    @include media($small){
+
+    @include media($mobile){
         @include span-columns(6);
         @include omega(2n);
     }
