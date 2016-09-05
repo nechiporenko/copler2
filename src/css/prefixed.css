@@ -4430,6 +4430,18 @@ label.css-radio-label {
   max-width: 49.2619926199%;
 }
 
+.b-hero__inner--3 {
+  max-width: 558px;
+}
+
+.b-hero__inner--3:after {
+  padding-top: 53.0465949821%;
+}
+
+.b-hero__inner--3 .b-hero__img--bottom {
+  max-width: 19.7132616487%;
+}
+
 /*Breadcrumbs*/
 .crumbs {
   padding: 10px 0;
@@ -5314,7 +5326,7 @@ label.css-radio-label {
 
 .b-link:hover .b-link__thumb {
   color: #6cd3dd;
-  box-shadow: inset 0 0 1px 2px #6cd3dd, 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 1px 1px #6cd3dd, 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 3px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
 .b-link:hover .b-link__img .st1 {

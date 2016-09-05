@@ -46,3 +46,16 @@
         max-width:267*100%/542;
     }
 }
+
+//для услуги №3 (hero03...)
+.b-hero__inner--3{
+    max-width:558px;
+
+    &:after{
+        padding-top:296*100%/558;
+    }
+
+    .b-hero__img--bottom{
+        max-width:110*100%/558;
+    }
+}
