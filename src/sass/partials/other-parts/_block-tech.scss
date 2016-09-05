@@ -1,0 +1,103 @@
+﻿@import "../../modules/_base.scss";
+/*Technologies list*/
+.b-tech{
+    max-width:732px;
+    margin:0 auto;
+}
+
+.b-tech__line{
+    height:52px;
+    margin:$project-line-height auto 2*$project-line-height;
+    position:relative;
+    border-bottom:1px dashed $primary;
+    line-height:1;
+
+    &:before,
+    &:after{
+        bottom:-8px;
+    }
+
+    &:before{
+        left:0;
+    }
+
+    &:after{
+        right:0;
+    }
+}
+
+.b-tech__graph{
+    height:52px;
+    width:16px;
+    position:absolute;
+    left:50%;
+    top:0;
+    margin-left:-8px;
+
+    &:before{
+        top:0;
+    }
+
+    &:after{
+        content:'';
+        display:block;
+        height:30px;
+        width:1px;
+        border-left:1px dashed $primary;
+        position:absolute;
+        left:50%;
+        margin-left:-1px;
+        top:20px;
+    }
+}
+
+.b-tech__line:before,
+.b-tech__line:after,
+.b-tech__graph:before{//точки
+    content:'\e917';
+    display:block;
+    @include size(16px);
+    font-family:'icomoon';
+    position:absolute;
+    font-size:rem(16px);
+    border-radius:50%;
+    background:#fff;
+    color:$primary;
+    z-index:1;
+}
+
+.b-tech__row{
+    @extend .g-row;
+}
+.b-tech__col{
+    @extend .g-column;
+
+    @include media($small){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($tablet){
+        @include omega-reset(2n);
+        @include span-columns(3);
+        padding-left:15px;
+    }
+}
+
+.b-tech__list{
+    list-style-type:none;
+    padding:0;
+    line-height:strip-units($project-line-height/$project-font-size);
+
+    li{
+        margin-bottom:$project-line-height/2;
+        padding-left:10px;
+        position:relative;
+
+        &:before{
+            content:'-';
+            position:absolute;
+            left:0;
+        }
+    }
+}

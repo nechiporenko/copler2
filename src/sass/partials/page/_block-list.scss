@@ -6,6 +6,10 @@
     margin-top:3*$project-line-height;
 }
 
+.b-list--alt{//меньше отступ сверху + на десктопе поднимаем 3-й блок
+    margin-top:2*$project-line-height;
+}
+
 .b-list__item{
     @extend .g-column;
     position:relative;
@@ -83,7 +87,6 @@
 .b-list__img{
     @extend .g-align;
     path{
-        @extend .g-transition;
         transition-property:fill, stroke;
     }
 
