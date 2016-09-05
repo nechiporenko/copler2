@@ -55,6 +55,10 @@
 }
 .b-icon__img{
     @extend .b-list__img;
+    width:100%;
     max-width:70%;
     height:auto;
+}
+.b-icon__img--alt{
+    max-width:90%;
 }
