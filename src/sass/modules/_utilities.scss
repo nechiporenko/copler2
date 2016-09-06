@@ -103,3 +103,27 @@ img.g-full-width{clear:both;display:block;width:100%;height:auto;margin:0 0 0 0;
 .g-nowrap{
     white-space:nowrap;
 }
+
+.g-hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.g-visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.g-invisible {
+    visibility: hidden;
+}
+
+.g-clearfix{
+    @include clearfix; //bourbon clearfix
+}

@@ -25,33 +25,7 @@
 }
 
 .b-rates__list{
-    @extend .g-clearlist;
-
-    li{
-        padding-left:40px;
-        margin:$project-line-height 0;
-        position:relative;
-
-        &:before{
-            content:'';
-            @include size(24px);
-            border-radius:50%;
-            background:$primary;
-            position:absolute;
-            left:0;
-            top:0;
-        }
-
-        &:after{
-            content:'\e914';
-            font-family:'icomoon';
-            font-size:rem(10px);
-            color:#fff;
-            position:absolute;
-            top:6px;
-            left:11px;
-        }
-    }
+    @extend .g-circle-list;
 }
 
 @include media($tablet){

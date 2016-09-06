@@ -1,0 +1,42 @@
+﻿@import "../../modules/_base.scss";
+/*Comited block*/
+.b-commit{
+    @extend .g-row;
+}
+
+.b-commit__col{
+    @extend .g-column;
+
+    @include media($tablet){
+        width:56%;
+
+        &:first-child{
+            width:44%;
+            padding-right:4%;
+        }
+    }
+
+    @include media($desktop){
+        width:61%;
+
+        &:first-child{
+            width:39%;
+            padding-right:6.5%;
+        }
+    }
+}
+
+.b-commit__thumb{
+    width:100%;
+    max-width:190px;
+    margin:$project-line-height auto;
+
+    @include media($tablet){
+        float:right;
+        margin:$project-line-height 0 0;
+    }
+}
+.b-commit__img{
+    @extend .g-full-width;
+}
+

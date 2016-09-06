@@ -149,3 +149,20 @@
         }
     }
 }
+
+//иконка (play)
+.b-news__icon{
+    display:block;
+    @include size(66px);
+    line-height:66px;
+    text-align:center;
+    background:rgba(#000, .4);
+    color:#fff;
+    font-size:rem(24px);
+    border-radius:50%;
+    @extend .g-align;
+
+    [class^="icon-"], [class*=" icon-"]{
+        vertical-align:middle;
+    }
+}

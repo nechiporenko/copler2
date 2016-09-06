@@ -138,10 +138,45 @@ ol ul {
         &:before{
             content: "\e902";
             font-family:'icomoon';
-            font-size:15px;
+            font-size:rem(15px);
             position:absolute;
             top:0; left:0;
             color:$primary;
+        }
+    }
+}
+
+.g-circle-list{
+    @extend .g-clearlist;
+
+    li{
+        padding-left:40px;
+        margin:$project-line-height 0;
+        position:relative;
+        font-size:rem(16px);
+
+        @include media($extra-large){
+            font-size:rem(17px);
+        }
+
+        &:before{
+            content:'';
+            @include size(24px);
+            border-radius:50%;
+            background:$primary;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+
+        &:after{
+            content:'\e914';
+            font-family:'icomoon';
+            font-size:rem(10px);
+            color:#fff;
+            position:absolute;
+            top:6px;
+            left:11px;
         }
     }
 }
@@ -208,28 +243,3 @@ a, button, input[type="button"], input[type="submit"],
     @extend .g-transition;
 }
 
-
-/*Helper classes*/
-.g-hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-.g-visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.g-invisible {
-    visibility: hidden;
-}
-
-.g-clearfix{
-    @include clearfix; //bourbon clearfix
-}

@@ -14,19 +14,14 @@
     @extend .g-clearfix;
 }
 
-.g-row,
-.g-container__inner{
-    @include row();  
+.g-container__inner--half{
+    @extend .g-container__inner;
+    max-width:530px;
 }
 
-.lt-ie9{
-    .g-container,
-    .g-container__inner,
-    .g-row{
-        @extend .g-clearfix;
-    }
+.g-row{
+    @include row();
 }
-
 
 /*Default Grid*/
 .g-column{
