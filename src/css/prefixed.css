@@ -4417,6 +4417,12 @@ label.css-radio-label {
   }
 }
 
+@media screen and (min-width: 75em) {
+  .page__section--zoom {
+    background-image: url(../img/bg-zoom.png);
+  }
+}
+
 /*Hero Images*/
 .b-hero {
   margin: 0;

@@ -23,5 +23,12 @@
         background-image:url(../img/bg-money.png);
         background-position:left 85%;
     }
+    
+}
+
+@include media($large){
+    .page__section--zoom{
+        background-image:url(../img/bg-zoom.png);
+    }
 }
 
