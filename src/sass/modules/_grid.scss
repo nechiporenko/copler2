@@ -19,6 +19,11 @@
     max-width:530px;
 }
 
+.g-container__inner--medium{
+    @extend .g-container__inner;
+    max-width:800px;
+}
+
 .g-row{
     @include row();
 }

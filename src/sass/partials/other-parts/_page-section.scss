@@ -15,6 +15,10 @@
     background-position:left bottom;
 }
 
+.page__spacer{//распорка по высоте
+    min-height:70vh;
+}
+
 @include media($desktop){
     .page__section--tier{
         background-image:url(../img/bg-tier.png);

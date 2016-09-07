@@ -1,5 +1,6 @@
 ﻿@import "../modules/_base.scss";
 
+//3 лендинга услуг
 @import "other-parts/_page-section.scss";//стили для доп.секций
 @import "other-parts/_hero.scss";//блок с svg-картинками в начале страницы услуг (баннер страницы)
 @import "other-parts/_breadcrumbs.scss";//хлебные крошки
@@ -9,12 +10,17 @@
 @import "other-parts/_block-tier-graph.scss";//блок со списком в стиле диаграммы на десктопе
 @import "other-parts/_heads.scss";//головы с подписями на разном уровне
 @import "other-parts/_news-slider.scss";//слайдер новостей
-@import "other-parts/_b-post.scss";//страница записи (post)
-@import "other-parts/_share-this.scss";//блок с кнопками для расшаривания поста
 @import "other-parts/_block-link.scss";//стилизованный линк с иконкой, кнопкой и т.п.
 @import "other-parts/_block-tech.scss";//список технологий
 @import "other-parts/_block-rates.scss";//Our Rates include - svg-картинка + стилизованный список
 @import "other-parts/_block-ask.scss";//блок Ask The Experts
-@import "other-parts/solution-list.scss";//список с иконками в секции Our PRO service is your solution if
+@import "other-parts/_solution-list.scss";//список с иконками в секции Our PRO service is your solution if
 @import "other-parts/_zoom-head-list.scss";//список с картинками голов, на десктопе при наведении покажем лупу
-@import "other-parts/_block-commit.scss";//блок графика + стилизованный список (после зума) 
+@import "other-parts/_block-commit.scss";//блок графика + стилизованный список (после зума)
+
+//newsroom, ideas
+@import "other-parts/_single-post.scss";//страница записи (post)
+@import "other-parts/_share-this.scss";//блок с кнопками для расшаривания поста
+@import "other-parts/_post-filter.scss";//фильтр записей + строка поиска
+@import "other-parts/_entry-list.scss";//список записей (newsroom, ideas)
+@import "other-parts/_about-author.scss";//короткий блок с инфой об авторе постов

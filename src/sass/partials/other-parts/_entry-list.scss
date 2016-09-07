@@ -1,0 +1,145 @@
+﻿@import "../../modules/_base.scss";
+/*Entrie's List*/
+.b-entry{
+    list-style-type:none;
+    padding:0;
+    margin-bottom:$project-line-height;
+    @extend .g-clearfix;
+}
+
+.b-entry__item{
+    @extend .g-column;
+
+    @include media($mobile){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($tablet){
+        @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega(3n);
+    }
+}
+
+.b-entry__inner{
+    max-width:260px;
+    margin:0 auto $project-line-height;
+    background:#fff;
+    line-height:1;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    @extend .g-shadow-hover;
+}
+
+.b-entry__thumb{
+    display:block;
+    position:relative;
+
+    &:after{
+        content:'';
+        display:block;
+        padding-top:75%;
+    }
+
+    &:hover{
+        .b-entry__img{
+            opacity:.8;
+        }
+    }
+}
+
+.b-entry__img{
+    @extend .b-news__img;
+}
+
+.b-entry__info{
+    padding:10px;
+    font-size:rem(14px);
+    line-height:1.38;
+    @extend .g-clearfix;
+}
+.b-entry__categories{
+    display:block;
+    overflow:hidden;
+    @extend .g-nowrap;
+}
+
+.b-entry__category{
+    color:$text-color;
+    text-transform:uppercase;
+    text-decoration:none;
+
+    &:hover{
+        color:$primary;
+    }
+}
+
+.b-entry__title{
+    display:block;
+    margin-bottom:$project-line-height/2;
+    color:$title-color;
+    font-family:$font-bold;
+    font-size:rem(24px);
+    line-height:1;
+    text-decoration:none;
+
+    &:hover{
+        color:$primary;
+    }
+
+    @include media($small){
+        font-size:rem(29px);
+    }
+}
+
+.b-entry__quote{
+    height:180px;
+    overflow:hidden;
+    position:relative;
+
+    &:after{
+        content:'';
+        position:absolute;
+        left:0; right:0; bottom:0;
+        height:34px;
+        @include linear-gradient(to bottom, rgba(#fff, .2), rgba(#fff, .98));
+    }
+}
+
+.b-entry__meta{
+    padding:5px 0 7px;
+    overflow:hidden;
+    @extend .g-nowrap;
+    font-size:rem(12px);
+    color:#afafaf;
+
+    a{
+        text-decoration:none;
+
+        &:hover{
+            text-decoration:underline;
+        }
+    }
+}
+
+
+//activity list
+.b-activity{
+    float:left;
+    list-style-type:none;
+    padding:5px 0;
+    margin:0;
+    line-height:1;
+    overflow:hidden;
+    @extend .g-nowrap;
+    border:1px solid #afafaf;
+    border-radius:2px;
+    font-size:0;
+}
+.b-activity__item{
+    display:inline-block;
+    vertical-align:middle;
+    margin:0 5px;
+    font-size:rem(10px);
+    color:#afafaf;
+}
