@@ -812,7 +812,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   visibility: hidden;
 }
 
-.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--medium::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after {
+.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--medium::after, .g-container__inner--large::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after {
   clear: both;
   content: "";
   display: block;
@@ -834,7 +834,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   display: block;
 }
 
-.g-container__inner, .g-container__inner--half, .g-container__inner--medium {
+.g-container__inner, .g-container__inner--half, .g-container__inner--medium, .g-container__inner--large {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -848,6 +848,10 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   max-width: 800px;
 }
 
+.g-container__inner--large {
+  max-width: 1560px;
+}
+
 .g-row, .b-tech__row, .b-commit, .b-filter {
   display: block;
 }
@@ -859,7 +863,8 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
 }
 
 /*Default Grid*/
-.g-column, .g-col, .b-list__item, .b-feature__item, .p-list__item, .i-list__item, .b-career__item, .b-career__col, .p-footer__column, .b-tier__thumb,
+.g-column, .g-col, .b-intro__entry,
+.b-intro__form, .b-list__item, .b-feature__item, .p-list__item, .i-list__item, .b-career__item, .b-career__col, .p-footer__column, .b-tier__thumb,
 .b-tier__list, .b-heads__item, .b-news__item, .b-tech__col, .b-zoom__item, .b-commit__col, .b-filter__col, .b-entry__item {
   width: 100%;
   float: left;
@@ -2147,6 +2152,47 @@ label.css-radio-label {
 @media screen and (min-width: 115em) {
   .b-cardthumb {
     max-width: 586px;
+  }
+}
+
+.b-intro--has-form {
+  position: relative;
+  z-index: 1;
+}
+
+.b-intro__form {
+  padding: 36px 0;
+}
+
+.b-intro__inner {
+  max-width: 560px;
+}
+
+@media screen and (min-width: 62em) {
+  .b-intro__entry {
+    width: 57.6423479766%;
+    margin-right: 2.3576520234%;
+    padding-left: 15px;
+  }
+  .b-intro__form {
+    width: 40%;
+    padding-right: 20px;
+  }
+  .b-intro__bg {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 58%;
+    max-width: 1130px;
+    background-image: url(../img/bg-intro.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  .b-intro__bg:after {
+    content: '';
+    display: block;
+    padding-top: 75.4867256637%;
   }
 }
 
@@ -6340,6 +6386,9 @@ a.p-footer__title:hover {
   }
   .b-intro .b-slider__form {
     margin-bottom: 15px;
+  }
+  .b-intro--has-form {
+    padding-top: 80px;
   }
   .b-intro--card {
     padding-top: 77px;

@@ -171,3 +171,54 @@
         max-width:586px;
     }
 }
+
+
+//модификация - секция без слайдера, но с формой
+.b-intro--has-form{
+    position:relative;
+    z-index:1;
+    //background:none;
+}
+.b-intro__entry,
+.b-intro__form{
+    @extend .g-column;
+}
+
+.b-intro__form{
+    padding:2*$project-line-height 0;
+}
+
+.b-intro__inner{
+    max-width:560px;
+}
+
+@include media($desktop){
+    .b-intro__entry{
+        width:1*(60% - $grid-gutter);
+        margin-right:$grid-gutter;
+        padding-left:15px;
+    }
+    .b-intro__form{
+        width:40%;
+        padding-right:20px;
+    }
+
+
+    .b-intro__bg{
+        position:absolute;
+        bottom:0;
+        left:10px;
+        width:58%;
+        max-width:1130px;
+        background-image:url(../img/bg-intro.png);
+        background-size:cover;
+        background-repeat:no-repeat;
+        z-index:-1;
+
+        &:after{
+            content:'';
+            display:block;
+            padding-top:(853*100%)/1130;
+        }
+    }
+}
