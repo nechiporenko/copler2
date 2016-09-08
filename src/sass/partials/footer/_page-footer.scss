@@ -32,11 +32,19 @@ $page-footer-color:#afafaf;
 
 .p-footer__title{
     display:block;
-    margin-bottom:25px;
+    //margin-bottom:25px;
+    margin-bottom:$project-line-height/2;
     @include font-size(17px);
     color:$title-color;
     text-transform:uppercase;
+    text-decoration:none;
     font-family:$font-medium;
+}
+
+a.p-footer__title{
+    &:hover{
+        color:$primary;
+    }
 }
 
 //меню

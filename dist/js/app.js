@@ -271,10 +271,11 @@ jQuery(document).ready(function ($) {
             $('html,body').animate({ scrollTop: pos }, 800)
         });
 
-        $('.p-menu').on('click', 'a[data-scroll-link]', function (e) {//скролл по клику в футере(в разделе Контакты)
+        $('.p-footer__column').on('click', 'a[data-scroll-link]', function (e) {//если нужен скролл по стиранице по клику в футере (в разделе Контакты) - к линку добавим data-scroll-link
             e.preventDefault();
-            var $el = $(this);
-            method.scrollToContent($el);
+            var link = $(this).attr('href');
+            link = link.slice(link.indexOf('#'), link.length); //обрежем все до символа #
+            $('html,body').animate({ scrollTop: $(link).offset().top }, 800);
         });
     };
 

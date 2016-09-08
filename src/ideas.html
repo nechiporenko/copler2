@@ -7,6 +7,9 @@
     <!--selectric style-->
     <link href="css/selectric.min.css" rel="stylesheet" />
     <!--selectric style-->
+    <!--autocomplete style-->
+    <link href="css/jquery.auto-complete.min.css" rel="stylesheet" />
+    <!--/autocomplete style-->
 </head>
 <body class="page">
     <!--header-->
@@ -50,7 +53,18 @@
                             </select>
                         </div>
                         <div class="b-filter__col">
-                            <input type="text" class="b-filter__input" placeholder="Search ..." />
+                            <input type="text" class="b-filter__input js-search" placeholder="Search ..." />
+                        </div>
+                        <div class="b-filter__col">
+                            <select class="b-filter__select js-select">
+                                <option selected value="all">All authors</option>
+                                <option value="Helena Hlavko">Helena Hlavko</option>
+                                <option value="Ivan Bo">Ivan Bo</option>
+                                <option value="Peter Mo">Peter Mo</option>
+                                <option value="John Do">John Do</option>
+                                <option value="Jack Wo">Jack Wo</option>
+                                <option value="Michal Ro">Michal Ro</option>
+                            </select>
                         </div>
                     </div>
                     <!--/filter-->
@@ -427,5 +441,32 @@
         });
     </script>
     <!--/selectric scripts-->
+    <!--autocomplete scripts-->
+        <!--see more: https://goodies.pixabay.com/jquery/auto-complete/demo.html -->
+    <script src="js/vendor/jquery.auto-complete.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.js-search').autoComplete({
+                minChars: 2,
+                source: function(term, suggest){
+                    term = term.toLowerCase();
+                    var choices = ['ActionScript', 'AppleScript', 'Asp', 'Apple'];
+                    var matches = [];
+                    for (i=0; i<choices.length; i++)
+                        if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+                    suggest(matches);
+                },
+                //source: function (term, responce) {
+                //    try { xhr.abort(); } catch (e) { }
+                //    xhr = $.getJSON('/some/ajax/url/', { q: term }, function (data) { response(data); });
+                //}
+                onSelect: function (event, term, item) {
+                    //...
+                    console.log(term);
+                }
+            });
+        });
+    </script>
+    <!--/autocomplete scripts-->
 </body>
 </html>

@@ -12,6 +12,9 @@
     <!--selectric style-->
     <link href="css/selectric.min.css" rel="stylesheet" />
     <!--selectric style-->
+    <!--autocomplete style-->
+    <link href="css/jquery.auto-complete.min.css" rel="stylesheet" />
+    <!--/autocomplete style-->
 </head>
 <body class="page">
     <!--header-->
@@ -83,7 +86,18 @@
                             </select>
                         </div>
                         <div class="b-filter__col">
-                            <input type="text" class="b-filter__input" placeholder="Search ..." />
+                            <input type="text" class="b-filter__input js-search" placeholder="Search ..." />
+                        </div>
+                        <div class="b-filter__col">
+                            <select class="b-filter__select js-select">
+                                <option selected value="all">All authors</option>
+                                <option value="Helena Hlavko">Helena Hlavko</option>
+                                <option value="Ivan Bo">Ivan Bo</option>
+                                <option value="Peter Mo">Peter Mo</option>
+                                <option value="John Do">John Do</option>
+                                <option value="Jack Wo">Jack Wo</option>
+                                <option value="Michal Ro">Michal Ro</option>
+                            </select>
                         </div>
                     </div>
                     <!--/filter-->
@@ -438,10 +452,47 @@
             <!--true footer-->
             <footer class="page__footer">
             <div class="g-container">
-                <nav class="g-container__inner">
+                <div class="g-container__inner">
                     <div class="g-row">
-                        <div class="p-footer__column">
-                            <span class="p-footer__title">Services</span>
+                        <nav class="p-footer__column">
+                            <a href="index.html#who-we-are" class="p-footer__title" data-scroll-link>Who we are</a>
+                            <ul class="p-menu">
+                                <li class="p-menu__item">
+                                    <a href="about.html" class="p-menu__link">About us</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="leadership.html" class="p-menu__link">Leadership Team</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="newsroom.html" class="p-menu__link">Newsroom</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="partnership.html" class="p-menu__link">Partnership Model</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <a href="index.html#what-we-do" class="p-footer__title" data-scroll-link>What we do</a>
+                            <ul class="p-menu">
+                                <li class="p-menu__item">
+                                    <a href="why.html" class="p-menu__link">Why Copler</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="business.html" class="p-menu__link">Business process model</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="stories.html" class="p-menu__link">Client stories</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="calculator.html" class="p-menu__link">Calculator</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="discount.html" class="p-menu__link">Discount</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <a href="index.html#services" class="p-footer__title" data-scroll-link>Services</a>
                             <ul class="p-menu">
                                 <li class="p-menu__item">
                                     <a href="service1.html" class="p-menu__link">BPO & Technical Support</a>
@@ -453,32 +504,33 @@
                                     <a href="service3.html" class="p-menu__link">Recruitment Process Outsoucing</a>
                                 </li>
                             </ul>
-                            <span class="p-footer__title">Careers</span>
-                        </div>
-                        <div class="p-footer__column">
-                            <span class="p-footer__title">Who we are</span>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <span class="p-footer__title">Industries</span>
                             <ul class="p-menu">
                                 <li class="p-menu__item">
-                                    <a href="#who-we-are" class="p-menu__link" data-scroll-link>About us</a>
+                                    <a href="healthcare.html" class="p-menu__link">Healthcare</a>
                                 </li>
-                            </ul>
-                        </div>
-                        <div class="p-footer__column">
-                            <span class="p-footer__title">What we do</span>
-                            <ul class="p-menu">
                                 <li class="p-menu__item">
-                                    <a href="#what-we-do" class="p-menu__link" data-scroll-link>Values</a>
+                                    <a href="technology.html" class="p-menu__link">Technology & Telecom</a>
                                 </li>
-                            </ul>
-                        </div>
-                        <div class="p-footer__column">
-                            <span class="p-footer__title">Contact us</span>
-                            <ul class="p-menu">
                                 <li class="p-menu__item">
-                                    <a href="#contacts" class="p-menu__link" data-scroll-link>Contact us</a>
+                                    <a href="iot.html" class="p-menu__link">IoT</a>
                                 </li>
                             </ul>
-
+                        </nav>
+                    </div>
+                    <div class="g-row">
+                        <nav class="p-footer__column">
+                            <a href="ideas.html" class="p-footer__title">Ideas</a>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <a href="index.html#careers" class="p-footer__title" data-scroll-link>Careers</a>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <a href="index.html#contacts" class="p-footer__title" data-scroll-link>Contact us</a>
+                        </nav>
+                        <div class="p-footer__column">
                             <span class="p-footer__title">Follow us</span>
                             <ul class="p-social">
                                 <li class="p-social__item">
@@ -508,7 +560,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div><!--/g-row-->
+                    </div>
                     <div class="g-row">
                         <div class="p-footer__column p-footer__column--wide">
                             <span class="p-footer__copyright">© 2016 by Copler. All Rights Reserved</span>
@@ -520,7 +572,7 @@
                             <a href="#" class="p-footer__link">Terms & Conditions</a>
                         </div>
                     </div>
-                </nav>
+                </div>
             </div>
         </footer>
         <!--/true footer-->
@@ -636,5 +688,32 @@
         });
     </script>
     <!--/selectric scripts-->
+    <!--autocomplete scripts-->
+        <!--see more: https://goodies.pixabay.com/jquery/auto-complete/demo.html -->
+    <script src="js/vendor/jquery.auto-complete.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.js-search').autoComplete({
+                minChars: 2,
+                source: function(term, suggest){
+                    term = term.toLowerCase();
+                    var choices = ['ActionScript', 'AppleScript', 'Asp', 'Apple'];
+                    var matches = [];
+                    for (i=0; i<choices.length; i++)
+                        if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+                    suggest(matches);
+                },
+                //source: function (term, responce) {
+                //    try { xhr.abort(); } catch (e) { }
+                //    xhr = $.getJSON('/some/ajax/url/', { q: term }, function (data) { response(data); });
+                //}
+                onSelect: function (event, term, item) {
+                    //...
+                    console.log(term);
+                }
+            });
+        });
+    </script>
+    <!--/autocomplete scripts-->
 </body>
 </html>

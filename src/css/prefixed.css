@@ -3929,11 +3929,16 @@ label.css-radio-label {
 
 .p-footer__title {
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 9px;
   font-size: 1.0625rem;
   color: #000;
   text-transform: uppercase;
+  text-decoration: none;
   font-family: "ClearSansMedium";
+}
+
+a.p-footer__title:hover {
+  color: #6cd3dd;
 }
 
 .p-menu,
