@@ -1,0 +1,132 @@
+﻿@import "../../modules/_base.scss";
+/*Leadership page*/
+.b-leader{
+    @extend .g-container__inner;
+    min-height:50vh;
+    margin-bottom:2*$project-line-height;
+    text-align:center;
+}
+
+.b-leader__subtitle{
+    @extend .g-container__inner--medium;
+    margin-bottom:$project-line-height;
+    font-size:117.65%;
+    text-transform:uppercase;
+    line-height:1.5;
+}
+
+.b-leader__row{
+    @extend .g-container__inner--medium;
+    max-width:700px;
+}
+
+.b-leader__col{
+    @extend .g-col;
+    @extend .g-col--one-half;
+}
+
+.b-leader__hr{
+    max-width:615px;
+    margin:0 auto 2*$project-line-height;
+}
+
+.b-leader__inner{
+    max-width:238px;
+    margin:0 auto $project-line-height;
+}
+
+.b-leader__entry{
+    text-align:center;
+    line-height:1.6;
+}
+
+.b-leader__link{
+    display:block;
+    margin:0 auto $project-line-height/2;
+    @include size(238px);
+    position:relative;
+    
+    &:after{
+        content:'';
+        display:block;
+        border-radius:50%;
+        position:absolute;
+        top:0; left:0; right:0; bottom:0;
+        background:rgba($primary, .6);
+        @extend .g-transition;
+        transition-property:opacity;
+        opacity:0;
+    }
+
+    &:hover{
+        &:after{
+            opacity:1;
+        }
+    }
+}
+
+.b-leader__img{
+    @extend .g-img-centered;
+    border-radius:50%;
+    border:2px solid $border-color;
+    box-sizing:border-box;
+}
+
+.b-leader__name{
+    display:block;
+    color:$title-color;
+    font-size:rem(15px);
+    font-family:$font-bold;
+    text-transform:uppercase;
+    text-decoration:none;
+
+    &:hover{
+        color:$primary;
+    }
+}
+.b-leader__position{
+    display:block;
+    font-size:rem(13px);
+    line-height:1.1;
+    text-transform:uppercase;
+}
+
+
+.b-leader__inner--team{
+    .b-leader__link{
+        @include size(138px);
+    }
+
+    .b-leader__name{
+        margin-bottom:$project-line-height/2;
+        font-size:rem(12px);
+    }
+    .b-leader__position{
+        font-size:rem(11px);
+        line-height:1.3;
+    }
+}
+
+.b-leader__list{
+    list-style-type:none;
+    padding:0;
+    margin:0 auto;
+    max-width:800px;
+    @extend .g-clearfix;
+}
+
+.b-leader__item{
+    @extend .g-column;
+
+    @include media($small){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($desktop){
+        @include omega-reset(2n);
+        @include span-columns(3);
+        @include omega(4n);
+    }
+}
+

@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Copler - leadership page</title>
+    @@include('templates/head.html')
+</head>
+<body class="page">
+    <!--header-->
+    @@include('templates/header-static.html')
+
+    <!--main content-->
+    <main class="page__content">
+
+        <!--page section-->
+        <section class="page__section">
+            <!--breadcrumbs-->
+            <div class="crumbs">
+                <ol class="crumbs__list">
+                    <li class="crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="index.html" class="crumbs__link" itemprop="url">
+                            <span itemprop="title">Home</span>
+                        </a>
+                    </li>
+                    <li class="crumbs__item">
+                        Leadership team
+                    </li>
+                </ol>
+            </div>
+            <!--/breadcrumbs-->
+            <header class="page__header">
+                <h1 class="g-title">Leadership Team</h1>
+            </header>
+            <div class="g-container">
+                <!--leaders block-->
+                <div class="b-leader">
+                    <p class="b-leader__subtitle">
+                        Meet our leadership team. Copler is driven by service perfectionists, who&nbsp;possesses deep experience in their field of expertise.
+                    </p>
+                    <div class="b-leader__row">
+                        <div class="b-leader__col">
+                            <figure class="b-leader__inner">
+                                <a href="team.html" class="b-leader__link">
+                                    <img src="http://placehold.it/238x238/f0f0f0" class="b-leader__img" alt="" />
+                                </a>
+                                <figcaption class="b-leader__entry">
+                                    <a href="team.html" class="b-leader__name">Konstantin Ryzhov</a>
+                                    <span class="b-leader__position">
+                                        CEO,
+                                        <br />
+                                        co-founder
+                                    </span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="b-leader__col">
+                            <figure class="b-leader__inner">
+                                <a href="team.html" class="b-leader__link">
+                                    <img src="http://placehold.it/238x238/f0f0f0" class="b-leader__img" alt="" />
+                                </a>
+                                <figcaption class="b-leader__entry">
+                                    <a href="team.html" class="b-leader__name">Nataliya Zub</a>
+                                    <span class="b-leader__position">
+                                        COO
+                                        <br />
+                                        co-founder
+                                    </span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <hr class="b-leader__hr" />
+
+                    <ul class="b-leader__list">
+                        <li class="b-leader__item">
+                            <figure class="b-leader__inner b-leader__inner--team">
+                                <a href="team.html" class="b-leader__link">
+                                    <img src="http://placehold.it/138x138" class="b-leader__img" alt="" />
+                                </a>
+                                <figcaption class="b-leader__entry">
+                                    <a href="team.html" class="b-leader__name">Nataliya Zub</a>
+                                    <span class="b-leader__position">
+                                        Vp.business
+                                        <br />
+                                        development
+                                        <br />
+                                        (USA, Canada)
+                                    </span>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="b-leader__item">
+                            <figure class="b-leader__inner b-leader__inner--team">
+                                <a href="team.html" class="b-leader__link">
+                                    <img src="http://placehold.it/138x138" class="b-leader__img" alt="" />
+                                </a>
+                                <figcaption class="b-leader__entry">
+                                    <a href="team.html" class="b-leader__name">Olga Kremena</a>
+                                    <span class="b-leader__position">
+                                        HR Director
+                                    </span>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="b-leader__item">
+                            <figure class="b-leader__inner b-leader__inner--team">
+                                <a href="team.html" class="b-leader__link">
+                                    <img src="http://placehold.it/138x138" class="b-leader__img" alt="" />
+                                </a>
+                                <figcaption class="b-leader__entry">
+                                    <a href="team.html" class="b-leader__name">Vladimir Morgulov</a>
+                                    <span class="b-leader__position">
+                                        IT Director
+                                    </span>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="b-leader__item">
+                            <figure class="b-leader__inner b-leader__inner--team">
+                                <a href="team.html" class="b-leader__link">
+                                    <img src="http://placehold.it/138x138" class="b-leader__img" alt="" />
+                                </a>
+                                <figcaption class="b-leader__entry">
+                                    <a href="team.html" class="b-leader__name">Iryna Velychko</a>
+                                    <span class="b-leader__position">
+                                        Consultant
+                                    </span>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+                <!--/leaders block-->
+            </div>
+
+            <!--prefooter-->
+            @@include('templates/prefooter.html')
+            
+
+            <!--true footer-->
+            @@include('templates/page-footer.html')
+        </section>
+
+        <!--modals-->
+        <div class="g-hidden">
+            @@include('templates/modals.html')
+        </div>
+        <!--/modals-->
+    </main>
+    <!--/main content-->
+
+    <!--scripts-->
+    @@include('templates/scripts.html')
+</body>
+</html>
