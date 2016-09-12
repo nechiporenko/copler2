@@ -193,7 +193,7 @@
                     <span class="b-hover__title">Our service is for companies which have:</span>
                     <ul class="b-hover__list">
                         <li class="b-hover__item">
-                            <figure class="b-hover__inner b-hover__inner--alt">
+                            <figure class="b-hover__inner hover">
                                 <div class="b-hover__thumb">
                                     <svg viewBox="0 0 80 77.585" class="b-hover__img" version="1.1">
                                         <defs>
@@ -1458,5 +1458,40 @@
         });
     </script>
     <!--/tooltip scripts-->
+    <!--b-hover script-->
+    <script>
+        $(document).ready(function() {
+            var isHoverStarted = false,
+                $hover = $('.b-hover__inner'),
+                method = {};
+
+            $hover.filter(':first').addClass('hover');
+
+            method.initHover = function () {
+                isHoverStarted = true;
+                $hover.on({
+                    mouseenter: function () {
+                        $hover.removeClass('hover');
+                        $(this).addClass('hover');
+                    },
+                    mouseleave: function () {
+                        $(this).removeClass('hover');
+                    }
+                })
+            };
+
+            method.checkWindowSize = function () {
+                var winW = $.viewportW();
+                if (winW >= 1200 && !isHoverStarted) {
+                    method.initHover();
+                    $(window).unbind('resize', method.checkWindowSize);
+                }
+            };
+
+            $(window).bind('resize', method.checkWindowSize);
+            method.checkWindowSize();
+        });
+    </script>
+    <!--/b-hover script-->
 </body>
 </html>

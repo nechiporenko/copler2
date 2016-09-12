@@ -4899,17 +4899,17 @@ a.p-footer__title:hover {
     padding: 3px;
     position: relative;
   }
-  .b-hover__inner:hover, .b-hover__inner.b-hover__inner--alt {
+  .b-hover__inner:hover, .b-hover__inner.hover {
     background: #fff;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 3px 4px 3px rgba(0, 0, 0, 0.12);
   }
-  .b-hover__inner:hover .b-hover__entry, .b-hover__inner.b-hover__inner--alt .b-hover__entry {
+  .b-hover__inner:hover .b-hover__entry, .b-hover__inner.hover .b-hover__entry {
     visibility: visible;
   }
-  .b-hover__inner.b-hover__inner--alt .b-hover__thumb {
+  .b-hover__inner.hover .b-hover__thumb {
     border-color: #6cd3dd;
   }
-  .b-hover__inner.b-hover__inner--alt .b-hover__img .st1 {
+  .b-hover__inner.hover .b-hover__img .st1 {
     fill: #6cd3dd;
   }
   .b-hover__thumb {

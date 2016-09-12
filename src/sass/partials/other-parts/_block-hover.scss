@@ -87,7 +87,7 @@
         position:relative;
 
         &:hover,
-        &.b-hover__inner--alt{
+        &.hover{
             background:#fff;
             box-shadow:0 0 1px 1px rgba(#000, .1), 0 3px 4px 3px rgba(#000, .12);
 
@@ -96,7 +96,7 @@
             }
         }
 
-        &.b-hover__inner--alt{
+        &.hover{
             .b-hover__thumb{
                 border-color:$primary;
             }
