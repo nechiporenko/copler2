@@ -7,6 +7,9 @@
     <!--tooltip css-->
     <link href="css/tooltipster.min.css" rel="stylesheet" />
     <!--/tooltip css-->
+    <!--pikaday css-->
+    <link href="css/pikaday.min.css" rel="stylesheet" />
+    <!--/pikaday css-->
 </head>
 <body class="page">
     <!--header-->
@@ -609,11 +612,14 @@
                                 </svg>
                             </div>
                             <figcaption class="b-link__entry">
-                                <span class="g-btn">Request a conversation</span>
+                                
                             </figcaption>
                         </figure>
                     </a>
                     <!--/link-->
+                    <p class="g-text-center">
+                        <button class="g-btn" data-modal="#conversation">Request a conversation</button>
+                    </p>
 
                     <div class="b-ask">
                         <span class="b-ask__title">
@@ -1169,6 +1175,74 @@
                 </div>
             </form>
             <!--/business contact-->
+
+            <!--conversation-->
+            <form class="box-modal box-modal--wide js-form-validate" id="conversation">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner">
+                    <span class="box-modal__title">30 minutes service discussion</span>
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">Your name</label>
+                                <div class="g-validate__inner">
+                                    <input type="text" class="g-input" id="cnv_name" name="cnv_name" placeholder="Your name*" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">Business Email</label>
+                                <div class="g-validate__inner">
+                                    <input type="email" class="g-input" id="cnv_mail" name="cnv_mail" placeholder="Business Email*" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.g-row-->
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-label">Day</label>
+                                <div class="g-validate__inner">
+                                    <input type="text" class="g-input" id="cnv_date" name="cnv_date" placeholder="Date*" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-label">Time</label>
+                                <select class="g-select" id="cnv_time" name="cnv_time">
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div><!--/.g-row-->
+
+                    <label class="g-label">Time are in:</label>
+                    <select class="g-select">
+                        <option value="GMT">GMT - Greenwich, London, Reykjavik</option>
+                        <option value="GMT+1">GMT +1 - Rome, Paris, Berlin, Oslo</option>
+                        <option value="GMT+2">GMT +2 - Kyiv, Minsk, Ankara, Athens</option>
+                        <option value="GMT+3">GMT +3 - Moscow, Addis Ababa, Baghdad</option>
+                        <option value="GMT+4">GMT +4 - Tehran, Baku, Abu Dhabi</option>
+                        <option value="GMT+5">GMT +5 - Dushanbe, Tashkent, Karachi</option>
+                        <option value="GMT+6">GMT +6 - Almaty, Tyumen</option>
+                        <option value="GMT+7">GMT +7 - Novosibirsk, Jakarta, Bangkok</option>
+                    </select>
+                    <button type="submit" class="g-btn">Send data</button>
+                </div>
+            </form>
+            <!--/conversation-->
         </div>
         <!--/modals-->
     </main>
@@ -1192,5 +1266,17 @@
         });
     </script>
     <!--/tooltip scripts-->
+    <!--pikaday scripts-->
+    <script src="js/vendor/moment.min.js"></script>
+    <script src="../dist/js/vendor/pikaday.min.js"></script>
+    <script>
+        var picker = new Pikaday({
+            field: document.getElementById('cnv_date'),
+            format: 'L',
+            minDate: moment().toDate()
+        });
+        picker.setDate(moment().toDate());
+    </script>
+    <!--/pikaday scripts-->
 </body>
 </html>

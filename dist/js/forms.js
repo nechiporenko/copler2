@@ -397,6 +397,41 @@
             checkBusinessForm();
         };
 
+        // правила для формы в модальном окне Conversation
+        //---------------------------------------------------------------------------------------
+        function checkConversationForm() {
+            var conversationFormRules = {
+                rules: {
+                    cnv_name: {
+                        required: true,
+                        minlength: 2,
+                    },
+                    cnv_mail: {
+                        required: true,
+                        email: true,
+                    },
+                    cnv_date: {
+                        required: true,
+                        regex: /\d{1,2}\/\d{1,2}\/\d{4}/
+                    }
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        //
+                        success: function () {
+                            modal.close('#conversation');
+                            modal.showThankYou();
+                        }
+                    });
+                    return false;
+                }
+            };
+            $('#conversation').validate($.extend(commonRules, callbackFormRules));
+        };
+        if ($('#conversation').length) {
+            checkConversationForm();
+        };
+
         //в этой функции используем метод valid - запустить ее последней!
         $('.js-form-validate').each(function () {//если в полях формы есть ошибки валидации - будем блокировать кнопку отправки
             var $form = $(this),
