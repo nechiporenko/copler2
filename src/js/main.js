@@ -213,7 +213,12 @@ jQuery(document).ready(function ($) {
             $header = $('.b-header__container'), //на мобильных когда вернемся на первый экран - прокрутим к началу, чтобы показать лого на первом экране
             isFooterVisible = false,//будем показывать/скрывать футер с кнопками при скролле (скрывать на первой и последней секции)
             isGoogleMapLoad = false,//будем загружать Гугл-карту когда дойдем до последней секции
+            isGoogleMapNeed = false,//будем загружать Гугл-карту только если она есть на странице!
             method = {};
+
+        if ($('#map').length) {
+            isGoogleMapNeed = true;
+        };
 
         method.changeLinkState = function (el) {//находим и подсвечиваем линк в хидере и пейджере
             $menu_link.removeClass('current');
@@ -254,7 +259,7 @@ jQuery(document).ready(function ($) {
             handler: function (direction) {
                 var prev = this.previous();//предыдущая секция
 
-                if (this === this.group.last() && !isGoogleMapLoad) {//когда дошли до последней секции - загрузим карту
+                if (this === this.group.last() && !isGoogleMapLoad && isGoogleMapNeed) {//когда дошли до последней секции - загрузим карту
                     initGoogleMap();
                     isGoogleMapLoad = true;
                 };

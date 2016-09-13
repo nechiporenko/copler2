@@ -1,0 +1,60 @@
+﻿@import "../../../modules/_base.scss";
+/*Partnership page Hero*/
+.page__header--partnership{
+    p{
+        max-width:850px;
+    }
+
+    .g-big-text{
+        font-size:rem(17px);
+        text-transform:none;
+    }
+
+    .g-title,
+    .g-subtitle,
+    p{
+        margin-bottom:$project-line-height/2;
+    }
+
+    @include media($extra-large){
+        .g-big-text{
+            font-size:rem(19px);
+        }
+
+        .g-title,
+        .g-subtitle,
+        p{
+            margin-bottom:$project-line-height;
+        }
+    }
+}
+
+.b-hero__inner--partnership{
+    max-width:500px;
+    background:darken($primary, 10%);
+
+    &:after{
+        padding-top:210*100%/500;
+    }
+
+    .b-hero__img--center{
+        bottom:0;
+        width:(208*100%)/500;
+        max-width:208px;
+    }
+
+    .b-hero__img--left1,
+    .b-hero__img--right1{
+        bottom:25%;
+        width:(72*100%)/500;
+        max-width:72px;
+        
+    }
+    .b-hero__img--left1{
+        margin-left:-30%;
+    }
+    .b-hero__img--right1{
+        margin-left:30%;
+    }
+}
+

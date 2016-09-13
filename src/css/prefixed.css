@@ -6555,6 +6555,69 @@ a.b-leader__name:hover {
   font-size: 1rem;
 }
 
+/*Partnership page Hero*/
+.page__header--partnership p {
+  max-width: 850px;
+}
+
+.page__header--partnership .g-big-text {
+  font-size: 1.0625rem;
+  text-transform: none;
+}
+
+.page__header--partnership .g-title, .page__header--partnership .b-intro__title, .page__header--partnership .b-contacts__title,
+.page__header--partnership .g-subtitle,
+.page__header--partnership .box-modal__title,
+.page__header--partnership .b-tiered__title,
+.page__header--partnership .b-post__title,
+.page__header--partnership p {
+  margin-bottom: 9px;
+}
+
+@media screen and (min-width: 90em) {
+  .page__header--partnership .g-big-text {
+    font-size: 1.1875rem;
+  }
+  .page__header--partnership .g-title, .page__header--partnership .b-intro__title, .page__header--partnership .b-contacts__title,
+  .page__header--partnership .g-subtitle,
+  .page__header--partnership .box-modal__title,
+  .page__header--partnership .b-tiered__title,
+  .page__header--partnership .b-post__title,
+  .page__header--partnership p {
+    margin-bottom: 18px;
+  }
+}
+
+.b-hero__inner--partnership {
+  max-width: 500px;
+  background: #43c7d3;
+}
+
+.b-hero__inner--partnership:after {
+  padding-top: 42%;
+}
+
+.b-hero__inner--partnership .b-hero__img--center {
+  bottom: 0;
+  width: 41.6%;
+  max-width: 208px;
+}
+
+.b-hero__inner--partnership .b-hero__img--left1,
+.b-hero__inner--partnership .b-hero__img--right1 {
+  bottom: 25%;
+  width: 14.4%;
+  max-width: 72px;
+}
+
+.b-hero__inner--partnership .b-hero__img--left1 {
+  margin-left: -30%;
+}
+
+.b-hero__inner--partnership .b-hero__img--right1 {
+  margin-left: 30%;
+}
+
 /*Desktop Font-size fix*/
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .page__content {
