@@ -31,7 +31,6 @@
 
 .b-hero__inner--partnership{
     max-width:500px;
-    background:darken($primary, 10%);
 
     &:after{
         padding-top:210*100%/500;
@@ -45,7 +44,7 @@
 
     .b-hero__img--left1,
     .b-hero__img--right1{
-        bottom:25%;
+        bottom:30%;
         width:(72*100%)/500;
         max-width:72px;
         
@@ -55,6 +54,19 @@
     }
     .b-hero__img--right1{
         margin-left:30%;
+    }
+
+    .b-hero__img--left2{
+        margin-left:-44%;
+        width:(60*100%)/500;
+        max-width:60px;
+        bottom:52%;
+    }
+    .b-hero__img--right2{
+        margin-left:44%;
+        width:(56*100%)/500;
+        max-width:56px;
+        bottom:55%;
     }
 }
 

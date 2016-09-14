@@ -1,0 +1,24 @@
+﻿@import "../../../modules/_base.scss";
+/*Partnership Form*/
+.f-pship{
+    @extend .g-container__inner--medium;
+
+    .g-textarea{
+        min-height:8*$project-line-height;
+    }
+}
+
+$f-gutter:8.75%;
+
+.f-pship__col{
+    @extend .g-column;
+
+    @include media($tablet){
+        width:(100%-$f-gutter)/2;
+        margin-left:$f-gutter;
+
+        &:first-child{
+            margin-left:0;
+        }
+    }
+}

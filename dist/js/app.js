@@ -89,6 +89,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 // Слайдер новостей
 // Список с выпадайками
 // Стилизуем input file field
+// Скролл по странице к нужному id
 // Если браузер не знает о плейсхолдерах в формах
 
 jQuery(document).ready(function ($) {
@@ -681,6 +682,17 @@ jQuery(document).ready(function ($) {
         path_input.trigger('change');
     });
 
+
+    //
+    // Скролл по странице к нужному id
+    //---------------------------------------------------------------------------------------
+    $(document).on('click', '[data-scroll-to-id]', function (e) {
+        e.preventDefault;
+        var id = $(this).data('scroll-to-id');
+        if ($(id).length) {
+            $('html,body').animate({ scrollTop: $(id).offset().top }, 800);
+        }
+    });
    
     //
     // Если браузер не знает о плейсхолдерах в формах

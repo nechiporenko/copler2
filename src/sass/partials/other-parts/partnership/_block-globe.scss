@@ -1,0 +1,131 @@
+﻿@import "../../../modules/_base.scss";
+/*Partership Globe Section*/
+.b-globe{
+    @extend .g-container__inner--medium;
+}
+.b-globe__planet{
+    max-width:316px;
+    margin:2*$project-line-height auto;
+    text-align:center;
+}
+.b-globe__list{
+    @extend .g-clearlist;
+    position:relative;
+}
+.b-globe__item{
+    display:block;
+}
+.b-globe__inner{
+    width:280px;
+    margin:0 auto $project-line-height;
+
+    &:hover{
+        .b-globe__thumb{
+            border-color:$primary;
+        }
+        
+        .st1{
+            fill:$primary;
+        }
+        .st2{
+            stroke:$primary;
+        }
+        .b-globe__arrow{
+            color:$primary;
+        }
+        .b-globe__entry{
+            color:$primary;
+        }
+    }
+}
+.b-globe__thumb{
+    @extend .b-solution__thumb;
+    margin-bottom:$project-line-height;
+}
+.b-globe__arrow{
+    @extend .b-solution__arrow;
+
+    [class^="icon-"], [class*=" icon-"]{
+        margin:0;
+    }
+}
+.b-globe__entry{
+    font-size:rem(24px);
+    text-align:center;
+    text-transform:uppercase;
+    line-height:1;
+    @extend .g-transition;
+    transition-property:color;
+}
+
+.b-globe__img{
+    @extend .b-icon__img;
+    width:auto;
+    max-width:100%;
+}
+
+@include media($tablet){
+    .b-globe__list{
+        height:340px;
+        margin-top:-120px;
+    }
+    .b-globe__inner{
+        margin:0;
+    }
+    .b-globe__item{
+        position:absolute;
+
+        &:nth-child(1){
+            left:0;
+            top:0;
+        }
+
+        &:nth-child(2){
+            top:145px;
+            left:17%;
+            .b-globe__thumb{
+                margin-bottom:$project-line-height/2;
+            }
+            .b-globe__entry{
+                transform:translateX(-90px);
+            }
+            .b-globe__arrow{
+                transform:translate(-18px, -5px);
+                i{
+                    transform:rotate(15deg);
+                }
+            }
+        }
+        &:nth-child(3){
+            top:145px;
+            right:17%;
+            .b-globe__thumb{
+                margin-bottom:$project-line-height/2;
+            }
+            .b-globe__entry{
+                transform:translateX(90px);
+            }
+            .b-globe__arrow{
+                transform:translate(18px, -5px);
+                i{
+                    transform:rotate(-15deg);
+                }
+            }
+        }
+        &:nth-child(4){
+            top:0;
+            right:0;
+        }
+    }
+}
+
+@include media($desktop){
+    .b-globe__item{
+        &:nth-child(1){
+            left:-50px;
+        }
+        &:nth-child(4){
+            right:-50px;
+        }
+    }
+}

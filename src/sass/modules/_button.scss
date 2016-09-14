@@ -70,4 +70,17 @@
     }
 }
 
+.g-btn--alt{
+    border:1px solid #fff;
+    margin-bottom:0;
+    line-height:2*$project-line-height - 2;
+
+    &:hover,
+    &:active,
+    &:focus{
+        background:#fff;
+        color:$primary;
+    }
+}
+
 
