@@ -87,6 +87,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 // Слайдер (головы)
 // Слайдер (вакансии)
 // Слайдер новостей
+// Слайдер партнеров
 // Список с выпадайками
 // Стилизуем input file field
 // Скролл по странице к нужному id
@@ -618,7 +619,89 @@ jQuery(document).ready(function ($) {
 
     if ($('.js-news-slider').length) {
         initNewsSlider();
-    }
+    };
+
+    //
+    // Слайдер партнеров
+    //---------------------------------------------------------------------------------------
+    function initPartnersSlider() {
+        var $slider = $('.js-partner-slider'),
+            rtime, //переменные для пересчета ресайза окна с задержкой delta - будем показывать разное кол-во слайдов на разных разрешениях
+            timeout = false,
+            delta = 200,
+            method = {};
+
+        method.getSliderSettings = function () {
+            var setting,
+                    settings1 = {
+                        maxSlides: 1,
+                        minSlides: 1,
+                    },
+                    settings2 = {
+                        maxSlides: 2,
+                        minSlides: 2,
+                    },
+                    settings3 = {
+                        maxSlides: 3,
+                        minSlides: 3,
+                    },
+                    common = {
+                        slideWidth: 230,
+                        moveSlides: 1,
+                        slideMargin: 65,
+                        auto: false,
+                        infiniteLoop: false,
+                        hideControlOnEnd: true,
+                        useCSS: false,
+                        nextSelector: $('.js-parent-slider-next'),
+                        prevSelector: $('.js-parent-slider-prev'),
+                        nextText: '<i class="icon-right-arrow"></i>&emsp;Next',
+                        prevText: 'Prev&emsp;<i class="icon-left-arrow"></i>',
+                        pager: true,
+                    },
+                    winW = $.viewportW(); //ширина окна
+
+            if (winW < 550) {
+                setting = $.extend(settings1, common);
+            };
+            if (winW >= 550 && winW < 850) {
+                setting = $.extend(settings2, common);
+            };
+            if (winW >= 850) {
+                setting = $.extend(settings3, common);
+            };
+            return setting;
+        };
+
+        method.reloadSliderSettings = function () {
+            $slider.reloadSlider($.extend(method.getSliderSettings(), { startSlide: $slider.getCurrentSlide() }));
+        };
+
+        method.endResize = function () {
+            if (new Date() - rtime < delta) {
+                setTimeout(method.endResize, delta);
+            } else {
+                timeout = false;
+                //ресайз окончен - пересчитываем
+                method.reloadSliderSettings();
+            }
+        };
+
+        method.startResize = function () {
+            rtime = new Date();
+            if (timeout === false) {
+                timeout = true;
+                setTimeout(method.endResize, delta);
+            }
+        };
+
+        //запускаем
+        $slider.bxSlider(method.getSliderSettings());//запускаем слайдер
+        $(window).bind('resize', method.startResize);//пересчитываем кол-во видимых элементов при ресайзе окна с задержкой .2с
+    };
+    if ($('.js-partner-slider').length) {
+        initPartnersSlider();
+    };
 
     //
     // Список с выпадайками

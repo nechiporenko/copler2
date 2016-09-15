@@ -2,4 +2,143 @@
 /*Partner's slider*/
 .b-partner{
     @extend .g-container__inner;
+    position:relative;
+    margin-top:-$project-line-height;
+
+    .bx-wrapper {
+	    .bx-pager,
+	    .bx-controls-auto {
+            bottom: 0;
+	    }
+    }
+}
+.b-partner__list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+    line-height:1;
+}
+
+.b-partner__item{
+    @extend .g-column;
+    padding:10px;//box-shadow;
+    width:230px;
+}
+.b-partner__link{
+    text-decoration:none;
+    color:$text-color;
+}
+.b-partner__inner{
+    @extend .b-news__inner;
+    width:210px;
+    padding:2px;
+    margin:2*$project-line-height auto;
+}
+.b-partner__thumb{
+    @extend .b-news__thumb;
+
+    &:after{
+        padding-top:114*100%/206;
+    }
+}
+.b-partner__img{
+    @extend .b-news__img;
+}
+.b-partner__entry{
+    padding:$project-line-height/2;
+    text-align:center;
+    line-height:1.1428;
+    font-size:rem(14px);
+
+    p{
+        margin:0;
+    }
+}
+.b-partner__info{
+    width:100%;
+    height:86px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+
+    &:before,
+    &:after{//обрежем лишний контент
+        content:'';
+        display:block;
+        position:absolute;
+        left:0; right:0;
+        height:12px;
+    }
+
+    &:before{
+        top:0;
+        @include linear-gradient(to bottom, #fff, rgba(#fff, .15));
+    }
+
+    &:after{
+        bottom:0;
+        @include linear-gradient(to bottom, rgba(#fff, .15), #fff);
+    }
+}
+
+.b-partner__title{
+    display:block;
+    overflow:hidden;
+    margin-bottom:0;
+    font-size:rem(22px);
+    line-height:1;
+    color:$title-color;
+    @extend .g-nowrap;
+}
+
+.b-partner__btn{
+    @extend .g-btn;
+    width:90%;
+    margin-bottom:0;
+}
+
+//slider arrows
+.b-partner__arrow{
+    display:block;
+    width:80px;
+    height:32px;
+    line-height:32px;
+    position:absolute;
+    top:50%;
+    margin-top:-16px;
+    font-size:rem(10px);
+    text-transform:uppercase;
+
+    [class^="icon-"], [class*=" icon-"]{
+        font-size:rem(28px);
+        margin:0;
+        vertical-align:middle;
+        transform:scaleX(1.2);
+    }
+
+    a{
+        display:block;
+        white-space:nowrap;
+        color:#cfcfcf;
+        text-decoration:none;
+
+        &:hover{
+            color:$primary;
+        }
+
+        &.disabled{
+            opacity:.3;
+            color:#cfcfcf;
+        }
+    }
+}
+
+.b-partner__arrow--prev{
+    left:0;
+}
+.b-partner__arrow--next{
+    right:0;
+    text-align:right;
 }
