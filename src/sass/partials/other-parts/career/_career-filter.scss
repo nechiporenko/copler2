@@ -1,0 +1,19 @@
+﻿@import "../../../modules/_base.scss";
+/*Career filter*/
+.b-career-filter{
+    max-width:660px;
+    margin:$project-line-height auto;
+    @extend .g-clearfix;
+}
+.b-career-filter__col{
+    @extend .g-column;
+
+    @include media($small){
+        width:(100%-$grid-gutter)/2;
+        margin-left:$grid-gutter;
+
+        &:first-child{
+            margin-left:0;
+        }    
+    }
+}

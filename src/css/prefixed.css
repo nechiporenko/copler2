@@ -821,7 +821,7 @@ img.g-full-width, img.g-table, img.b-commit__img {
   visibility: hidden;
 }
 
-.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after {
+.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after, .b-career-filter::after {
   clear: both;
   content: "";
   display: block;
@@ -874,7 +874,7 @@ img.g-full-width, img.g-table, img.b-commit__img {
 /*Default Grid*/
 .g-column, .g-col, .b-leader__col, .b-intro__entry,
 .b-intro__form, .b-list__item, .b-feature__item, .p-list__item, .i-list__item, .b-career__item, .b-career__col, .p-footer__column, .b-tier__thumb,
-.b-tier__list, .b-heads__item, .b-news__item, .b-tech__col, .b-zoom__item, .b-commit__col, .b-filter__col, .b-entry__item, .b-leader__item, .b-pship__item, .f-pship__col, .b-partner__item {
+.b-tier__list, .b-heads__item, .b-news__item, .b-tech__col, .b-zoom__item, .b-commit__col, .b-filter__col, .b-entry__item, .b-leader__item, .b-pship__item, .f-pship__col, .b-partner__item, .b-career-filter__col {
   width: 100%;
   float: left;
   box-sizing: border-box;
@@ -7267,6 +7267,22 @@ a.b-leader__name:hover {
   }
   .b-heroslider__xl {
     display: block;
+  }
+}
+
+/*Career filter*/
+.b-career-filter {
+  max-width: 660px;
+  margin: 18px auto;
+}
+
+@media screen and (min-width: 40em) {
+  .b-career-filter__col {
+    width: 48.8211739883%;
+    margin-left: 2.3576520234%;
+  }
+  .b-career-filter__col:first-child {
+    margin-left: 0;
   }
 }
 

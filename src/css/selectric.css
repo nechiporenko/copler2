@@ -161,6 +161,9 @@ margin-bottom:36px;
   background: #F0F0F0;
   color: #555;
 }
+.selectric-items .disabled {
+          display:none;
+}
 /*.selectric-items .disabled {
   filter: alpha(opacity=50);
   opacity: 0.5;
