@@ -237,8 +237,7 @@ hr {
 }
 
 /* Transitions */
-a, button, input[type="button"], input[type="submit"],
-#{$all-text-inputs}, select{
+a, button, input[type="button"], input[type="submit"]{
     transition-property:border-color,color,background-color, box-shadow, transform;
     @extend .g-transition;
 }

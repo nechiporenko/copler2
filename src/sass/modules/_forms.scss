@@ -29,6 +29,8 @@ textarea{
     box-shadow: none;
     font-size:rem(15px);
     box-sizing: border-box;
+    transition-property:border-color,color,background-color, box-shadow;
+    @extend .g-transition;
 
     @include media($large){
         @include font-size(17px);

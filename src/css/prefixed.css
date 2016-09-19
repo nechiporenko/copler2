@@ -525,7 +525,7 @@ ol ul {
   margin: 9px 0 9px 30px;
 }
 
-.g-clearlist, .g-circle-list, .b-rates__list, .b-slider__list, .b-list, .b-feature, .p-list, .b-career__list, .b-pager__list, .f-action, .b-hover__list, .b-tier__list, .b-tiered__titles, .b-heads, .b-news__list, .b-solution, .b-share__list, .l-social, .b-globe__list, .b-pship__list, .b-partner__list {
+.g-clearlist, .g-circle-list, .b-rates__list, .b-slider__list, .b-list, .b-feature, .p-list, .b-career__list, .b-pager__list, .f-action, .b-hover__list, .b-tier__list, .b-tiered__titles, .b-heads, .b-news__list, .b-solution, .b-share__list, .l-social, .b-globe__list, .b-pship__list, .b-partner__list, .b-heroslider__list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -646,8 +646,7 @@ hr {
 }
 
 /* Transitions */
-a, button, input[type="button"], input[type="submit"],
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select {
+a, button, input[type="button"], input[type="submit"] {
   -webkit-transition-property: border-color,color,background-color, box-shadow, -webkit-transform;
           transition-property: border-color,color,background-color, box-shadow, transform;
 }
@@ -786,8 +785,10 @@ img.g-full-width, img.g-table, img.b-commit__img {
   }
 }
 
-.g-transition, a, button, input[type="button"], input[type="submit"],
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select, .g-shadow-hover, .b-news__inner, .b-partner__inner, .b-post, .b-entry__inner, .l-social__link, .h-menu, .b-footer, .prefooter, .f-action__title--border, .f-action__btn--last:after, .b-heads__img .st1, .b-news__img, .b-entry__img, .b-partner__img, .b-link .g-btn, .b-link .b-partner__btn, .b-link__thumb, .b-link__btn, .b-solution__arrow, .b-globe__arrow, .b-pship__arrow, .b-zoom__inner:before, .b-zoom__img, .b-leader__link:after, .b-globe__entry, .b-pship__entry {
+.g-transition, a, button, input[type="button"], input[type="submit"], .g-shadow-hover, .b-news__inner, .b-partner__inner, .b-post, .b-entry__inner, .l-social__link, .g-input, .b-filter__select,
+.b-filter__input,
+.g-select,
+.g-textarea, .h-menu, .b-footer, .prefooter, .f-action__title--border, .f-action__btn--last:after, .b-heads__img .st1, .b-news__img, .b-entry__img, .b-partner__img, .b-link .g-btn, .b-link .b-partner__btn, .b-link__thumb, .b-link__btn, .b-solution__arrow, .b-globe__arrow, .b-pship__arrow, .b-zoom__inner:before, .b-zoom__img, .b-leader__link:after, .b-globe__entry, .b-pship__entry {
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
   -webkit-transition-timing-function: ease-in;
@@ -820,7 +821,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   visibility: hidden;
 }
 
-.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after {
+.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after {
   clear: both;
   content: "";
   display: block;
@@ -1023,6 +1024,8 @@ textarea {
   box-shadow: none;
   font-size: 0.9375rem;
   box-sizing: border-box;
+  -webkit-transition-property: border-color,color,background-color, box-shadow;
+          transition-property: border-color,color,background-color, box-shadow;
 }
 
 @media screen and (min-width: 75em) {
@@ -4490,14 +4493,21 @@ a.p-footer__title:hover {
 }
 
 /*Other page sections*/
-.page__section--alt {
+.page__section--alt, .page__section--has-slider {
   background: #6cd3dd;
   color: #fff;
   min-height: 100%;
 }
 
-.page__section--alt .g-title, .page__section--alt .b-intro__title, .page__section--alt .b-contacts__title, .page__section--alt .g-subtitle, .page__section--alt .box-modal__title, .page__section--alt .b-tiered__title, .page__section--alt .b-post__title {
+.page__section--alt .g-title, .page__section--has-slider .g-title, .page__section--alt .b-intro__title, .page__section--has-slider .b-intro__title, .page__section--alt .b-contacts__title, .page__section--has-slider .b-contacts__title, .page__section--alt .g-subtitle, .page__section--has-slider .g-subtitle, .page__section--alt .box-modal__title, .page__section--has-slider .box-modal__title, .page__section--alt .b-tiered__title, .page__section--has-slider .b-tiered__title, .page__section--alt .b-post__title, .page__section--has-slider .b-post__title {
   color: #fff;
+}
+
+.page__section--has-slider {
+  position: relative;
+  z-index: 100;
+  max-height: 1080px;
+  background: #000;
 }
 
 .page__section--has-bg {
@@ -4594,7 +4604,7 @@ a.p-footer__title:hover {
   line-height: 1;
 }
 
-.page__section--alt .crumbs {
+.page__section--alt .crumbs, .page__section--has-slider .crumbs {
   background: rgba(255, 255, 255, 0.3);
 }
 
@@ -4634,7 +4644,7 @@ a.p-footer__title:hover {
   text-decoration: underline;
 }
 
-.page__section--alt .crumbs__link {
+.page__section--alt .crumbs__link, .page__section--has-slider .crumbs__link {
   color: #fff !important;
 }
 
@@ -7186,6 +7196,78 @@ a.b-leader__name:hover {
 .b-partner__arrow--next {
   right: 0;
   text-align: right;
+}
+
+/*Career page - Hero Slider*/
+.b-heroslider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.b-heroslider .bx-wrapper,
+.b-heroslider .bx-viewport {
+  height: 100% !important;
+}
+
+.b-heroslider .bx-wrapper .bx-pager.bx-default-pager a {
+  background: none;
+}
+
+.b-heroslider .bx-wrapper .bx-pager.bx-default-pager a:hover, .b-heroslider .bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #6cd3dd;
+  box-shadow: none;
+}
+
+@media screen and (min-width: 40em) {
+  .b-heroslider .bx-wrapper .bx-pager {
+    bottom: 36px;
+  }
+}
+
+.b-heroslider__list {
+  height: 100%;
+}
+
+.b-heroslider__item {
+  display: block;
+  height: 100% !important;
+}
+
+.b-heroslider__inner {
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.b-heroslider__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .7;
+}
+
+.b-heroslider__bg--xl {
+  display: none;
+}
+
+@media screen and (min-width: 48em) {
+  .b-heroslider__sm {
+    display: none;
+  }
+  .b-heroslider__xl {
+    display: block;
+  }
 }
 
 /*Desktop Font-size fix*/

@@ -1,0 +1,68 @@
+﻿@import "../../../modules/_base.scss";
+
+/*Career page - Hero Slider*/
+.b-heroslider{
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background:#000;
+    overflow:hidden;
+    z-index:-1;
+
+    .bx-wrapper,
+    .bx-viewport{
+        height:100% !important;
+    }
+
+    .bx-wrapper .bx-pager.bx-default-pager a{
+        background:none;
+
+        &:hover,
+		&.active{
+			background: $primary;
+            box-shadow:none;
+		}
+    }
+
+    @include media($small){
+        .bx-wrapper .bx-pager{
+            bottom:2*$project-line-height;
+        }
+    }
+}
+
+.b-heroslider__list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+    height:100%;
+}
+.b-heroslider__item{
+    display:block;
+    height:100% !important;
+}
+.b-heroslider__inner{
+    height:100%;
+    margin:0;
+    position:relative;
+}
+
+.b-heroslider__bg{
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    opacity:.7;
+}
+
+.b-heroslider__bg--xl{
+    display:none;
+}
+
+@include media($tablet){
+    .b-heroslider__sm{
+        display:none;
+    }
+    .b-heroslider__xl{
+        display:block;
+    }
+}

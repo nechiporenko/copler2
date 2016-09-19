@@ -10,6 +10,14 @@
     }
 }
 
+.page__section--has-slider{
+    @extend .page__section--alt;
+    position:relative;
+    z-index:100;
+    max-height:1080px;
+    background:#000;
+}
+
 .page__section--has-bg{
     background-repeat:no-repeat;
     background-position:left bottom;

@@ -7,6 +7,7 @@
 // Слайдер (вакансии)
 // Слайдер новостей
 // Слайдер партнеров
+// Слайдер HERO (fullpage изображения)
 // Список с выпадайками
 // Стилизуем input file field
 // Скролл по странице к нужному id
@@ -620,6 +621,35 @@ jQuery(document).ready(function ($) {
     };
     if ($('.js-partner-slider').length) {
         initPartnersSlider();
+    };
+
+    //
+    // Слайдер HERO (fullpage изображения)
+    //---------------------------------------------------------------------------------------
+    function initHeroSlider() {
+        var $slider = $('.js-heroslider');
+
+        $slider.bxSlider({
+            controls: false,
+            pager: true,
+            auto: true,
+            mode: 'fade',
+            pause: 7000,
+            autoDelay: 5000,
+            onSliderLoad: loadImages()
+        });
+
+        function loadImages() {
+            $slider.find('.b-heroslider__bg').each(function () {
+                var source = $(this).data('image');
+                if (source != '') {
+                    $(this).css('background-image', 'url(' + source + ')').removeAttr('data-image');
+                }
+            });
+        };
+    };
+    if ($('.js-heroslider').length) {
+        initHeroSlider();
     };
 
     //
