@@ -66,6 +66,7 @@
             <header class="page__header">
                 <h1 class="g-title">Jobs and career at Copler</h1>
                 <p>&nbsp;</p>
+                <button type="button" class="g-btn" data-scroll-to-id="#section03">See our vacancies</button>
             </header>
             
             <!--hero slider-->
@@ -209,20 +210,176 @@
                     <div class="b-career-filter">
                         <div class="b-career-filter__col">
                             <label class="g-visuallyhidden">Choose office location</label>
-                            <select class="g-select js-select">
+                            <select class="g-select js-select" id="filter1">
                                 <option value="label" selected disabled>Choose office location</option>
-                                <option value="Kiev">Kiev</option>
-                                <option value="Dnipropetrovsk">Dnipropetrovsk</option>
+                                <option value="all">All</option>
+                                <option value="ajax/career-kiev.html">Kiev</option>
+                                <option value="ajax/career-dnipro.html">Dnipro</option>
                             </select>
                         </div>
                         <div class="b-career-filter__col">
                             <label class="g-visuallyhidden">Choose field</label>
-                            <select class="g-select js-select">
+                            <select class="g-select js-select" id="filter2">
                                 <option value="label" selected disabled>Choose field</option>
+                                <option value="all">All</option>
+                                <option value="ajax/web-designer.html">Web designer</option>
+                                <option value="ajax/android-developer.html">Android developer</option>
+                                <option value="ajax/frontend-developer.html">Frontend developer</option>
                             </select>
                         </div>
                     </div>
                     <!--/career filter-->
+
+                    <!--b-career-->
+                    <div class="b-career">
+                        <ul class="b-career__list js-career-list">
+                            <li class="b-career__item">
+                                <div class="b-career__inner">
+                                    <div class="b-career__col">
+                                        <figure class="b-career__thumb">
+                                            <img src="img/career/man01.svg" class="b-career__img" alt="Career" />
+                                        </figure>
+                                    </div>
+                                    <div class="b-career__col b-career__col--wide">
+                                        <span class="b-career__title">
+                                            Web designer
+                                        </span>
+                                        <p>
+                                            We are looking for an Android developer to become a core member of our dynamically growing team!<br />
+                                            You will handle the entire development of our Android products. You will work closely with the product owner and design team to determine the product functionality, define the architecture, and implement the high quality internet banking solutions we deliver to our customers
+                                        </p>
+                                        <a href="vacancy.html" class="g-btn g-btn--wide">Read More</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="b-career__item">
+                                <div class="b-career__inner">
+                                    <div class="b-career__col">
+                                        <figure class="b-career__thumb">
+                                            <img src="img/career/man02.svg" class="b-career__img" alt="Career" />
+                                        </figure>
+                                    </div>
+                                    <div class="b-career__col b-career__col--wide">
+                                        <span class="b-career__title">
+                                            Android developer
+                                        </span>
+                                        <p>
+                                            We are looking for an POSITION NAME to become a core member of our dynamically growing team!<br />
+                                            You will handle the entire development of our Android products. You will work closely with the product owner and design team to determine the product functionality, define the architecture, and implement the high quality internet banking solutions we deliver to our customers
+                                        </p>
+                                        <a href="vacancy.html" class="g-btn g-btn--wide">Read More</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="b-career__item">
+                                <div class="b-career__inner">
+                                    <div class="b-career__col">
+                                        <figure class="b-career__thumb">
+                                            <img src="img/career/man03.svg" class="b-career__img" alt="Career" />
+                                        </figure>
+                                    </div>
+                                    <div class="b-career__col b-career__col--wide">
+                                        <span class="b-career__title">
+                                            Frontend developer
+                                        </span>
+                                        <p>
+                                            We are looking for an POSITION NAME to become a core member of our dynamically growing team!<br />
+                                            You will handle the entire development of our Android products. You will work closely with the product owner and design team to determine the product functionality, define the architecture, and implement the high quality internet banking solutions we deliver to our customers
+                                        </p>
+                                        <a href="vacancy.html" class="g-btn g-btn--wide">Read More</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="b-career__item">
+                                <div class="b-career__inner">
+                                    <div class="b-career__col">
+                                        <figure class="b-career__thumb">
+                                            <img src="img/career/man04.svg" class="b-career__img" alt="Career" />
+                                        </figure>
+                                    </div>
+                                    <div class="b-career__col b-career__col--wide">
+                                        <span class="b-career__title">
+                                            Position Name
+                                        </span>
+                                        <p>
+                                            We are looking for an POSITION NAME to become a core member of our dynamically growing team!<br />
+                                            You will handle the entire development of our Android products. You will work closely with the product owner and design team to determine the product functionality, define the architecture, and implement the high quality internet banking solutions we deliver to our customers
+                                        </p>
+                                        <a href="vacancy.html" class="g-btn g-btn--wide">Read More</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="b-career__item">
+                                <div class="b-career__inner">
+                                    <div class="b-career__col">
+                                        <figure class="b-career__thumb">
+                                            <img src="img/career/man05.svg" class="b-career__img" alt="Career" />
+                                        </figure>
+                                    </div>
+                                    <div class="b-career__col b-career__col--wide">
+                                        <span class="b-career__title">
+                                            Another position
+                                        </span>
+                                        <p>
+                                            We are looking for an POSITION NAME to become a core member of our dynamically growing team!<br />
+                                            You will handle the entire development of our Android products. You will work closely with the product owner and design team to determine the product functionality, define the architecture, and implement the high quality internet banking solutions we deliver to our customers
+                                        </p>
+                                        <a href="vacancy.html" class="g-btn g-btn--wide">Read More</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                        <div class="b-career-nav js-career-nav">
+                            <a href="#" class="b-career-nav__btn" data-slide-index="0">
+                                <img src="img/career/man01.svg" class="b-career-nav__img" alt="Career" />
+                            </a>
+                            <a href="#" class="b-career-nav__btn" data-slide-index="1">
+                                <img src="img/career/man02.svg" class="b-career-nav__img" alt="Career" />
+                            </a>
+                            <a href="#" class="b-career-nav__btn" data-slide-index="2">
+                                <img src="img/career/man03.svg" class="b-career-nav__img" alt="Career" />
+                            </a>
+                            <a href="#" class="b-career-nav__btn" data-slide-index="3">
+                                <img src="img/career/man04.svg" class="b-career-nav__img" alt="Career" />
+                            </a>
+                            <a href="#" class="b-career-nav__btn" data-slide-index="4">
+                                <img src="img/career/man05.svg" class="b-career-nav__img" alt="Career" />
+                            </a>
+                        </div>
+                    </div>
+                    <!--/b-career-->
+
+                    <!--search career result-->
+                    <div id="result"></div>
+                    <!--/search career result-->
+
+                    <!--link-->
+                    <a href="mailto:hr@copler.uk" class="b-link">
+                        <figure class="b-link__inner">
+                            <div class="b-link__thumb">
+                                <svg viewBox="0 0 40 40" class="b-link__img" version="1.1">
+                                    <defs>
+                                        <clipPath id="a04">
+                                            <path d="M0 30h30V0H0z" />
+                                        </clipPath>
+                                    </defs>
+                                    <g class="st1" clip-path="url(#a04)" transform="matrix(1.33333 0 0 -1.33333 0 40)">
+                                        <path d="M13.89 20.985c-.236-.283-.354-.74-.354-1.374 0-.55.107-.96.322-1.22.214-.26.523-.39.925-.39.348 0 .784.18 1.307.54v2.47c-.445.27-.832.41-1.16.41-.457 0-.804-.14-1.04-.42" />
+                                        <path d="M19.834 18.187c-.176-.48-.44-.855-.794-1.125-.353-.27-.792-.404-1.315-.404-.387 0-.708.052-.964.158-.25.105-.43.297-.54.574-.55-.383-1.1-.574-1.66-.574-.49 0-.91.115-1.26.346-.34.23-.6.555-.78.975-.18.42-.27.907-.27 1.462 0 .9.22 1.62.667 2.15.44.53 1.057.8 1.846.8.44 0 .893-.14 1.354-.41v.24h1.26V18.3c0-.258.04-.416.13-.474.09-.06.19-.09.3-.09.25 0 .458.09.62.27.166.18.29.43.38.75.088.32.13.684.13 1.09 0 1.28-.33 2.256-.986 2.924-.66.668-1.606 1.002-2.844 1.002-.763 0-1.45-.172-2.07-.516-.617-.343-1.096-.82-1.44-1.43-.34-.613-.51-1.29-.51-2.038 0-.808.166-1.513.496-2.115.33-.6.794-1.06 1.394-1.38.6-.318 1.3-.477 2.105-.477.48 0 .927.017 1.34.053.41.03.84.1 1.29.21l.23-1.06c-.742-.19-1.7-.28-2.87-.28-1.017 0-1.916.2-2.697.61-.78.405-1.39.995-1.82 1.77-.43.77-.65 1.66-.65 2.665 0 .934.224 1.786.67 2.56.445.77 1.068 1.38 1.87 1.82.8.44 1.68.66 2.646.66 1.57 0 2.8-.434 3.685-1.305.888-.87 1.33-2.083 1.33-3.64 0-.66-.086-1.23-.262-1.71M15 30L0 19V0l1.07 1H1v15.92l9.223-7.38L15 14l4.777-4.46L29 16.92V1h-.07L30 0v19z" />
+                                        <path d="M2.537 1l8.475 7.91L15 12.632l3.988-3.722L27.463 1zM28.93 1l-9.153 8.54L15 14l-4.777-4.46L1.07 1 0 0h30z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <figcaption class="b-link__entry">
+                                Haven’t found position you’ve looked for?
+                                <br />
+                                Rush in your CV here: <span class="g-brand-color">hr@copler.uk</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <!--/link-->
                 </div>
             </div>
         </section>
@@ -337,7 +494,7 @@
                             <a href="ideas.html" class="p-footer__title">Ideas</a>
                         </nav>
                         <nav class="p-footer__column">
-                            <a href="index.html#careers" class="p-footer__title" data-scroll-link>Careers</a>
+                            <a href="career.html" class="p-footer__title">Careers</a>
                         </nav>
                         <nav class="p-footer__column">
                             <a href="index.html#contacts" class="p-footer__title" data-scroll-link>Contact us</a>
@@ -540,16 +697,147 @@
     <script src="js/forms.js"></script>
     <!--/scripts-->
 
-    <!--selectric scripts-->
+    <!--active vacancies scripts-->
     <script src="js/vendor/jquery.selectric.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('.js-select').selectric({
-                responsive: true
+            var isSliderLoaded = false; //флаг - запущен ли слайдер вакансий
+            $filter1 = $('#filter1'),
+            $filter2 = $('#filter2'),
+            $page = $('#result'), //в этот блок будем загружать контент
+            selectricOptions = {//опции js-select
+                responsive: true,
+                disableOnMobile: false
+            };
+
+            //слайдер вакансий
+            var careerSlider = (function () {
+                var $slider = $('.js-career-list'),
+                    method = {};
+
+                method.start = function () {//запускаем слайдер
+                    $slider.bxSlider({
+                        controls: true,
+                        nextText: '<i class="icon-arrow-right"></i>',
+                        prevText: '<i class="icon-arrow-left"></i>',
+                        useCSS: false,
+                        pagerCustom: '.js-career-nav',
+                        onSliderLoad: function () {
+                            isSliderLoaded = true;
+                        }
+                    });
+                };
+                method.stop = function () {//выключаем слайдер
+                    $slider.destroySlider();
+                    isSliderLoaded = false;
+                    method.remove();
+                };
+
+                method.remove = function () {//удаляем слайдер со страницы
+                    $('.b-career').remove();
+                }
+                return method;
+            })();
+
+            careerSlider.start(); //запустили слайдер
+
+            //стилизуем select в фильтре
+            $('.js-select').selectric(selectricOptions);
+
+            //отслеживаем изменения значений фильтра1
+            $filter1.on('change', function () {
+                var target1 = $(this).val(), //значение фильтра1
+                    target2 = $filter2.val(), //значение фильтра2
+                    data, content; //после запросов сюда запишем данные (значения фильтра и контент страницы)
+
+                if (target2 === null || target2 === 'all' || target2 === 'label') {
+                    target2 = 'all';
+                };
+
+                if (isSliderLoaded) {//если слайдер работает - выключим и удалим со страницы
+                    careerSlider.stop();
+                };
+
+                console.log('filter1: ' + target1 + ' filter2: ' + target2);
+
+                if (target2 === 'all') {
+                    // ajax-запрос когда значение фильтра2 == 'all'
+                    // data = ...
+
+                    //пока что - тестовый пример
+                    $.get('ajax/filter1.html', function (data) {
+                        reloadFilter($filter2, data);
+                    });
+                    $.get('ajax/career-content1.html', function (content) {
+                        reloadContent(content);
+                    });
+                } else {
+                    // ajax-запрос когда значение фильтра2 != 'all'
+                    // data = ...
+
+                    //пока что - тестовый пример
+                    $.get('ajax/filter2.html', function (data) {
+                        reloadFilter($filter2, data);
+                    });
+                    $.get('ajax/career-content2.html', function (content) {
+                        reloadContent(content);
+                    });
+                };
             });
+
+            //отслеживаем изменения значений фильтра2
+            $filter2.on('change', function () {
+                var target2 = $(this).val(), //значение фильтра2
+                    target1 = $filter1.val(), //значение фильтра1
+                    data, content; //после запросов сюда запишем данные (значения фильтра и контент страницы)
+
+                if (target1 === null || target1 === 'all' || target1 === 'label') {
+                    target1 = 'all';
+                };
+
+                if (isSliderLoaded) {//если слайдер работает - выключим и удалим со страницы
+                    careerSlider.stop();
+                };
+
+                console.log('filter1: ' + target1 + ' filter2: ' + target2);
+
+                if (target1 === 'all') {
+                    // ajax-запрос когда значение фильтра1 == 'all'
+                    // data = ...
+
+                    //пока что - тестовый пример
+                    $.get('ajax/filter3.html', function (data) {
+                        reloadFilter($filter1, data);
+                    });
+                    $.get('ajax/career-content3.html', function (content) {
+                        reloadContent(content);
+                    });
+                } else {
+                    // ajax-запрос когда значение фильтра1 != 'all'
+                    // data = ...
+
+                    //пока что - тестовый пример
+                    $.get('ajax/filter4.html', function (data) {
+                        reloadFilter($filter1, data);
+                    });
+                    $.get('ajax/career-content4.html', function (content) {
+                        reloadContent(content);
+                    });
+                };
+            });
+
+            //хелперы
+            function reloadFilter(filter, data) {//перезагрузим фильтр
+                filter.selectric('destroy').html('').append(data);
+                filter.selectric(selectricOptions);
+            };
+
+            function reloadContent(content) {//перезагрузим контент страницы
+                $page.html('').append(content);
+            };
         });
     </script>
-    <!--/selectric scripts-->
+    <!--/active vacancies scripts-->
 
 </body>
 </html>

@@ -1,0 +1,32 @@
+﻿@import "../../../modules/_base.scss";
+/*Career Result Table*/
+.t-career{
+    @extend .g-full-width;
+
+    th,
+    td {
+      padding: $project-line-height/2 10px;
+      font-size:rem(16px);
+      line-height:1.3;
+    }
+
+    tbody tr:nth-child(2n) td{
+        background:#fff;
+    }
+
+    .g-btn{
+        margin-bottom:0;
+    }
+
+    @include media($desktop){
+        th,
+        td {
+          padding: $project-line-height/2 20px;
+        }
+    }
+}
+
+.t-career__title{
+    font-family:$font-medium;
+    text-transform:uppercase;
+}

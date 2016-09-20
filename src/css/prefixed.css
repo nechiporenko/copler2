@@ -664,7 +664,7 @@ a, button, input[type="button"], input[type="submit"] {
   text-align: right;
 }
 
-img.g-full-width, img.g-table, img.b-commit__img {
+img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
   clear: both;
   display: block;
   width: 100%;
@@ -682,7 +682,7 @@ img.g-full-width, img.g-table, img.b-commit__img {
   margin: 0 0 9px 20px;
 }
 
-.g-full-width, .g-table, .b-commit__img {
+.g-full-width, .g-table, .b-commit__img, .t-career {
   width: 100%;
   box-sizing: border-box;
 }
@@ -7276,6 +7276,10 @@ a.b-leader__name:hover {
   margin: 18px auto;
 }
 
+.b-career-filter + .b-career {
+  margin-top: 18px;
+}
+
 @media screen and (min-width: 40em) {
   .b-career-filter__col {
     width: 48.8211739883%;
@@ -7284,6 +7288,34 @@ a.b-leader__name:hover {
   .b-career-filter__col:first-child {
     margin-left: 0;
   }
+}
+
+/*Career Result Table*/
+.t-career th,
+.t-career td {
+  padding: 9px 10px;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.t-career tbody tr:nth-child(2n) td {
+  background: #fff;
+}
+
+.t-career .g-btn, .t-career .b-partner__btn {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 62em) {
+  .t-career th,
+  .t-career td {
+    padding: 9px 20px;
+  }
+}
+
+.t-career__title {
+  font-family: "ClearSansMedium";
+  text-transform: uppercase;
 }
 
 /*Desktop Font-size fix*/

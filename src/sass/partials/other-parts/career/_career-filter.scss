@@ -4,6 +4,10 @@
     max-width:660px;
     margin:$project-line-height auto;
     @extend .g-clearfix;
+
+    & + .b-career{
+        margin-top:$project-line-height;
+    }
 }
 .b-career-filter__col{
     @extend .g-column;
