@@ -1,0 +1,92 @@
+﻿@import "../../../modules/_base.scss";
+/*Vacancy page*/
+.b-vacancy{
+    max-width:700px;
+    margin:$project-line-height auto;
+    @extend .g-clearfix;
+}
+
+.b-vacancy__thumb{
+    width:160px;
+    height:170px;
+    margin: 0 auto;
+    position:relative;
+
+    &:hover{
+        .st1{
+            opacity:1;
+        }
+    }
+}
+
+.b-vacancy__bg{
+    position:absolute;
+    width:160px;
+    height:auto;
+    top:0; left:0;
+    
+    .st1{
+        @extend .g-transition;
+        transition-property:opacity;
+        opacity:.4;
+        fill:#fff;
+    }
+}
+
+.b-vacancy__img{
+    max-width:80px;
+    height:auto;
+    position:absolute;
+    top:68px; left:68px;
+    transform:translate(-50%, -50%);
+}
+
+.b-vacancy__entry{
+    padding:$project-line-height/2 0;
+
+    p{
+        margin:0;
+    }
+}
+
+.b-vacancy__title{
+    @extend .g-title;
+    font-size:rem(28px);
+    margin:0;
+    text-align:left;
+}
+
+.b-vacancy__meta{
+    list-style-type:none;
+    padding:0;
+    margin:$project-line-height/2 0;
+    font-size:0;
+}
+
+.b-vacancy__item{
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:$project-line-height;
+    font-size:rem(16px);
+    text-transform:uppercase;
+    white-space:nowrap;
+
+    &:last-child{
+        margin-right:0;
+    }
+
+    [class^="icon-"], [class*=" icon-"]{
+        margin-left:0;
+        vertical-align:middle;
+    }
+}
+
+@include media($small){
+    .b-vacancy__thumb{
+        float:left;
+    }
+    .b-vacancy__entry{
+        margin-left:170px;
+        padding:$project-line-height/2 20px;
+    }
+}

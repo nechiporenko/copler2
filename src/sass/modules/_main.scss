@@ -75,6 +75,11 @@ h1, h2, h3, h4, h5, h6, .g-title, .g-subtitle{
     text-align:center;
 }
 
+.g-subtitle--alt{
+    font-family:$font-medium;
+    text-transform:uppercase;
+}
+
 b, strong{
     font-family:$font-bold;
     font-weight:normal;
