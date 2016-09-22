@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Copler - idea single page</title>
+    @@include('templates/head.html')
+</head>
+<body class="page">
+    <!--header-->
+    @@include('templates/header-static.html')
+
+    <!--main content-->
+    <main class="page__content">
+
+        <!--page section-->
+        <section class="page__section">
+            <!--breadcrumbs-->
+            <div class="crumbs">
+                <ol class="crumbs__list">
+                    <li class="crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="index.html" class="crumbs__link" itemprop="url">
+                            <span itemprop="title">Home</span>
+                        </a>
+                    </li>
+                    <li class="crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="ideas.html" class="crumbs__link" itemprop="url">
+                            <span itemprop="title">Ideas</span>
+                        </a>
+                    </li>
+                    <li class="crumbs__item">
+                        Idea Title
+                    </li>
+                </ol>
+            </div>
+            <!--/breadcrumbs-->
+            <header class="page__header">
+                <h1 class="g-title">Idea Title</h1>
+            </header>
+            <div class="g-container">
+                <!--post content-->
+                <article class="b-post">
+                    <div class="b-post__inner">
+                        <figure class="b-post__thumb">
+                            <img src="img/del/post.jpg" class="b-post__img" alt="" />
+                        </figure>
+                        <div class="b-post__entry">
+                            <a href="#" class="b-post__category">ODC</a>
+                            <h2 class="b-post__title">What information we collect</h2>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                            <p>Pellentesque <a href="#">habitant morbi</a> tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            <ul>
+                                <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+                                <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+                                <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+                                <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+                            </ul>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                            <div class="b-post__meta">
+                                By <a href="#">Helen Hlavko</a> <time datetime="2016-05-20">May 20, 2016</time>
+                            </div>
+
+                            <!--share this-->
+                            <div class="b-share">
+                                <span class="b-share__title">Share with:</span>
+                                <ul class="b-share__list">
+                                    <li class="b-share__item">
+                                        <button type="button" class="b-share__btn">
+                                            <i class="icon-facebook"></i>
+                                        </button>
+                                    </li>
+                                    <li class="b-share__item">
+                                        <button type="button" class="b-share__btn">
+                                            <i class="icon-twitter"></i>
+                                        </button>
+                                    </li>
+                                    <li class="b-share__item">
+                                        <button type="button" class="b-share__btn">
+                                            <i class="icon-linkedin"></i>
+                                        </button>
+                                    </li>
+                                    <li class="b-share__item">
+                                        <button type="button" class="b-share__btn">
+                                            <i class="icon-google-plus"></i>
+                                        </button>
+                                    </li>
+                                    <li class="b-share__item">
+                                        <button type="button" class="b-share__btn">
+                                            <i class="icon-mail"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="g-row">
+                                <ul class="b-activity b-activity--medium">
+                                    <li class="b-activity__item">
+                                        <button type="button" class="b-activity__btn">
+                                            <i class="icon-thumb-up"></i>
+                                            305
+                                        </button>
+                                    </li>
+                                    <li class="b-activity__item">
+                                        <span class="b-activity__btn">
+                                            <i class="icon-see"></i>
+                                            487
+                                        </span>
+                                    </li>
+                                    <li class="b-activity__item">
+                                        <span class="b-activity__btn">
+                                            <i class="icon-chat"></i>
+                                            93
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/share this-->
+                        </div>
+                    </div>
+                </article>
+                <!--post content-->
+            </div>
+
+            <!--prefooter-->
+            @@include('templates/prefooter.html')
+            
+
+            <!--true footer-->
+            @@include('templates/page-footer.html')
+        </section>
+
+        <!--modals-->
+        <div class="g-hidden">
+            @@include('templates/modals.html')
+        </div>
+        <!--/modals-->
+    </main>
+    <!--/main content-->
+
+    <!--scripts-->
+    @@include('templates/scripts.html')
+</body>
+</html>

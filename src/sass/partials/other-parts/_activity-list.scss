@@ -1,0 +1,53 @@
+﻿@import "../../modules/_base.scss";
+/*Activity List (post like, comments count)*/
+.b-activity{
+    float:left;
+    list-style-type:none;
+    padding:5px 0;
+    margin:0;
+    line-height:1;
+    overflow:hidden;
+    @extend .g-nowrap;
+    border:1px solid #afafaf;
+    border-radius:2px;
+    font-size:0;
+}
+.b-activity__item{
+    display:inline-block;
+    vertical-align:middle;
+    margin:0 5px;
+    font-size:rem(10px);
+    color:#afafaf;
+}
+
+.b-activity--medium{
+    padding:7px 0;
+
+    .b-activity__item{
+        padding:0 4px;
+        margin:0 0 0 5px;
+        font-size:rem(11px);
+
+        &:first-child{
+            margin-left:0;
+        }
+    }
+}
+
+.b-activity__btn{
+    @extend .g-clearbutton;
+    color:#afafaf;
+    text-decoration:none;
+
+    &:disabled{
+        color:$border-color !important;
+        cursor:default;
+    }
+}
+
+button.b-activity__btn,
+a.b-activity__btn{
+    &:hover{
+        color:$primary;
+    }
+}

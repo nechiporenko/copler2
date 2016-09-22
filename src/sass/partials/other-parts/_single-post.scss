@@ -33,6 +33,29 @@
     font-size:rem(16px);
 }
 
+.b-post__category{
+    @extend .b-post__date;
+    text-decoration:none;
+    text-transform:uppercase;
+
+    &:hover{
+        color:$primary;
+    }
+}
+
+.b-post__meta{
+    margin-bottom:$project-line-height;
+    color: $border-color;
+
+    a{
+        text-decoration:none;
+
+        &:hover{
+            text-decoration:underline;
+        }
+    }
+}
+
 .b-post__title{
     @extend .g-subtitle;
     margin-bottom:15px;

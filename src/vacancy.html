@@ -105,7 +105,7 @@
                     <p>&nbsp;</p>
 
                     <div class="g-text-center">
-                        <button type="button" class="g-btn">Apply for this job</button>
+                        <button type="button" class="g-btn" data-modal="#job">Apply for this job</button>
                     </div>
 
                     <div class="g-row">
@@ -197,6 +197,47 @@
         <!--modals-->
         <div class="g-hidden">
             @@include('templates/modals.html')
+
+            <!--vacancy-->
+            <form class="box-modal js-form-validate" id="job">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner">
+                    <span class="box-modal__title">Apply for the job</span>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your name</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="job_name" name="job_name" placeholder="Your name*" required />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your email</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="job_mail" name="job_mail" placeholder="Email*" required />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your phone</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="job_phone" name="job_phone" placeholder="Phone number" />
+                        </div>
+                    </div>
+                    <div class="g-input-file js-input-file">
+                        <div class="g-input-file__btn">
+                            <i class="icon-attach"></i>
+                            <input type="file" multiple id="job_file" name="job_file">
+                        </div>
+                        <div class="g-input-file__wrapper">
+                            <input type="text" class="g-input-file__path" placeholder="Attach files" />
+                        </div>
+                    </div>
+                    <div class="g-text-center">
+                        <button type="submit" class="g-btn g-btn--wide">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <!--/vacancy-->
         </div>
         <!--/modals-->
     </main>

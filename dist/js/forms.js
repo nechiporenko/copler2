@@ -484,6 +484,41 @@
             checkPartnershipForm();
         };
 
+        // правила для формы в модальном окне на странице Vacancy
+        //---------------------------------------------------------------------------------------
+        function checkJobForm() {
+            var jobFormRules = {//правила валидации для формы Вакансии
+                rules: {
+                    job_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    job_mail: {
+                        required: true,
+                        email: true,
+                    },
+                    job_phone: {
+                        minlength: 8,
+                        regex: /[0-9\-\(\)\s]+/
+                    },
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        //
+                        success: function () {
+                            modal.close('#job');
+                            modal.showThankYou();
+                        }
+                    });
+                    return false;
+                }
+            };
+            $('#job').validate($.extend(commonRules, jobFormRules));
+        };
+        if ($('#job').length) {
+            checkJobForm();
+        };
+
         //в этой функции используем метод valid - запустить ее последней!
         $('.js-form-validate').each(function () {//если в полях формы есть ошибки валидации - будем блокировать кнопку отправки
             var $form = $(this),

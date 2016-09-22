@@ -50,7 +50,7 @@
         position:relative;
         z-index:1;
 
-        &:before{
+        &:before{//для этой страницы покажем бэкграунд в псевдоэлементе
             content:'';
             display:block;
             width:390px;

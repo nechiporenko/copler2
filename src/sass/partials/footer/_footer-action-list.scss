@@ -56,7 +56,7 @@
 .f-action__title{
     display:none;
 
-    @include media($small){
+    @include media($desktop){
         display:inline-block;
     }
 }
@@ -69,7 +69,7 @@
     @extend .g-transition;
     transition-property:border-color;
 
-    @include media($mobile){
+    @include media($desktop){
         display:inline-block;
     }
 }
@@ -83,7 +83,7 @@
     position:relative;
     display:none;
 
-    @include media($desktop){
+    @include media($large){
         display:inline-block;
     }
 }
