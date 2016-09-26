@@ -519,6 +519,40 @@
             checkJobForm();
         };
 
+        // правила для формы добавления комментария на странице Idea
+        //---------------------------------------------------------------------------------------
+        function checkCommentForm() {
+            var commentFormRules = {//правила валидации для формы Вакансии
+                rules: {
+                    cmt_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    cmt_mail: {
+                        required: true,
+                        email: true,
+                    },
+                    cmt_msg: {
+                        required: true,
+                        minlength: 8,
+                    },
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        //
+                        success: function () {
+                            modal.showThankYou();
+                        }
+                    });
+                    return false;
+                }
+            };
+            $('#cmt_form').validate($.extend(commonRules, commentFormRules));
+        };
+        if ($('#cmt_form').length) {
+            checkCommentForm();
+        };
+
         //в этой функции используем метод valid - запустить ее последней!
         $('.js-form-validate').each(function () {//если в полях формы есть ошибки валидации - будем блокировать кнопку отправки
             var $form = $(this),

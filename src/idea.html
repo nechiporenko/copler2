@@ -33,7 +33,7 @@
             </div>
             <!--/breadcrumbs-->
             <header class="page__header">
-                <h1 class="g-title">Idea Title</h1>
+                <span class="g-title">Idea</span>
             </header>
             <div class="g-container">
                 <!--post content-->
@@ -44,7 +44,7 @@
                         </figure>
                         <div class="b-post__entry">
                             <a href="#" class="b-post__category">ODC</a>
-                            <h2 class="b-post__title">What information we collect</h2>
+                            <h1 class="b-post__title">What information we collect</h1>
                             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
                             <p>Pellentesque <a href="#">habitant morbi</a> tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                             <ul>
@@ -115,6 +115,72 @@
                                 </ul>
                             </div>
                             <!--/share this-->
+
+                            <!--comments-->
+                            <div class="b-comment">
+                                <span class="b-comment__title">Add comment</span>
+                                <form class="js-form-validate" id="cmt_form">
+                                    <div class="g-row">
+                                        <div class="g-col g-col--one-third">
+                                            <div class="g-validate">
+                                                <label class="g-visuallyhidden">Name</label>
+                                                <div class="g-validate__inner">
+                                                    <input type="text" class="g-input" name="cmt_name" id="cmt_name" placeholder="Name*" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="g-col g-col--one-third">
+                                            <div class="g-validate">
+                                                <label class="g-visuallyhidden">Email</label>
+                                                <div class="g-validate__inner">
+                                                    <input type="email" class="g-input" name="cmt_mail" id="cmt_mail" placeholder="Email*" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="g-validate">
+                                        <label class="g-visuallyhidden">Message</label>
+                                        <div class="g-validate__inner">
+                                            <textarea class="g-textarea" name="cmt_msg" id="cmt_msg" placeholder="Your message..." required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="g-text-center">
+                                        <button type="submit" class="g-btn">Add comment</button>
+                                    </div>
+                                </form>
+
+                                <span class="b-comment__subtitle">Comments</span>
+                                <figure class="b-comment__item">
+                                    <div class="b-comment__thumb">
+                                        <img src="img/del/avatar.svg" class="b-comment__img" alt="" />
+                                    </div>
+                                    <figcaption class="b-comment__entry">
+                                        <span class="b-comment__author">Katerina Sokolova</span>
+                                        <time class="b-comment__date" datetime="2016-10-23T08:23:11">A few second ago</time>
+                                        <div class="b-comment__msg">
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+
+                                <figure class="b-comment__item">
+                                    <div class="b-comment__thumb">
+                                        <img src="img/del/avatar.svg" class="b-comment__img" alt="" />
+                                    </div>
+                                    <figcaption class="b-comment__entry">
+                                        <span class="b-comment__author">Igor Petrenko</span>
+                                        <time class="b-comment__date" datetime="2016-10-23T01:23:11">7 hours ago</time>
+                                        <div class="b-comment__msg">
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+
+                                <div class="g-text-center">
+                                    <button type="button" class="g-btn">Show more</button>
+                                </div>
+                            </div>
+                            <!--/comments-->
                         </div>
                     </div>
                 </article>

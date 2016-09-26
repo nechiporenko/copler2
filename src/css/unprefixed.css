@@ -761,7 +761,7 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.g-align, .b-slider__wrapper--middle .b-slider__img, .b-list__img, .b-icon__img, .b-hover__img, .b-solution__img, .b-globe__img, .b-pship__img, .b-link__img, .b-rates__img, .b-zoom__img, .b-feature__img, .b-news__icon {
+.g-align, .b-slider__wrapper--middle .b-slider__img, .b-list__img, .b-icon__img, .b-hover__img, .b-solution__img, .b-globe__img, .b-pship__img, .b-link__img, .b-rates__img, .b-zoom__img, .b-feature__img, .b-news__icon, .b-comment__img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -818,7 +818,7 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
   visibility: hidden;
 }
 
-.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--small::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after, .b-career-filter::after, .b-vacancy::after {
+.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--small::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-comment__item::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after, .b-career-filter::after, .b-vacancy::after {
   clear: both;
   content: "";
   display: block;
@@ -6449,7 +6449,7 @@ a.p-footer__title:hover {
   }
 }
 
-/*Activity List (post like, comments count)*/
+/*Activity List (post like, comments count...)*/
 .b-activity {
   float: left;
   list-style-type: none;
@@ -6497,6 +6497,92 @@ a.p-footer__title:hover {
 button.b-activity__btn:hover,
 a.b-activity__btn:hover {
   color: #6cd3dd;
+}
+
+/*Comments*/
+.b-comment {
+  padding-top: 36px;
+}
+
+.b-comment .g-input, .b-comment .b-filter__select, .b-comment
+.b-filter__input,
+.b-comment .g-select {
+  height: 40px;
+}
+
+.b-comment .g-textarea {
+  text-transform: none;
+}
+
+.b-comment .g-btn, .b-comment .b-partner__btn {
+  min-width: 170px;
+}
+
+.b-comment__title, .b-comment__subtitle {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.1;
+}
+
+.b-comment__subtitle {
+  margin-bottom: 18px;
+  border-bottom: 1px solid #ccc;
+  line-height: 1.4;
+}
+
+.b-comment__thumb {
+  height: 42px;
+  width: 42px;
+  margin: 0 auto 9px;
+  position: relative;
+  box-shadow: inset 0 0 1px #555;
+  border-radius: 50%;
+}
+
+.b-comment__img {
+  max-width: 40px;
+}
+
+.b-comment__author {
+  display: block;
+  font-size: 0.9375rem;
+  color: #6cd3dd;
+  text-align: center;
+}
+
+.b-comment__date {
+  display: block;
+  color: #afafaf;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.b-comment__msg {
+  font-size: 0.75rem;
+  line-height: 1.1667;
+}
+
+@media screen and (min-width: 40em) {
+  .b-comment__thumb {
+    float: left;
+    margin: 0;
+  }
+  .b-comment__entry {
+    margin-left: 60px;
+    padding-top: 9px;
+  }
+  .b-comment__author,
+  .b-comment__date {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+  }
+  .b-comment__date:before {
+    content: '•';
+    margin: 0 5px;
+  }
 }
 
 /*Leadership page*/
