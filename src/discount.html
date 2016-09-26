@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Copler - vacancy page</title>
+    @@include('templates/head.html')
+</head>
+<body class="page">
+    <!--header-->
+    @@include('templates/header-static.html')
+
+    <!--main content-->
+    <main class="page__content">
+
+        <!--page section-->
+        <section class="page__section page__section--alt">
+            <!--breadcrumbs-->
+            <div class="crumbs">
+                <ol class="crumbs__list">
+                    <li class="crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="index.html" class="crumbs__link" itemprop="url">
+                            <span itemprop="title">Home</span>
+                        </a>
+                    </li>
+                    <li class="crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="index.html#what-we-do" class="crumbs__link" itemprop="url">
+                            <span itemprop="title">What we do</span>
+                        </a>
+                    </li>
+                    <li class="crumbs__item">
+                        Discount
+                    </li>
+                </ol>
+            </div>
+            <!--/breadcrumbs-->
+
+            <header class="page__header">
+                <h1 class="g-title">Discount</h1>
+                <p>
+                    We appreciate a lot your long-term relationship with us.
+                    <br />
+                    The more people you add to your team and the longer you stay with us, the more you get in return.
+                </p>
+            </header>
+            
+            <div class="g-container">
+                <div class="g-container__inner--small g-text-center">
+                    <img src="img/hero/discount.svg" alt="" />
+                </div>
+            </div>
+            
+        </section>
+
+        <div class="page__section">
+            <div class="g-container">
+                <div class="g-container__inner--medium">
+                    <div class="g-subtitle g-subtitle--alt">
+                        The Loyalty Discount table below shows how your savings add up depending on the number
+                        of consecutive years you have been with us
+                        and the number of employees you hire for your remote team.
+                    </div>
+                    <p>&nbsp;</p>
+                    <figure class="g-text-center">
+                        <img src="img/graph/discount-table.png" alt="" />
+                    </figure>
+                    <p>&nbsp;</p>
+                    <div class="g-big-text g-text-center">
+                        <p>
+                            The more people you have and the longer you are with us the bigger your discount. 
+                            <br />
+                            Take out more projects to maximize your savings today. <a href="#">Get a quote now</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page__section page__section--unset">
+            <!--prefooter-->
+            @@include('templates/prefooter.html')
+
+
+            <!--true footer-->
+            @@include('templates/page-footer.html')
+        </div>
+
+        <!--modals-->
+        <div class="g-hidden">
+            @@include('templates/modals.html')
+        </div>
+        <!--/modals-->
+    </main>
+    <!--/main content-->
+
+    <!--scripts-->
+    @@include('templates/scripts.html')
+</body>
+</html>
