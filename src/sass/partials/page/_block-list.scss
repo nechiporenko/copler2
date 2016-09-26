@@ -233,3 +233,31 @@
     border-radius:8px;
     @include font-size(16px);
 }
+
+
+//версия в 2 колонки
+.b-list--2col{
+    margin-top:2*$project-line-height;
+
+    .b-list__item{
+        @include media($desktop){
+            @include omega-reset(4n);
+            @include span-columns(6);
+            @include omega(2n);
+            padding-top:0;
+            //padding-top:2*$project-line-height;
+
+            /*&:nth-child(2){
+                padding-top:0;
+            }
+
+            .b-list--alt &:nth-child(2){
+                padding-top:2*$project-line-height;
+            }
+            .b-list--alt &:nth-child(3){
+                padding-top:0;
+            }*/
+        }
+    }
+}
+

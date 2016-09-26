@@ -98,8 +98,22 @@ em, i{
 }
 
 .g-big-text{
-    @include font-size(16px);
+    font-size:rem(16px);
     text-transform:uppercase;
+}
+
+.g-big-text--alt{
+    font-size:rem(17px);
+    text-transform:none;
+}
+
+.g-big-text--large{
+    font-size:rem(19px);
+    text-transform:none;
+
+    @include media($extra-large){
+        font-size:rem(21px);
+    }
 }
 
 /* Links */

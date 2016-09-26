@@ -505,6 +505,22 @@ em, i {
   text-transform: uppercase;
 }
 
+.g-big-text--alt {
+  font-size: 1.0625rem;
+  text-transform: none;
+}
+
+.g-big-text--large {
+  font-size: 1.1875rem;
+  text-transform: none;
+}
+
+@media screen and (min-width: 90em) {
+  .g-big-text--large {
+    font-size: 1.3125rem;
+  }
+}
+
 /* Links */
 a {
   color: #6cd3dd;
@@ -2616,6 +2632,45 @@ label.css-radio-label {
   font-size: 1rem;
 }
 
+.b-list--2col {
+  margin-top: 36px;
+}
+
+@media screen and (min-width: 62em) {
+  .b-list--2col .b-list__item {
+    float: left;
+    display: block;
+    margin-right: 2.3576520234%;
+    width: 48.8211739883%;
+    padding-top: 0;
+    /*&:nth-child(2){
+                padding-top:0;
+            }
+
+            .b-list--alt &:nth-child(2){
+                padding-top:2*$project-line-height;
+            }
+            .b-list--alt &:nth-child(3){
+                padding-top:0;
+            }*/
+  }
+  .b-list--2col .b-list__item:nth-child(4n) {
+    margin-right: 2.3576520234%;
+  }
+  .b-list--2col .b-list__item:nth-child(4n+1) {
+    clear: none;
+  }
+  .b-list--2col .b-list__item:last-child {
+    margin-right: 0;
+  }
+  .b-list--2col .b-list__item:nth-child(2n) {
+    margin-right: 0;
+  }
+  .b-list--2col .b-list__item:nth-child(2n+1) {
+    clear: left;
+  }
+}
+
 /*Section 2*/
 @media screen and (min-width: 62em) {
   .b-look {
@@ -4568,6 +4623,10 @@ a.p-footer__title:hover {
     left: 0;
     background: url(../img/bg-vacancy.png) left bottom no-repeat;
     background-size: cover;
+  }
+  .page__section--teach {
+    background-image: url(../img/bg-teach.png);
+    background-position: left 35%;
   }
 }
 

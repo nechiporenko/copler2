@@ -61,6 +61,11 @@
             background-size:cover;
         }
     }
+
+    .page__section--teach{
+        background-image:url(../img/bg-teach.png);
+        background-position:left 35%;
+    }
 }
 
 @include media($large){
