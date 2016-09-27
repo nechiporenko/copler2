@@ -183,10 +183,6 @@
     .g-title{
         margin-bottom:$project-line-height;
     }
-
-    .b-intro__footer .g-container__inner--medium{
-        position:relative;
-    }
 }
 .b-intro__entry,
 .b-intro__form{
@@ -197,9 +193,7 @@
     padding:$project-line-height 0;
 }
 
-.b-intro__inner{
-    //max-width:560px;
-}
+
 
 @include media($desktop){
     .b-intro__entry{
@@ -219,12 +213,17 @@
         }
     }
 
+    .b-intro__footer .g-container__inner--medium{
+        position:relative;
+        height:78px;
+    }
 
     .b-intro__bg{
         position:absolute;
         bottom:0;
         left:0;
         width:100%;
+        margin-top:-78px;
         max-width:738px;
         background-image:url(../img/bg-intro.png);
         background-size:cover;

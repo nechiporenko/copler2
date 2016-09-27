@@ -2210,10 +2210,6 @@ label.css-radio-label {
   margin-bottom: 18px;
 }
 
-.b-intro--has-form .b-intro__footer .g-container__inner--medium, .b-intro--has-form .b-intro__footer .b-leader__subtitle, .b-intro--has-form .b-intro__footer .b-leader__row, .b-intro--has-form .b-intro__footer .b-globe, .b-intro--has-form .b-intro__footer .b-pship, .b-intro--has-form .b-intro__footer .f-pship {
-  position: relative;
-}
-
 .b-intro__form {
   padding: 18px 0;
 }
@@ -2234,11 +2230,16 @@ label.css-radio-label {
     height: 40px;
     font-size: 0.875rem;
   }
+  .b-intro__footer .g-container__inner--medium, .b-intro__footer .b-leader__subtitle, .b-intro__footer .b-leader__row, .b-intro__footer .b-globe, .b-intro__footer .b-pship, .b-intro__footer .f-pship {
+    position: relative;
+    height: 78px;
+  }
   .b-intro__bg {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    margin-top: -78px;
     max-width: 738px;
     background-image: url(../img/bg-intro.png);
     background-size: cover;
