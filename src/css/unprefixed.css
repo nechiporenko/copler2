@@ -546,7 +546,7 @@ ol ul {
   margin: 9px 0 9px 30px;
 }
 
-.g-clearlist, .g-circle-list, .b-rates__list, .b-slider__list, .b-list, .b-feature, .p-list, .b-career__list, .b-pager__list, .f-action, .b-hover__list, .b-tier__list, .b-tiered__titles, .b-heads, .b-news__list, .b-solution, .b-share__list, .l-social, .b-globe__list, .b-pship__list, .b-partner__list, .b-heroslider__list {
+.g-clearlist, .g-circle-list, .b-rates__list, .b-slider__list, .b-list, .b-feature, .p-list, .b-career__list, .b-pager__list, .f-action, .b-hover__list, .b-tier__list, .b-tiered__titles, .b-heads, .b-news__list, .b-solution, .b-share__list, .l-social, .b-globe__list, .b-pship__list, .b-partner__list, .b-heroslider__list, .b-load {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -769,15 +769,15 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
   }
 }
 
-.g-shadow-hover, .b-news__inner, .b-partner__inner, .b-post, .b-entry__inner, .l-social__link {
+.g-shadow-hover, .b-news__inner, .b-partner__inner, .b-post, .b-entry__inner, .l-social__link, .b-load__link {
   transition-property: box-shadow, border-color;
 }
 
-.g-shadow-hover:hover, .b-news__inner:hover, .b-partner__inner:hover, .b-post:hover, .b-entry__inner:hover, .l-social__link:hover {
+.g-shadow-hover:hover, .b-news__inner:hover, .b-partner__inner:hover, .b-post:hover, .b-entry__inner:hover, .l-social__link:hover, .b-load__link:hover {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.g-align, .b-slider__wrapper--middle .b-slider__img, .b-list__img, .b-icon__img, .b-hover__img, .b-solution__img, .b-globe__img, .b-pship__img, .b-link__img, .b-rates__img, .b-zoom__img, .b-feature__img, .b-news__icon, .b-comment__img {
+.g-align, .b-slider__wrapper--middle .b-slider__img, .b-list__img, .b-icon__img, .b-hover__img, .b-solution__img, .b-globe__img, .b-pship__img, .b-link__img, .b-rates__img, .b-zoom__img, .b-load__img, .b-feature__img, .b-news__icon, .b-comment__img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -800,7 +800,7 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
   }
 }
 
-.g-transition, a, button, input[type="button"], input[type="submit"], .g-shadow-hover, .b-news__inner, .b-partner__inner, .b-post, .b-entry__inner, .l-social__link, .g-input, .b-filter__select,
+.g-transition, a, button, input[type="button"], input[type="submit"], .g-shadow-hover, .b-news__inner, .b-partner__inner, .b-post, .b-entry__inner, .l-social__link, .b-load__link, .g-input, .b-filter__select,
 .b-filter__input,
 .g-select,
 .g-textarea, .h-menu, .b-footer, .prefooter, .f-action__title--border, .f-action__btn--last:after, .b-heads__img .st1, .b-news__img, .b-entry__img, .b-partner__img, .b-link .g-btn, .b-link .b-partner__btn, .b-link__thumb, .b-link__btn, .b-solution__arrow, .b-globe__arrow, .b-pship__arrow, .b-zoom__inner:before, .b-zoom__img, .b-leader__link:after, .b-globe__entry, .b-pship__entry, .b-vacancy__bg .st1 {
@@ -809,7 +809,7 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
 }
 
 .g-nowrap, .b-entry__categories, .b-entry__meta, .b-author__name, .b-author__tel,
-.b-author__mail, .b-activity, .b-partner__title {
+.b-author__mail, .b-activity, .b-partner__title, .b-load__filename {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -834,7 +834,7 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
   visibility: hidden;
 }
 
-.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--small::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-comment__item::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after, .b-career-filter::after, .b-vacancy::after {
+.g-clearfix::after, .g-container__inner::after, .g-container__inner--half::after, .g-container__inner--small::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-comment__item::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after, .b-career-filter::after, .b-vacancy::after, .b-load::after {
   clear: both;
   content: "";
   display: block;
@@ -891,7 +891,7 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
 /*Default Grid*/
 .g-column, .g-col, .b-leader__col, .b-intro__entry,
 .b-intro__form, .b-list__item, .b-feature__item, .p-list__item, .i-list__item, .b-career__item, .b-career__col, .p-footer__column, .b-tier__thumb,
-.b-tier__list, .b-heads__item, .b-news__item, .b-tech__col, .b-zoom__item, .b-commit__col, .b-filter__col, .b-entry__item, .b-leader__item, .b-pship__item, .f-pship__col, .b-partner__item, .b-career-filter__col {
+.b-tier__list, .b-heads__item, .b-news__item, .b-tech__col, .b-zoom__item, .b-commit__col, .b-filter__col, .b-entry__item, .b-leader__item, .b-pship__item, .f-pship__col, .b-partner__item, .b-career-filter__col, .b-load__item {
   width: 100%;
   float: left;
   box-sizing: border-box;
@@ -2420,11 +2420,11 @@ label.css-radio-label {
   transform: translateY(-10px);
 }
 
-.b-list__item:hover .b-list__img .st1, .b-list__item:hover .b-icon__img .st1, .b-list__item:hover .b-hover__img .st1, .b-list__item:hover .b-solution__img .st1, .b-list__item:hover .b-globe__img .st1, .b-list__item:hover .b-pship__img .st1, .b-list__item:hover .b-link__img .st1, .b-list__item:hover .b-rates__img .st1, .b-list__item:hover .b-zoom__img .st1, .b-list__item.active .b-list__img .st1, .b-list__item.active .b-icon__img .st1, .b-list__item.active .b-hover__img .st1, .b-list__item.active .b-solution__img .st1, .b-list__item.active .b-globe__img .st1, .b-list__item.active .b-pship__img .st1, .b-list__item.active .b-link__img .st1, .b-list__item.active .b-rates__img .st1, .b-list__item.active .b-zoom__img .st1 {
+.b-list__item:hover .b-list__img .st1, .b-list__item:hover .b-icon__img .st1, .b-list__item:hover .b-hover__img .st1, .b-list__item:hover .b-solution__img .st1, .b-list__item:hover .b-globe__img .st1, .b-list__item:hover .b-pship__img .st1, .b-list__item:hover .b-link__img .st1, .b-list__item:hover .b-rates__img .st1, .b-list__item:hover .b-zoom__img .st1, .b-list__item:hover .b-load__img .st1, .b-list__item.active .b-list__img .st1, .b-list__item.active .b-icon__img .st1, .b-list__item.active .b-hover__img .st1, .b-list__item.active .b-solution__img .st1, .b-list__item.active .b-globe__img .st1, .b-list__item.active .b-pship__img .st1, .b-list__item.active .b-link__img .st1, .b-list__item.active .b-rates__img .st1, .b-list__item.active .b-zoom__img .st1, .b-list__item.active .b-load__img .st1 {
   fill: #6cd3dd;
 }
 
-.b-list__item:hover .b-list__img .st2, .b-list__item:hover .b-icon__img .st2, .b-list__item:hover .b-hover__img .st2, .b-list__item:hover .b-solution__img .st2, .b-list__item:hover .b-globe__img .st2, .b-list__item:hover .b-pship__img .st2, .b-list__item:hover .b-link__img .st2, .b-list__item:hover .b-rates__img .st2, .b-list__item:hover .b-zoom__img .st2, .b-list__item.active .b-list__img .st2, .b-list__item.active .b-icon__img .st2, .b-list__item.active .b-hover__img .st2, .b-list__item.active .b-solution__img .st2, .b-list__item.active .b-globe__img .st2, .b-list__item.active .b-pship__img .st2, .b-list__item.active .b-link__img .st2, .b-list__item.active .b-rates__img .st2, .b-list__item.active .b-zoom__img .st2 {
+.b-list__item:hover .b-list__img .st2, .b-list__item:hover .b-icon__img .st2, .b-list__item:hover .b-hover__img .st2, .b-list__item:hover .b-solution__img .st2, .b-list__item:hover .b-globe__img .st2, .b-list__item:hover .b-pship__img .st2, .b-list__item:hover .b-link__img .st2, .b-list__item:hover .b-rates__img .st2, .b-list__item:hover .b-zoom__img .st2, .b-list__item:hover .b-load__img .st2, .b-list__item.active .b-list__img .st2, .b-list__item.active .b-icon__img .st2, .b-list__item.active .b-hover__img .st2, .b-list__item.active .b-solution__img .st2, .b-list__item.active .b-globe__img .st2, .b-list__item.active .b-pship__img .st2, .b-list__item.active .b-link__img .st2, .b-list__item.active .b-rates__img .st2, .b-list__item.active .b-zoom__img .st2, .b-list__item.active .b-load__img .st2 {
   stroke: #6cd3dd;
 }
 
@@ -2509,19 +2509,19 @@ label.css-radio-label {
   transition-property: border-color, transform;
 }
 
-.b-list__img path, .b-icon__img path, .b-hover__img path, .b-solution__img path, .b-globe__img path, .b-pship__img path, .b-link__img path, .b-rates__img path, .b-zoom__img path {
+.b-list__img path, .b-icon__img path, .b-hover__img path, .b-solution__img path, .b-globe__img path, .b-pship__img path, .b-link__img path, .b-rates__img path, .b-zoom__img path, .b-load__img path {
   transition-property: fill, stroke;
 }
 
-.b-list__img .st0, .b-icon__img .st0, .b-hover__img .st0, .b-solution__img .st0, .b-globe__img .st0, .b-pship__img .st0, .b-link__img .st0, .b-rates__img .st0, .b-zoom__img .st0 {
+.b-list__img .st0, .b-icon__img .st0, .b-hover__img .st0, .b-solution__img .st0, .b-globe__img .st0, .b-pship__img .st0, .b-link__img .st0, .b-rates__img .st0, .b-zoom__img .st0, .b-load__img .st0 {
   fill: none;
 }
 
-.b-list__img .st1, .b-icon__img .st1, .b-hover__img .st1, .b-solution__img .st1, .b-globe__img .st1, .b-pship__img .st1, .b-link__img .st1, .b-rates__img .st1, .b-zoom__img .st1 {
+.b-list__img .st1, .b-icon__img .st1, .b-hover__img .st1, .b-solution__img .st1, .b-globe__img .st1, .b-pship__img .st1, .b-link__img .st1, .b-rates__img .st1, .b-zoom__img .st1, .b-load__img .st1 {
   fill: #afafaf;
 }
 
-.b-list__img .st2, .b-icon__img .st2, .b-hover__img .st2, .b-solution__img .st2, .b-globe__img .st2, .b-pship__img .st2, .b-link__img .st2, .b-rates__img .st2, .b-zoom__img .st2 {
+.b-list__img .st2, .b-icon__img .st2, .b-hover__img .st2, .b-solution__img .st2, .b-globe__img .st2, .b-pship__img .st2, .b-link__img .st2, .b-rates__img .st2, .b-zoom__img .st2, .b-load__img .st2 {
   stroke: #afafaf;
 }
 
@@ -2548,7 +2548,7 @@ label.css-radio-label {
 }
 
 .b-list__icon, .b-icon__thumb, .b-hover__thumb, .b-solution__thumb, .b-globe__thumb, .b-pship__thumb,
-.b-list__img path, .b-icon__img path, .b-hover__img path, .b-solution__img path, .b-globe__img path, .b-pship__img path, .b-link__img path, .b-rates__img path, .b-zoom__img path,
+.b-list__img path, .b-icon__img path, .b-hover__img path, .b-solution__img path, .b-globe__img path, .b-pship__img path, .b-link__img path, .b-rates__img path, .b-zoom__img path, .b-load__img path,
 .b-list__title,
 .b-list__label {
   transition-timing-function: ease;
@@ -7722,6 +7722,143 @@ a.b-leader__name:hover {
     margin-left: 170px;
     padding: 9px 20px;
   }
+}
+
+/*Download link's list*/
+@media screen and (min-width: 40em) {
+  .b-load__item {
+    float: left;
+    display: block;
+    margin-right: 2.3576520234%;
+    width: 48.8211739883%;
+  }
+  .b-load__item:last-child {
+    margin-right: 0;
+  }
+  .b-load__item:nth-child(2n) {
+    margin-right: 0;
+  }
+  .b-load__item:nth-child(2n+1) {
+    clear: left;
+  }
+}
+
+.b-load__link {
+  display: block;
+  padding: 3px;
+  width: 100%;
+  max-width: 306px;
+  margin: 18px auto;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background: #fff;
+  box-sizing: border-box;
+  font-family: "ClearSansMedium";
+  color: #555;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1;
+}
+
+.b-load__inner {
+  margin: 0;
+  border: 1px solid #f0f1f1;
+}
+
+.b-load__header {
+  height: 178px;
+  padding: 8px;
+  background: #f0f1f1;
+  box-sizing: border-box;
+}
+
+.b-load__title, .b-load__subtitle, .b-load__info {
+  width: 100%;
+  height: 38px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  line-height: 1.1;
+}
+
+.b-load__name {
+  font-size: 1.25rem;
+  color: #6cd3dd;
+  text-transform: uppercase;
+}
+
+.b-load__thumb {
+  height: 100px;
+  width: 100px;
+  margin: 8px auto;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.b-load__thumb:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #6cd3dd;
+  border-radius: 50%;
+}
+
+.b-load__img .st1 {
+  fill: #6cd3dd;
+}
+
+.b-load__img .st2 {
+  stroke: #6cd3dd;
+}
+
+.b-load__entry {
+  padding: 8px;
+}
+
+.b-load__subtitle, .b-load__info {
+  height: 78px;
+  margin-bottom: 9px;
+  line-height: 1.2;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.b-load__subtitle p, .b-load__info p {
+  margin: 0;
+}
+
+.b-load__icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+  margin: 0 auto 9px;
+  border-radius: 50%;
+  background: #6cd3dd;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+.b-load__filename {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 0.875rem;
+  overflow: hidden;
+}
+
+.b-load__info {
+  height: 130px;
+  margin-bottom: 0;
+  line-height: 1;
+  text-transform: none;
+  font-size: 1rem;
+  font-family: "ClearSansRegular";
 }
 
 /*Desktop Font-size fix*/
