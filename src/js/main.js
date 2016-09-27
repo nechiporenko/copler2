@@ -19,22 +19,22 @@ jQuery(document).ready(function ($) {
     //---------------------------------------------------------------------------------------
     (function () {
         var $header = $('.js-header'),
-            isHeaderVisible = false,//флаг состояния
+            //isHeaderVisible = false,//флаг состояния
             isScrollerVisible = false,
             $scroller = $('<button type="button" class="scroll-up-btn"><i class="icon-up"></i></button>'),
             method = {};
 
         $('body').append($scroller);
 
-        method.showHeader = function () {
-            $header.addClass('visible');
-            isHeaderVisible = true;
-        };
+        //method.showHeader = function () {
+        //    $header.addClass('visible');
+        //    isHeaderVisible = true;
+        //};
 
-        method.hideHeader = function () {
-            $header.removeClass('visible');
-            isHeaderVisible = false;
-        };
+        //method.hideHeader = function () {
+        //    $header.removeClass('visible');
+        //    isHeaderVisible = false;
+        //};
 
         method.showScroller = function () {
             $scroller.show();
@@ -48,11 +48,11 @@ jQuery(document).ready(function ($) {
 
         method.checkState = function () {
             var fromTop = $.scrollY();//
-            if (fromTop >= 100 && !isHeaderVisible) {
-                method.showHeader();
-            } else if (fromTop < 100 && isHeaderVisible) {
-                method.hideHeader();
-            };
+            //if (fromTop >= 100 && !isHeaderVisible) {
+            //    method.showHeader();
+            //} else if (fromTop < 100 && isHeaderVisible) {
+            //    method.hideHeader();
+            //};
 
             if (fromTop >= 500 && !isScrollerVisible) {
                 method.showScroller();

@@ -43,7 +43,7 @@
             </header>
             <p>&nbsp;</p>
             <div class="g-container">
-                <figure class="g-container__inner--small g-text-center">
+                <figure class="g-container__inner--half g-text-center">
                     <img src="img/hero/teach.svg" alt="" />
                 </figure>
             </div>
@@ -108,7 +108,7 @@
                                         <br />
                                         “How to” questions
                                     </p>
-                                    <button type="button" class="g-btn">Contact Technical Support</button>
+                                    <button type="button" class="g-btn" data-modal="#cts_form">Contact Technical Support</button>
                                 </figcaption>
                             </figure>
                         </li>
@@ -146,7 +146,7 @@
                                         <br />
                                         Data Entry
                                     </p>
-                                    <button type="button" class="g-btn">Contact Customer Service</button>
+                                    <button type="button" class="g-btn" data-modal="#ccs_form">Contact Customer Service</button>
                                 </figcaption>
                             </figure>
                         </li>
@@ -277,6 +277,125 @@
         <!--modals-->
         <div class="g-hidden">
             @@include('templates/modals.html')
+
+
+            <!--contact technical support-->
+            <form class="box-modal box-modal--wide js-form-validate" id="cts_form">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner">
+                    <span class="box-modal__title">Contact technical support</span>
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">First name</label>
+                                <div class="g-validate__inner">
+                                    <input type="text" class="g-input" id="cts_name" name="cts_name" placeholder="First name*" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">Last name</label>
+                                <div class="g-validate__inner">
+                                    <input type="text" class="g-input" id="cts_surname" name="cts_surname" placeholder="Last name*" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">Email</label>
+                                <div class="g-validate__inner">
+                                    <input type="email" class="g-input" id="cts_mail" name="cts_mail" placeholder="Email*" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">Company name</label>
+                                <div class="g-validate__inner">
+                                    <input type="text" class="g-input" id="cts_company" name="cts_company" placeholder="Company name*" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">What can we help you with?</label>
+                        <div class="g-validate__inner">
+                            <textarea class="g-textarea" id="cts_msg" name="cts_msg" placeholder="What can we help you with?*" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="g-text-center">
+                        <button type="submit" class="g-btn">Create request</button>
+                        <p>&nbsp;</p>
+                        <div>You Can Also Call Us At&emsp;<a href="tel:+17185093086">+1 718 509 3086</a></div>
+                    </div>
+                </div>
+            </form>
+            <!--contact technical support-->
+
+            <!--contact customer service-->
+            <form class="box-modal box-modal--wide js-form-validate" id="ccs_form">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner">
+                    <span class="box-modal__title">Contact customer service</span>
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">First name</label>
+                                <div class="g-validate__inner">
+                                    <input type="text" class="g-input" id="ccs_name" name="ccs_name" placeholder="First name*" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">Last name</label>
+                                <div class="g-validate__inner">
+                                    <input type="text" class="g-input" id="ccs_surname" name="ccs_surname" placeholder="Last name*" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">Email</label>
+                                <div class="g-validate__inner">
+                                    <input type="email" class="g-input" id="ccs_mail" name="ccs_mail" placeholder="Email*" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <div class="g-validate">
+                                <label class="g-visuallyhidden">Company name</label>
+                                <div class="g-validate__inner">
+                                    <input type="text" class="g-input" id="ccs_company" name="ccs_company" placeholder="Company name*" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">What can we help you with?</label>
+                        <div class="g-validate__inner">
+                            <textarea class="g-textarea" id="ccs_msg" name="ccs_msg" placeholder="What can we help you with?*" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="g-text-center">
+                        <button type="submit" class="g-btn">Create request</button>
+                        <p>&nbsp;</p>
+                        <div>You Can Also Call Us At&emsp;<a href="tel:+17185093086">+1 718 509 3086</a></div>
+                    </div>
+                </div>
+            </form>
+            <!--/contact customer service-->
         </div>
         <!--/modals-->
     </main>

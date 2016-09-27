@@ -2200,34 +2200,46 @@ label.css-radio-label {
 }
 
 .b-intro--has-form {
+  padding-top: 130px;
   position: relative;
   z-index: 1;
+  background: none;
+}
+
+.b-intro--has-form .g-title, .b-intro--has-form .b-intro__title, .b-intro--has-form .b-contacts__title, .b-intro--has-form .b-vacancy__title {
+  margin-bottom: 18px;
+}
+
+.b-intro--has-form .b-intro__footer .g-container__inner--medium, .b-intro--has-form .b-intro__footer .b-leader__subtitle, .b-intro--has-form .b-intro__footer .b-leader__row, .b-intro--has-form .b-intro__footer .b-globe, .b-intro--has-form .b-intro__footer .b-pship, .b-intro--has-form .b-intro__footer .f-pship {
+  position: relative;
 }
 
 .b-intro__form {
-  padding: 36px 0;
-}
-
-.b-intro__inner {
-  max-width: 560px;
+  padding: 18px 0;
 }
 
 @media screen and (min-width: 62em) {
   .b-intro__entry {
-    width: 57.6423479766%;
+    width: 52.6423479766%;
     margin-right: 2.3576520234%;
-    padding-left: 15px;
+  }
+  .b-intro__entry .g-big-text {
+    max-width: 320px;
   }
   .b-intro__form {
-    width: 40%;
-    padding-right: 20px;
+    width: 45%;
+  }
+  .b-intro__form .g-input, .b-intro__form .b-filter__select, .b-intro__form
+  .b-filter__input {
+    height: 40px;
+    font-size: 0.875rem;
   }
   .b-intro__bg {
     position: absolute;
     bottom: 0;
-    left: 10px;
-    width: 58%;
-    max-width: 1130px;
+    left: 0;
+    width: 100%;
+    max-width: 738px;
     background-image: url(../img/bg-intro.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -2236,7 +2248,14 @@ label.css-radio-label {
   .b-intro__bg:after {
     content: '';
     display: block;
-    padding-top: 75.4867256637%;
+    padding-top: 63.6856368564%;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .b-intro__form .g-input, .b-intro__form .b-filter__select, .b-intro__form
+  .b-filter__input {
+    height: 45px;
   }
 }
 
@@ -7680,7 +7699,7 @@ a.b-leader__name:hover {
     margin-bottom: 15px;
   }
   .b-intro--has-form {
-    padding-top: 80px;
+    padding-top: 130px;
   }
   .b-intro--card {
     padding-top: 77px;

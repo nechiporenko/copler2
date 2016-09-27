@@ -173,11 +173,20 @@
 }
 
 
-//модификация - секция без слайдера, но с формой
+//модификация - секция без слайдера (с формой)
 .b-intro--has-form{
+    padding-top:130px;
     position:relative;
     z-index:1;
-    //background:none;
+    background:none;
+
+    .g-title{
+        margin-bottom:$project-line-height;
+    }
+
+    .b-intro__footer .g-container__inner--medium{
+        position:relative;
+    }
 }
 .b-intro__entry,
 .b-intro__form{
@@ -185,31 +194,38 @@
 }
 
 .b-intro__form{
-    padding:2*$project-line-height 0;
+    padding:$project-line-height 0;
 }
 
 .b-intro__inner{
-    max-width:560px;
+    //max-width:560px;
 }
 
 @include media($desktop){
     .b-intro__entry{
-        width:1*(60% - $grid-gutter);
+        width:1*(55% - $grid-gutter);
         margin-right:$grid-gutter;
-        padding-left:15px;
+
+        .g-big-text{
+            max-width:320px;
+        }
     }
     .b-intro__form{
-        width:40%;
-        padding-right:20px;
+        width:45%;
+
+        .g-input{
+            height:40px;
+            font-size:rem(14px);
+        }
     }
 
 
     .b-intro__bg{
         position:absolute;
         bottom:0;
-        left:10px;
-        width:58%;
-        max-width:1130px;
+        left:0;
+        width:100%;
+        max-width:738px;
         background-image:url(../img/bg-intro.png);
         background-size:cover;
         background-repeat:no-repeat;
@@ -218,7 +234,15 @@
         &:after{
             content:'';
             display:block;
-            padding-top:(853*100%)/1130;
+            padding-top:(470*100%)/738;
+        }
+    }
+}
+
+@include media($extra-large){
+    .b-intro__form{
+        .g-input{
+            height:45px;
         }
     }
 }

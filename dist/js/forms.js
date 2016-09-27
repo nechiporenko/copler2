@@ -553,6 +553,92 @@
             checkCommentForm();
         };
 
+        // правила для формы в модальном окне CONTACT TECHNICAL SUPPORT
+        //---------------------------------------------------------------------------------------
+        function checkCTSForm() {
+            var formRules = {
+                rules: {
+                    cts_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    cts_surname: {
+                        required: true,
+                        minlength: 2
+                    },
+                    cts_mail: {
+                        required: true,
+                        email: true,
+                    },
+                    cts_company: {
+                        required: true,
+                        minlength: 2,
+                    },
+                    cts_msg: {
+                        required: true,
+                        minlength: 8,
+                    }
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        //
+                        success: function () {
+                            modal.close('#cts_form');
+                            modal.showThankYou();
+                        }
+                    });
+                    return false;
+                }
+            }
+            $('#cts_form').validate($.extend(commonRules, formRules));
+        };
+        if ($('#cts_form').length) {
+            checkCTSForm();
+        };
+
+        // правила для формы в модальном окне CONTACT CUSTOMER SERVICE
+        //---------------------------------------------------------------------------------------
+        function checkCCSForm() {
+            var formRules = {
+                rules: {
+                    ccs_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    ccs_surname: {
+                        required: true,
+                        minlength: 2
+                    },
+                    ccs_mail: {
+                        required: true,
+                        email: true,
+                    },
+                    ccs_company: {
+                        required: true,
+                        minlength: 2,
+                    },
+                    ccs_msg: {
+                        required: true,
+                        minlength: 8,
+                    }
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        //
+                        success: function () {
+                            modal.close('#ccs_form');
+                            modal.showThankYou();
+                        }
+                    });
+                    return false;
+                }
+            }
+            $('#ccs_form').validate($.extend(commonRules, formRules));
+        };
+        if ($('#ccs_form').length) {
+            checkCCSForm();
+        };
+
         //в этой функции используем метод valid - запустить ее последней!
         $('.js-form-validate').each(function () {//если в полях формы есть ошибки валидации - будем блокировать кнопку отправки
             var $form = $(this),
