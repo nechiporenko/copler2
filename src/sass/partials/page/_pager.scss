@@ -6,12 +6,14 @@
     z-index:900;
     display:none;
 
-    @include media($wide){
-        right:50px;
-    }
+    
 
     @include media($desktop){
         display:block;
+    }
+
+    @include media($wide){
+        right:50px;
     }
 }
 

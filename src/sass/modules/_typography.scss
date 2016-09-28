@@ -44,11 +44,11 @@
 /*Icon font*/
 @font-face {
     font-family: 'icomoon';
-    src:    url('../fonts/icomoon/icomoon.eot?964w4x');
-    src:    url('../fonts/icomoon/icomoon.eot?964w4x#iefix') format('embedded-opentype'),
-        url('../fonts/icomoon/icomoon.ttf?964w4x') format('truetype'),
-        url('../fonts/icomoon/icomoon.woff?964w4x') format('woff'),
-        url('../fonts/icomoon/icomoon.svg?964w4x#icomoon') format('svg');
+    src:    url('../fonts/icomoon/icomoon.eot?w5f9ty');
+    src:    url('../fonts/icomoon/icomoon.eot?w5f9ty#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon/icomoon.ttf?w5f9ty') format('truetype'),
+        url('../fonts/icomoon/icomoon.woff?w5f9ty') format('woff'),
+        url('../fonts/icomoon/icomoon.svg?w5f9ty#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -73,7 +73,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-bullet:before {
+  content: "\e923";
+}
 .icon-flag:before {
   content: "\e921";
 }

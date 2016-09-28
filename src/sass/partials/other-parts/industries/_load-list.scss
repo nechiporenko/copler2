@@ -32,18 +32,46 @@ $b-load-color:#f0f1f1;
     text-decoration:none;
     text-align:center;
     line-height:1;
+
+    &:hover{
+        .b-load__inner{
+            border-color:$primary;
+        }
+
+        .b-load__header{
+            background-color:$primary;
+        }
+        .b-load__name{
+            color:#fff;
+        }
+        .b-load__thumb{
+            &:after{
+                top:3px;
+                left:3px;
+                right:3px;
+                bottom:3px;
+            }
+        }
+        .b-load__icon{
+            transform:translateY(5px);
+        }
+    }
 }
 
 .b-load__inner{
     margin:0;
     border:1px solid $b-load-color;
+    @extend .g-transition;
+    transition-property:border-color;
 }
 
 .b-load__header{
     height:178px;
     padding:8px;
-    background:$b-load-color;
+    background-color:$b-load-color;
     box-sizing:border-box;
+    @extend .g-transition;
+    transition-property:background-color;
 }
 
 .b-load__title{
@@ -61,6 +89,8 @@ $b-load-color:#f0f1f1;
     font-size:rem(20px);
     color:$primary;
     text-transform:uppercase;
+    @extend .g-transition;
+    transition-property:color;
 }
 
 .b-load__thumb{
@@ -76,6 +106,9 @@ $b-load-color:#f0f1f1;
         top:0; left:0; right:0; bottom:0;
         border:2px solid $primary;
         border-radius:50%;
+        @extend .g-transition;
+        transition-property:top, left, right, bottom;
+        transition-timing-function:linear;
     }
 }
 
@@ -115,6 +148,8 @@ $b-load-color:#f0f1f1;
     background:$primary;
     font-size:rem(12px);
     color:#fff;
+    @extend .g-transition;
+    transition-property:transform;
 }
 
 .b-load__filename{
@@ -127,7 +162,7 @@ $b-load-color:#f0f1f1;
 
 .b-load__info{
     @extend .b-load__subtitle;
-    height:130px;
+    height:150px;
     margin-bottom:0;
     line-height:1;
     text-transform:none;

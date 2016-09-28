@@ -245,18 +245,38 @@
             @include span-columns(6);
             @include omega(2n);
             padding-top:0;
-            //padding-top:2*$project-line-height;
+        }
+    }
+}
 
-            /*&:nth-child(2){
-                padding-top:0;
-            }
+//версия в 2 колонки
+.b-list--3col{
+    margin-top:2*$project-line-height;
 
-            .b-list--alt &:nth-child(2){
-                padding-top:2*$project-line-height;
-            }
-            .b-list--alt &:nth-child(3){
-                padding-top:0;
-            }*/
+    .b-list__item{
+        @include media($small){
+            @include omega-reset(2n);
+            @include span-columns(12);
+            @include omega(n);
+        }
+
+        @include media($tablet){
+            @include omega-reset(n);
+            @include span-columns(4);
+            @include omega(3n);
+            padding-top:0;
+        }
+
+        @include media($desktop){
+            @include span-columns(4);
+            @include omega(3n);
+            
+        }
+
+        .g-list{
+            width:100%;
+            max-width:80%;
+            margin:0 auto $project-line-height;
         }
     }
 }

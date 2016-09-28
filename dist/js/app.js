@@ -89,6 +89,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 // Слайдер новостей
 // Слайдер партнеров
 // Слайдер HERO (fullpage изображения)
+// Слайдер результатов (страница Industries)
 // Список с выпадайками
 // Стилизуем input file field
 // Скролл по странице к нужному id
@@ -732,6 +733,63 @@ jQuery(document).ready(function ($) {
     if ($('.js-heroslider').length) {
         initHeroSlider();
     };
+
+    //
+    // Слайдер результатов (страница Industries)
+    //---------------------------------------------------------------------------------------
+    function initResultSlider() {
+        var $slider = $('.js-result-slider'),
+            isImagesLoaded = false,
+            method = {};
+
+        method.loadFirstImage = function (index) {
+            var img = $slider.children('li').eq(index).find('.js-slider-img');
+            method.loadSliderImage(img);
+        };
+
+        method.loadAllImages = function () {
+            $slider.children('li').each(function () {
+                var img = $(this).find('.js-slider-img');
+                if (img.length) {
+                    method.loadSliderImage(img);
+                }
+            });
+            isImagesLoaded = true;
+        };
+
+        method.loadSliderImage = function (el) {
+            var source = el.data('img');
+            if (source != '') {
+                el.attr('src', source);
+                el.removeClass('js-slider-img');
+            };
+        };
+
+        $slider.bxSlider({
+            pager:false,
+            mode: 'fade',
+            auto: false,
+            infiniteLoop: false,
+            hideControlOnEnd: true,
+            nextSelector: $('.js-result-slider-next'),
+            prevSelector: $('.js-result-slider-prev'),
+            nextText: '<i class="icon-right-arrow"></i>&emsp;Next',
+            prevText: 'Prev&emsp;<i class="icon-left-arrow"></i>',
+            onSliderLoad: function (currentIndex) {
+                method.loadFirstImage(currentIndex);
+            },
+            onSlideBefore: function () {
+                if (!isImagesLoaded) {
+                    method.loadAllImages();
+                }
+            }
+        });
+    };
+    if ($('.js-result-slider').length) {
+        initResultSlider();
+    };
+
+
 
     //
     // Список с выпадайками

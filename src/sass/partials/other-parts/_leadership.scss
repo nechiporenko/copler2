@@ -154,6 +154,18 @@ a.b-leader__name{
     }
 }
 
+
+.b-leader__list--2col{
+    max-width:520px;
+    .b-leader__item{
+        @include media($small){
+            @include omega-reset(2n);
+            @include span-columns(6);
+            @include omega(2n);
+        }
+    }
+}
+
 .b-leader__list--3col{
     max-width:700px;
     .b-leader__item{
@@ -245,4 +257,27 @@ a.b-leader__name{
     font-size:rem(16px);
 }
 
+
+.b-leader__mail{
+    @extend .b-share__btn;
+    margin:$project-line-height/2 0;
+}
+
+
+
+//alt 3col (2col) style
+.b-leader__list--alt{
+    .b-leader__thumb,
+    .b-leader__link{
+        @include size(160px);
+    }
+
+    .b-leader__name{
+        font-size:rem(15px);
+        margin-bottom:$project-line-height/2;
+    }
+    .b-leader__position{
+        font-size:rem(13px);
+    }
+}
 

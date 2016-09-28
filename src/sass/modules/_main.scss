@@ -142,6 +142,27 @@ ol ul {
     padding:0;
 }
 
+.g-list{
+    @extend .g-clearlist;
+    padding-left:25px;
+
+    li{
+        margin-bottom:$project-line-height/2;
+        text-align:left;
+        position:relative;
+
+        &:before{
+            content: '\e923';
+            font-family:'icomoon';
+            font-size:rem(8px);
+            color:$primary;
+            position:absolute;
+            top:7px;
+            left:-20px;
+        }
+    }
+}
+
 .g-styled-list{
     list-style-type:none;
     padding:0;

@@ -4,6 +4,7 @@
     background:$primary;
     color:#fff;
     min-height:100%;
+    overflow:hidden;
 
     .g-title, .g-subtitle{
         color:#fff;
@@ -46,25 +47,47 @@
         background-image:url(../img/bg-money.png);
         background-position:left 85%;
     }
-    .page__section--vacancy{
+    .page__section--vacancy,
+    .page__section--industries{
         position:relative;
         z-index:1;
 
-        &:before{//для этой страницы покажем бэкграунд в псевдоэлементе
+        &:before{//для этих страницы покажем бэкграунд в псевдоэлементе
             content:'';
             display:block;
+            position:absolute;
+            left:0;
             width:390px;
             height:560px;
-            position:absolute;
-            bottom:-40px; left:0;
             background:url(../img/bg-vacancy.png) left bottom no-repeat;
             background-size:cover;
+            z-index:-1;
+        }
+    }
+
+    .page__section--vacancy{
+        &:before{
+            bottom:-40px;
+        }
+    }
+
+    .page__section--industries{
+        &:before{
+            bottom:-60px;
         }
     }
 
     .page__section--teach{
         background-image:url(../img/bg-teach.png);
         background-position:left 35%;
+    }
+}
+
+@include media(min-width 1280px max-width 1440px){
+    .page__section--vacancy{
+        &:before{
+            bottom:-120px;
+        }
     }
 }
 

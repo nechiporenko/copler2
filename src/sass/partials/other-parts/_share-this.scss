@@ -44,6 +44,14 @@
         box-shadow:none;
         color:#fff;
     }
+
+    [class^="icon-"], [class*=" icon-"]{
+        margin:0;
+    }
+
+    .icon-mail{
+        transform:translateX(-4px);
+    }
 }
 
 @include media($small){

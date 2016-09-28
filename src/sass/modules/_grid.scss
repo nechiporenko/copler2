@@ -14,6 +14,11 @@
     @extend .g-clearfix;
 }
 
+.g-container__inner--xs{
+    @extend .g-container__inner;
+    max-width:460px;
+}
+
 .g-container__inner--half{
     @extend .g-container__inner;
     max-width:530px;

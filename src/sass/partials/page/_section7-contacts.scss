@@ -9,12 +9,12 @@ $contacts-color:#afafaf;
     }
     
     @include media($large){
-        background-position:-100px 170px;
+        background-position:-100px 150px;
        
     }
     
     @include media($extra-large){
-        background-position:0 170px;
+        background-position:0 160px;
 
     }       
 }
