@@ -2249,6 +2249,7 @@ label.css-radio-label {
   .b-intro__entry {
     width: 56.6423479766%;
     margin-right: 2.3576520234%;
+    position: relative;
   }
   .b-intro__entry .g-big-text {
     max-width: 330px;
@@ -2262,15 +2263,15 @@ label.css-radio-label {
     height: 36px;
     font-size: 0.875rem;
   }
-  .b-intro__footer .b-intro__main {
-    position: relative;
-    height: 78px;
-  }
+  /*.b-intro__footer .b-intro__main{
+        position:relative;
+        height:78px;
+    }*/
   .b-intro__bg {
     position: absolute;
-    bottom: 0;
+    top: 30%;
     left: 0;
-    width: 100%;
+    width: 200%;
     max-width: 782px;
     background-image: url(../img/bg-intro.png);
     background-size: cover;
@@ -2285,6 +2286,15 @@ label.css-radio-label {
 }
 
 @media screen and (min-width: 90em) {
+  .b-intro--has-form {
+    padding-top: 170px;
+  }
+  .b-intro__main {
+    max-width: 1000px;
+  }
+  .b-intro__entry .g-big-text {
+    max-width: 370px;
+  }
   .b-intro__form .g-input, .b-intro__form .b-filter__select, .b-intro__form
   .b-filter__input {
     height: 45px;

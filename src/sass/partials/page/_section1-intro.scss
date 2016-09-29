@@ -201,6 +201,8 @@
         width:1*(59% - $grid-gutter);
         margin-right:$grid-gutter;
 
+        position:relative;
+
         .g-big-text{
             max-width:330px;
         }
@@ -215,16 +217,18 @@
         }
     }
 
-    .b-intro__footer .b-intro__main{
+    /*.b-intro__footer .b-intro__main{
         position:relative;
         height:78px;
-    }
+    }*/
 
     .b-intro__bg{
         position:absolute;
-        bottom:0;
+        //bottom:0;
+        top:30%;
         left:0;
-        width:100%;
+        //width:100%;
+        width:200%;
         max-width:782px;
         background-image:url(../img/bg-intro.png);
         background-size:cover;
@@ -240,6 +244,21 @@
 }
 
 @include media($extra-large){
+
+    .b-intro--has-form{
+        padding-top:170px;
+    }
+
+    .b-intro__main{
+        max-width:1000px;
+    }
+
+    .b-intro__entry{
+        .g-big-text{
+            max-width:370px;
+        }
+    }
+
     .b-intro__form{
         .g-input{
             height:45px;
