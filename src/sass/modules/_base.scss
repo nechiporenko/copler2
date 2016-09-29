@@ -44,19 +44,6 @@ $font-italic:'ClearSansItalic';
 }
 
 
-//ie8 clearfix
-//for new browsers, use bourbon clearfix() mixin
-//@mixin clear-fix(){
-//    &:before,
-//    &:after {
-//        content: "";
-//        display: table;
-//    }
-//
-//    &:after {
-//        clear: both;
-//    }
-//}
 
 
 @mixin px2rem($property, $values) {

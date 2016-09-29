@@ -54,5 +54,12 @@
      .p-list__content,
      .g-styled-list{
          font-size:rem(14px);
-     } 
+     }
+     .g-list{
+         li{
+             &:before{
+                 top:5px;
+             }
+         }
+     }
 }

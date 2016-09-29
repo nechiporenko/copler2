@@ -1,0 +1,98 @@
+﻿@import "../../../modules/_base.scss";
+/*Business Process Model list*/
+.b-process{
+    @extend .g-container__inner--medium;
+    margin-bottom:3*$project-line-height;
+    position:relative;
+    z-index:1;
+
+    .g-list{
+        max-width:240px;
+        margin:0 auto $project-line-height;
+    }
+}
+
+.b-process__list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+}
+
+.b-process__item{
+    @extend .g-column;
+    @include media($small){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($tablet){
+        @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega(3n);
+    }
+}
+
+.b-process__inner{
+    text-align:center;
+
+    &:hover{
+        .b-process__thumb{
+            border-color:$primary;
+        }
+        .b-process__icon{
+            color:$primary;
+            border-color:$primary;
+        }
+    }
+}
+.b-process__thumb{
+    @extend .b-list__icon;
+    margin-bottom:$project-line-height/2;
+    line-height:1;
+}
+
+.b-process__img{
+    @extend .b-list__img;
+}
+
+.b-process__icon{
+    @extend .b-solution__arrow;
+    line-height:22px;
+    text-align:center;
+    font-size:rem(8px);
+    border:1px solid #afafaf;
+    transition-property:color, border-color;
+}
+.b-process__title{
+    font-size:rem(22px);
+    line-height:1.1;
+    color:$primary;
+}
+.b-process__bg{
+    text-align:center;
+}
+
+@include media($desktop){
+    .b-process{
+        margin-bottom:5*$project-line-height;
+    }
+    .b-process__item{
+        &:nth-child(1),
+        &:nth-child(3),
+        &:nth-child(5){
+            padding-top:45px;
+        }
+
+        &:nth-child(3){
+            margin-bottom:70px;
+        }
+    }
+
+    .b-process__bg{
+        position:absolute;
+        margin:0;
+        top:300px;
+        left:50%;
+        transform:translateX(-50%);
+        z-index:-1;
+    }
+}
