@@ -97,3 +97,45 @@
         text-align:left;
     }
 }
+
+
+/*About author - more info*/
+.b-about{
+    margin:2*$project-line-height 0;
+    @extend .g-clearfix;
+}
+
+.b-about__img{
+    max-width:160px;
+    border-radius:50%;
+}
+
+.b-about__title{
+    @extend .g-subtitle;
+    @extend .g-subtitle--alt;
+    margin-bottom:$project-line-height;
+    font-size:rem(17px) !important;
+}
+
+.b-about__col{
+    @extend .g-column;
+    text-align:center;
+}
+
+@include media($tablet){
+    .b-about__title{
+        text-align:left;
+    }
+
+    .b-about__col{
+        text-align:left;
+
+        &:first-child{
+            width:(300*100%)/800;
+        }
+
+        &:last-child{
+            width:(500*100%)/800;
+        }
+    }
+}

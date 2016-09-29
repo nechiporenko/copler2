@@ -449,7 +449,7 @@ html {
 }
 
 /* Typography*/
-h1, h2, h3, h4, h5, h6, .g-title, .b-intro__title, .b-contacts__title, .b-vacancy__title, .g-subtitle, .box-modal__title, .b-tiered__title, .b-post__title {
+h1, h2, h3, h4, h5, h6, .g-title, .b-intro__title, .b-contacts__title, .b-vacancy__title, .g-subtitle, .box-modal__title, .b-tiered__title, .b-post__title, .b-about__title {
   margin-top: 0;
   margin-bottom: 8px;
   line-height: 1.1;
@@ -471,14 +471,14 @@ h1, h2, h3, h4, h5, h6, .g-title, .b-intro__title, .b-contacts__title, .b-vacanc
   }
 }
 
-.g-subtitle, .box-modal__title, .b-tiered__title, .b-post__title {
+.g-subtitle, .box-modal__title, .b-tiered__title, .b-post__title, .b-about__title {
   display: block;
   font-size: 1.5rem;
   font-family: "ClearSansRegular";
   text-align: center;
 }
 
-.g-subtitle--alt {
+.g-subtitle--alt, .b-about__title {
   font-family: "ClearSansMedium";
   text-transform: uppercase;
 }
@@ -854,7 +854,7 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
   visibility: hidden;
 }
 
-.g-clearfix::after, .g-container__inner::after, .g-container__inner--xs::after, .g-container__inner--half::after, .g-container__inner--small::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-result::after, .b-social::after, .b-intro__main::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-comment__item::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after, .b-career-filter::after, .b-vacancy::after, .b-load::after, .b-result__list::after {
+.g-clearfix::after, .g-container__inner::after, .g-container__inner--xs::after, .g-container__inner--half::after, .g-container__inner--small::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-result::after, .b-social::after, .b-intro__main::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-about::after, .b-comment__item::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after, .b-career-filter::after, .b-vacancy::after, .b-load::after, .b-result__list::after {
   clear: both;
   content: "";
   display: block;
@@ -915,7 +915,7 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
 /*Default Grid*/
 .g-column, .g-col, .b-leader__col, .b-intro__entry,
 .b-intro__form, .b-list__item, .b-feature__item, .p-list__item, .i-list__item, .b-career__item, .b-career__col, .p-footer__column, .b-tier__thumb,
-.b-tier__list, .b-heads__item, .b-news__item, .b-tech__col, .b-zoom__item, .b-commit__col, .b-filter__col, .b-entry__item, .b-leader__item, .b-pship__item, .f-pship__col, .b-partner__item, .b-career-filter__col, .b-load__item, .b-result__item {
+.b-tier__list, .b-heads__item, .b-news__item, .b-tech__col, .b-zoom__item, .b-commit__col, .b-filter__col, .b-entry__item, .b-about__col, .b-leader__item, .b-pship__item, .f-pship__col, .b-partner__item, .b-career-filter__col, .b-load__item, .b-result__item {
   width: 100%;
   float: left;
   box-sizing: border-box;
@@ -3866,7 +3866,7 @@ label.css-radio-label {
   }
 }
 
-.b-contacts__map .g-subtitle, .b-contacts__map .box-modal__title, .b-contacts__map .b-tiered__title, .b-contacts__map .b-post__title {
+.b-contacts__map .g-subtitle, .b-contacts__map .box-modal__title, .b-contacts__map .b-tiered__title, .b-contacts__map .b-post__title, .b-contacts__map .b-about__title {
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -4800,7 +4800,7 @@ a.p-footer__title:hover {
   overflow: hidden;
 }
 
-.page__section--alt .g-title, .page__section--has-slider .g-title, .page__section--half-alt .g-title, .page__section--alt .b-intro__title, .page__section--has-slider .b-intro__title, .page__section--half-alt .b-intro__title, .page__section--alt .b-contacts__title, .page__section--has-slider .b-contacts__title, .page__section--half-alt .b-contacts__title, .page__section--alt .b-vacancy__title, .page__section--has-slider .b-vacancy__title, .page__section--half-alt .b-vacancy__title, .page__section--alt .g-subtitle, .page__section--has-slider .g-subtitle, .page__section--half-alt .g-subtitle, .page__section--alt .box-modal__title, .page__section--has-slider .box-modal__title, .page__section--half-alt .box-modal__title, .page__section--alt .b-tiered__title, .page__section--has-slider .b-tiered__title, .page__section--half-alt .b-tiered__title, .page__section--alt .b-post__title, .page__section--has-slider .b-post__title, .page__section--half-alt .b-post__title {
+.page__section--alt .g-title, .page__section--has-slider .g-title, .page__section--half-alt .g-title, .page__section--alt .b-intro__title, .page__section--has-slider .b-intro__title, .page__section--half-alt .b-intro__title, .page__section--alt .b-contacts__title, .page__section--has-slider .b-contacts__title, .page__section--half-alt .b-contacts__title, .page__section--alt .b-vacancy__title, .page__section--has-slider .b-vacancy__title, .page__section--half-alt .b-vacancy__title, .page__section--alt .g-subtitle, .page__section--has-slider .g-subtitle, .page__section--half-alt .g-subtitle, .page__section--alt .box-modal__title, .page__section--has-slider .box-modal__title, .page__section--half-alt .box-modal__title, .page__section--alt .b-tiered__title, .page__section--has-slider .b-tiered__title, .page__section--half-alt .b-tiered__title, .page__section--alt .b-post__title, .page__section--has-slider .b-post__title, .page__section--half-alt .b-post__title, .page__section--alt .b-about__title, .page__section--has-slider .b-about__title, .page__section--half-alt .b-about__title {
   color: #fff;
 }
 
@@ -6644,6 +6644,40 @@ a.p-footer__title:hover {
   }
 }
 
+/*About author - more info*/
+.b-about {
+  margin: 36px 0;
+}
+
+.b-about__img {
+  max-width: 160px;
+  border-radius: 50%;
+}
+
+.b-about__title {
+  margin-bottom: 18px;
+  font-size: 1.0625rem !important;
+}
+
+.b-about__col {
+  text-align: center;
+}
+
+@media screen and (min-width: 48em) {
+  .b-about__title {
+    text-align: left;
+  }
+  .b-about__col {
+    text-align: left;
+  }
+  .b-about__col:first-child {
+    width: 37.5%;
+  }
+  .b-about__col:last-child {
+    width: 62.5%;
+  }
+}
+
 /*Activity List (post like, comments count...)*/
 .b-activity {
   float: left;
@@ -7108,6 +7142,7 @@ a.b-leader__name:hover {
 .page__header--partnership .box-modal__title,
 .page__header--partnership .b-tiered__title,
 .page__header--partnership .b-post__title,
+.page__header--partnership .b-about__title,
 .page__header--partnership p {
   margin-bottom: 9px;
 }
@@ -7121,6 +7156,7 @@ a.b-leader__name:hover {
   .page__header--partnership .box-modal__title,
   .page__header--partnership .b-tiered__title,
   .page__header--partnership .b-post__title,
+  .page__header--partnership .b-about__title,
   .page__header--partnership p {
     margin-bottom: 18px;
   }
@@ -8184,6 +8220,7 @@ a.b-leader__name:hover {
   .box-modal__title,
   .b-tiered__title,
   .b-post__title,
+  .b-about__title,
   .b-feature__title,
   .b-career__title {
     font-size: 1.375rem;

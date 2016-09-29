@@ -1,8 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-    <title>Copler - ideas page</title>
-    @@include('templates/head.html')
+    <title>Copler - author page</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Page Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <link rel="stylesheet" href="css/app.min.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!--selectric style-->
     <link href="css/selectric.min.css" rel="stylesheet" />
@@ -13,7 +18,35 @@
 </head>
 <body class="page">
     <!--header-->
-    @@include('templates/header-static.html')
+    <header class="b-header visible">
+        <div class="b-header__wrapper">
+            <div class="b-header__container">
+                <nav class="b-header__inner">
+                    <a href="index.html" class="b-header__logo">Copler</a>
+                    <ul class="h-menu">
+                        <li class="h-menu__item">
+                            <a href="index.html#services" class="h-menu__link current">Services</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="index.html#who-we-are" class="h-menu__link">Who we are</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="index.html#what-we-do" class="h-menu__link">What we do</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="index.html#careers" class="h-menu__link">Careers</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="index.html#contacts" class="h-menu__link">Contact us</a>
+                        </li>
+                    </ul>
+                    <button type="button" class="b-header__call" data-modal="#callback"><i class="icon-telephone"></i></button>
+                </nav>
+            </div>
+        </div>
+        <label class="b-header__label">Scroll »</label>
+    </header>
+    <!--/header-->
 
     <!--main content-->
     <main class="page__content">
@@ -28,17 +61,43 @@
                             <span itemprop="title">Home</span>
                         </a>
                     </li>
+                    <li class="crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="ideas.html" class="crumbs__link" itemprop="url">
+                            <span itemprop="title">Ideas</span>
+                        </a>
+                    </li>
                     <li class="crumbs__item">
-                        Ideas
+                        Brayan Moritz
                     </li>
                 </ol>
             </div>
             <!--/breadcrumbs-->
             <header class="page__header">
-                <h1 class="g-title">Ideas</h1>
+                <h1 class="g-title">Brayan Moritz</h1>
             </header>
             <div class="g-container">
                 <div class="g-container__inner--medium page__spacer">
+                    <!--about author - more info-->
+                    <article class="b-about">
+                        <div class="b-about__col">
+                            <figure class="g-text-center">
+                                <img src="http://placehold.it/160x160" class="b-about__img" alt="" />
+                            </figure>
+                        </div>
+                        <div class="b-about__col">
+                            <h2 class="b-about__title">CEO of Brayan Company</h2>
+                            <p>
+                                Donec consequat, massa non tincidunt iaculis, nunc quam cursus
+                                nunc, eu facilisis risus purus at augue. Aenean sodales ut arcu
+                                a volutpat. Nam eleifend, lacus non laoreet rhoncus, nisl metus
+                                malesuada tortor, nec semper enim turpis nec tellus
+                                Donec consequat, massa non tincidunt iaculis, nunc quam cursus
+                                nunc, eu facilisis risus purus at augue. Aenean sodales ut arcu
+                            </p>
+                        </div>
+                    </article>
+                    <!--/about author - more info-->
+
                     <!--filter-->
                     <div class="b-filter">
                         <div class="b-filter__col">
@@ -54,17 +113,6 @@
                         </div>
                         <div class="b-filter__col">
                             <input type="text" class="b-filter__input js-search" placeholder="Search ..." />
-                        </div>
-                        <div class="b-filter__col">
-                            <select class="b-filter__select js-select">
-                                <option selected value="all">All authors</option>
-                                <option value="Helena Hlavko">Helena Hlavko</option>
-                                <option value="Ivan Bo">Ivan Bo</option>
-                                <option value="Peter Mo">Peter Mo</option>
-                                <option value="John Do">John Do</option>
-                                <option value="Jack Wo">Jack Wo</option>
-                                <option value="Michal Ro">Michal Ro</option>
-                            </select>
                         </div>
                     </div>
                     <!--/filter-->
@@ -85,7 +133,7 @@
                                         <p>Pellentesque vehicula libero eget turpis lacinia, sed tincidunt elit imperdiet. Pellentesque tristique, nibh in tristique vehicula, velit justo lobortis nibh, sit amet congue ex quam vitae nibh…</p>
                                     </div>
                                     <div class="b-entry__meta">
-                                        By <a href="author.html">Helen Hlavko</a>
+                                        By <a href="#">Brayan Moritz</a>
                                         <time datetime="2016-05-10">May 10, 2016</time>
                                     </div>
                                     <ul class="b-activity">
@@ -120,7 +168,7 @@
                                         <p>Pellentesque vehicula libero eget turpis lacinia, sed tincidunt elit imperdiet. Pellentesque tristique, nibh in tristique vehicula, velit justo lobortis nibh, sit amet congue ex quam vitae nibh…</p>
                                     </div>
                                     <div class="b-entry__meta">
-                                        By <a href="author.html">Helen Hlavko</a>
+                                        By <a href="#">Brayan Moritz</a>
                                         <time datetime="2016-05-10">May 10, 2016</time>
                                     </div>
                                     <ul class="b-activity">
@@ -155,7 +203,7 @@
                                         <p>Pellentesque vehicula libero eget turpis lacinia, sed tincidunt elit imperdiet. Pellentesque tristique</p>
                                     </div>
                                     <div class="b-entry__meta">
-                                        By <a href="author.html">Helen Hlavko</a>
+                                        By <a href="#">Brayan Moritz</a>
                                         <time datetime="2016-05-10">May 10, 2016</time>
                                     </div>
                                     <ul class="b-activity">
@@ -190,7 +238,7 @@
                                         <p>Pellentesque vehicula libero eget turpis lacinia, sed tincidunt elit imperdiet. Pellentesque tristique, nibh in tristique vehicula, velit justo lobortis nibh, sit amet congue ex quam vitae nibh…</p>
                                     </div>
                                     <div class="b-entry__meta">
-                                        By <a href="author.html">Helen Hlavko</a>
+                                        By <a href="#">Brayan Moritz</a>
                                         <time datetime="2016-05-10">May 10, 2016</time>
                                     </div>
                                     <ul class="b-activity">
@@ -225,7 +273,7 @@
                                         <p>Pellentesque vehicula libero eget turpis lacinia, sed tincidunt elit imperdiet. Pellentesque tristique, nibh in tristique vehicula, velit justo lobortis nibh, sit amet congue ex quam vitae nibh…</p>
                                     </div>
                                     <div class="b-entry__meta">
-                                        By <a href="author.html">Helen Hlavko</a>
+                                        By <a href="#">Brayan Moritz</a>
                                         <time datetime="2016-05-10">May 10, 2016</time>
                                     </div>
                                     <ul class="b-activity">
@@ -260,7 +308,7 @@
                                         <p>Pellentesque vehicula libero eget turpis lacinia, sed tincidunt elit imperdiet. Pellentesque tristique, nibh in tristique vehicula, velit justo lobortis nibh, sit amet congue ex quam vitae nibh…</p>
                                     </div>
                                     <div class="b-entry__meta">
-                                        By <a href="author.html">Helen Hlavko</a>
+                                        By <a href="#">Brayan Moritz</a>
                                         <time datetime="2016-05-10">May 10, 2016</time>
                                     </div>
                                     <ul class="b-activity">
@@ -295,7 +343,7 @@
                                         <p>Pellentesque vehicula libero eget turpis lacinia, sed tincidunt elit imperdiet. Pellentesque tristique, nibh in tristique vehicula, velit justo lobortis nibh, sit amet congue ex quam vitae nibh…</p>
                                     </div>
                                     <div class="b-entry__meta">
-                                        By <a href="author.html">Helen Hlavko</a>
+                                        By <a href="#">Brayan Moritz</a>
                                         <time datetime="2016-05-10">May 10, 2016</time>
                                     </div>
                                     <ul class="b-activity">
@@ -330,7 +378,7 @@
                                         <p>Pellentesque vehicula libero eget turpis lacinia, sed tincidunt elit imperdiet. Pellentesque tristique, nibh in tristique vehicula, velit justo lobortis nibh, sit amet congue ex quam vitae nibh…</p>
                                     </div>
                                     <div class="b-entry__meta">
-                                        By <a href="author.html">Helen Hlavko</a>
+                                        By <a href="#">Brayan Moritz</a>
                                         <time datetime="2016-05-10">May 10, 2016</time>
                                     </div>
                                     <ul class="b-activity">
@@ -365,7 +413,7 @@
                                         <p>Pellentesque vehicula libero eget turpis lacinia, sed tincidunt elit imperdiet. Pellentesque tristique, nibh in tristique vehicula, velit justo lobortis nibh, sit amet congue ex quam vitae nibh…</p>
                                     </div>
                                     <div class="b-entry__meta">
-                                        By <a href="author.html">Helen Hlavko</a>
+                                        By <a href="#">Brayan Moritz</a>
                                         <time datetime="2016-05-10">May 10, 2016</time>
                                     </div>
                                     <ul class="b-activity">
@@ -389,47 +437,236 @@
 
                     <div class="g-text-center">
                         <button type="button" class="g-btn g-btn--wide">Show more</button>
+                        <p>&nbsp;</p>
                     </div>
-
-                    <!--about author-->
-                    <div class="b-author">
-                        <figure class="b-author__inner">
-                            <div class="b-author__thumb">
-                                <img src="img/del/author.svg" class="b-author__img" width="26" alt="" />
-                            </div>
-                            <figcaption class="b-author__entry">
-                                <span class="b-author__name">Helen Hlavko</span>
-                                <div class="b-author__contact">
-                                    <span class="b-author__tel">
-                                        <i class="icon-phone"></i>
-                                        (099) 123-23-23
-                                    </span>
-                                    <span class="b-author__mail">
-                                        <i class="icon-mail"></i>
-                                        <a href="mailto:H.hlavko@gmail.com">H.hlavko@gmail.com</a>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <!--/about author-->
                 </div>
             </div>
 
             <!--true footer-->
-            @@include('templates/page-footer.html')
+            <footer class="page__footer">
+            <div class="g-container">
+                <div class="g-container__inner">
+                    <div class="g-row">
+                        <nav class="p-footer__column">
+                            <a href="index.html#who-we-are" class="p-footer__title" data-scroll-link>Who we are</a>
+                            <ul class="p-menu">
+                                <li class="p-menu__item">
+                                    <a href="about.html" class="p-menu__link">About us</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="leadership.html" class="p-menu__link">Leadership Team</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="newsroom.html" class="p-menu__link">Newsroom</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="partnership.html" class="p-menu__link">Partnership Model</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <a href="index.html#what-we-do" class="p-footer__title" data-scroll-link>What we do</a>
+                            <ul class="p-menu">
+                                <li class="p-menu__item">
+                                    <a href="why.html" class="p-menu__link">Why Copler</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="business.html" class="p-menu__link">Business process model</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="stories.html" class="p-menu__link">Client stories</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="calculator.html" class="p-menu__link">Calculator</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="discount.html" class="p-menu__link">Discount</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <a href="index.html#services" class="p-footer__title" data-scroll-link>Services</a>
+                            <ul class="p-menu">
+                                <li class="p-menu__item">
+                                    <a href="service1.html" class="p-menu__link">BPO & Technical Support</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="service2.html" class="p-menu__link">Offshore Development Center</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="service3.html" class="p-menu__link">Recruitment Process Outsoucing</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <span class="p-footer__title">Industries</span>
+                            <ul class="p-menu">
+                                <li class="p-menu__item">
+                                    <a href="industries-retail.html" class="p-menu__link">Retail and E-commerce</a>
+                                </li>
+                                <li class="p-menu__item">
+                                    <a href="industries-travel.html" class="p-menu__link">Travel and Transportation</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="g-row">
+                        <nav class="p-footer__column">
+                            <a href="ideas.html" class="p-footer__title">Ideas</a>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <a href="career.html" class="p-footer__title">Careers</a>
+                        </nav>
+                        <nav class="p-footer__column">
+                            <a href="index.html#contacts" class="p-footer__title" data-scroll-link>Contact us</a>
+                        </nav>
+                        <div class="p-footer__column">
+                            <span class="p-footer__title">Follow us</span>
+                            <ul class="p-social">
+                                <li class="p-social__item">
+                                    <a href="#" rel="nofollow" target="_blank" class="p-menu__link">
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="p-social__item">
+                                    <a href="#" rel="nofollow" target="_blank" class="p-menu__link">
+                                        <i class="icon-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li class="p-social__item">
+                                    <a href="#" rel="nofollow" target="_blank" class="p-menu__link">
+                                        <i class="icon-slideshare"></i>
+                                    </a>
+                                </li>
+                                <li class="p-social__item">
+                                    <a href="#" rel="nofollow" target="_blank" class="p-menu__link">
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="p-social__item">
+                                    <a href="#" rel="nofollow" target="_blank" class="p-menu__link">
+                                        <i class="icon-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="g-row">
+                        <div class="p-footer__column p-footer__column--wide">
+                            <span class="p-footer__copyright">© 2016 by Copler. All Rights Reserved</span>
+                        </div>
+                        <div class="p-footer__column">
+                            <a href="#" class="p-footer__link">Privacy polycy</a>
+                        </div>
+                        <div class="p-footer__column">
+                            <a href="#" class="p-footer__link">Terms & Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--/true footer-->
         </section>
 
         <!--modals-->
         <div class="g-hidden">
-            @@include('templates/modals.html')
+            <!--callback-->
+            <form class="box-modal js-form-validate" id="callback">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner">
+                    <span class="box-modal__title">Request a callback</span>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your name</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="clbc_name" name="clbc_name" placeholder="Your name*" required />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your phone</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="clbc_phone" name="clbc_phone" placeholder="Business phone number*" required />
+                        </div>
+                    </div>
+                    <div class="g-text-center">
+                        <button type="submit" class="g-btn">Create request</button>
+                    </div>
+                </div>
+            </form>
+            <!--/callback-->
+
+            <!--contact a Sales Expert-->
+            <form class="box-modal js-form-validate" id="expert">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner">
+                    <span class="box-modal__title">Contact a sales expert</span>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your name</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="exp_name" name="exp_name" placeholder="Your name*" required />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your email</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="exp_mail" name="exp_mail" placeholder="Business email*" required />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your phone</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="exp_phone" name="exp_phone" placeholder="Business phone number" />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Company</label>
+                        <div class="g-validate__inner">
+                            <input type="text" class="g-input" id="exp_company" name="exp_company" placeholder="Company" />
+                        </div>
+                    </div>
+                    <div class="g-validate">
+                        <label class="g-visuallyhidden">Your question</label>
+                        <div class="g-validate__inner">
+                            <textarea class="g-textarea" id="exp_msg" name="exp_msg" placeholder="Your question*" required></textarea>
+                        </div>
+                    </div>
+                    <div class="g-text-center">
+                        <button type="submit" class="g-btn g-btn--wide">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <!--/contact a Sales Expert-->
+
+            <!--thank you-->
+            <div class="box-modal box-modal--thin" id="thankyou">
+                <div class="box-modal_close arcticmodal-close">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="box-modal__inner g-text-center">
+                    <span class="box-modal__title"><img src="img/head.svg" alt="Thank you" /> Thank you!</span>
+                    <p>
+                        We've received your submission<br />
+                        and a representative will be in touch with you soon
+                    </p>
+                </div>
+            </div>
+            <!--/thank you-->
         </div>
         <!--/modals-->
     </main>
     <!--/main content-->
 
     <!--scripts-->
-    @@include('templates/scripts.html')
+    <script src="js/vendor/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/app.min.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/forms.js"></script>
+    <!--/scripts-->
 
     <!--selectric scripts-->
     <script src="js/vendor/jquery.selectric.min.js"></script>
