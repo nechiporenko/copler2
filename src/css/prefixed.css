@@ -862,7 +862,7 @@ img.g-full-width, img.g-table, img.b-commit__img, img.t-career {
   visibility: hidden;
 }
 
-.g-clearfix::after, .g-container__inner::after, .g-container__inner--xs::after, .g-container__inner--half::after, .g-container__inner--small::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-result::after, .b-social::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-comment__item::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after, .b-career-filter::after, .b-vacancy::after, .b-load::after, .b-result__list::after {
+.g-clearfix::after, .g-container__inner::after, .g-container__inner--xs::after, .g-container__inner--half::after, .g-container__inner--small::after, .g-container__inner--medium::after, .b-leader__subtitle::after, .b-leader__row::after, .b-globe::after, .b-pship::after, .f-pship::after, .g-container__inner--large::after, .b-leader::after, .b-partner::after, .b-result::after, .b-social::after, .b-intro__main::after, .b-slider__list::after, .b-list::after, .b-feature::after, .p-list::after, .i-list::after, .b-career__list::after, .b-career__inner::after, .b-contacts__list::after, .b-tier::after, .b-heads::after, .b-news__list::after, .b-solution::after, .b-solution__inner::after, .b-zoom::after, .b-share::after, .b-entry::after, .b-entry__info::after, .b-comment__item::after, .b-leader__list::after, .b-leader__inner--about::after, .b-pship__list::after, .b-pship__row::after, .b-partner__list::after, .b-heroslider__list::after, .b-career-filter::after, .b-vacancy::after, .b-load::after, .b-result__list::after {
   clear: both;
   content: "";
   display: block;
@@ -2228,7 +2228,7 @@ label.css-radio-label {
 }
 
 .b-intro--has-form {
-  padding-top: 130px;
+  padding-top: 145px;
   position: relative;
   z-index: 1;
   background: none;
@@ -2238,37 +2238,38 @@ label.css-radio-label {
   margin-bottom: 18px;
 }
 
-.b-intro__form {
-  padding: 18px 0;
+.b-intro__main {
+  max-width: 880px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 62em) {
   .b-intro__entry {
-    width: 52.6423479766%;
+    width: 56.6423479766%;
     margin-right: 2.3576520234%;
   }
   .b-intro__entry .g-big-text {
-    max-width: 320px;
+    max-width: 330px;
   }
   .b-intro__form {
-    width: 45%;
+    width: 41%;
+    padding-top: 7px;
   }
   .b-intro__form .g-input, .b-intro__form .b-filter__select, .b-intro__form
   .b-filter__input {
-    height: 40px;
+    height: 36px;
     font-size: 0.875rem;
   }
-  .b-intro__footer .g-container__inner--medium, .b-intro__footer .b-leader__subtitle, .b-intro__footer .b-leader__row, .b-intro__footer .b-globe, .b-intro__footer .b-pship, .b-intro__footer .f-pship {
+  .b-intro__footer .b-intro__main {
     position: relative;
     height: 78px;
   }
   .b-intro__bg {
     position: absolute;
-    bottom: 0;
+    bottom: 100px;
     left: 0;
     width: 100%;
-    margin-top: -78px;
-    max-width: 738px;
+    max-width: 782px;
     background-image: url(../img/bg-intro.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -2277,7 +2278,7 @@ label.css-radio-label {
   .b-intro__bg:after {
     content: '';
     display: block;
-    padding-top: 63.6856368564%;
+    padding-top: 53.3248081841%;
   }
 }
 
@@ -8138,7 +8139,7 @@ a.b-leader__name:hover {
     margin-bottom: 15px;
   }
   .b-intro--has-form {
-    padding-top: 130px;
+    padding-top: 145px;
   }
   .b-intro--card {
     padding-top: 77px;

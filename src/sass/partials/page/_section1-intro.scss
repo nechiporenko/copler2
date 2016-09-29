@@ -175,7 +175,7 @@
 
 //модификация - секция без слайдера (с формой)
 .b-intro--has-form{
-    padding-top:130px;
+    padding-top:145px;
     position:relative;
     z-index:1;
     background:none;
@@ -184,47 +184,48 @@
         margin-bottom:$project-line-height;
     }
 }
+.b-intro__main{
+    @extend .g-clearfix;
+    max-width:880px;
+    margin:0 auto;
+}
 .b-intro__entry,
 .b-intro__form{
     @extend .g-column;
-}
-
-.b-intro__form{
-    padding:$project-line-height 0;
 }
 
 
 
 @include media($desktop){
     .b-intro__entry{
-        width:1*(55% - $grid-gutter);
+        width:1*(59% - $grid-gutter);
         margin-right:$grid-gutter;
 
         .g-big-text{
-            max-width:320px;
+            max-width:330px;
         }
     }
     .b-intro__form{
-        width:45%;
+        width:41%;
+        padding-top:7px;
 
         .g-input{
-            height:40px;
+            height:36px;
             font-size:rem(14px);
         }
     }
 
-    .b-intro__footer .g-container__inner--medium{
+    .b-intro__footer .b-intro__main{
         position:relative;
         height:78px;
     }
 
     .b-intro__bg{
         position:absolute;
-        bottom:0;
+        bottom:100px;
         left:0;
         width:100%;
-        margin-top:-78px;
-        max-width:738px;
+        max-width:782px;
         background-image:url(../img/bg-intro.png);
         background-size:cover;
         background-repeat:no-repeat;
@@ -233,7 +234,7 @@
         &:after{
             content:'';
             display:block;
-            padding-top:(470*100%)/738;
+            padding-top:(417*100%)/782;
         }
     }
 }
