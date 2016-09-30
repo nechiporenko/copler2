@@ -148,7 +148,7 @@ jQuery(document).ready(function ($) {
                 window.webkitRequestAnimationFrame ||
                 window.mozRequestAnimationFrame ||
                 window.msRequestAnimationFrame ||
-                window.oRequestAnimationFrame; //будем экономить ресурсы браузера
+                window.oRequestAnimationFrame; //будем пытаться экономить ресурсы браузера
 
 
         method.loop = function () {
@@ -164,10 +164,11 @@ jQuery(document).ready(function ($) {
         };
 
 
-        
         method.checkState(lastScrollTop);
-        method.loop();
-
+        if (raf) {
+            method.loop();
+        };
+        
         $scroller.on('click', function () {
             $('html, body').animate({ scrollTop: 0 }, 800);
             return false;
