@@ -204,7 +204,7 @@
         position:relative;
 
         .g-big-text{
-            max-width:330px;
+            max-width:380px;
         }
     }
     .b-intro__form{
@@ -217,17 +217,12 @@
         }
     }
 
-    /*.b-intro__footer .b-intro__main{
-        position:relative;
-        height:78px;
-    }*/
+  
 
     .b-intro__bg{
         position:absolute;
-        //bottom:0;
         top:30%;
         left:0;
-        //width:100%;
         width:200%;
         max-width:782px;
         background-image:url(../img/bg-intro.png);
@@ -243,6 +238,12 @@
     }
 }
 
+@include media($large){
+    .b-intro__main{
+        max-width:1000px;
+    }
+}
+
 @include media($extra-large){
 
     .b-intro--has-form{
@@ -255,7 +256,7 @@
 
     .b-intro__entry{
         .g-big-text{
-            max-width:370px;
+            max-width:380px;
         }
     }
 

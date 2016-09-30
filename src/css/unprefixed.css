@@ -2256,7 +2256,7 @@ label.css-radio-label {
     position: relative;
   }
   .b-intro__entry .g-big-text {
-    max-width: 330px;
+    max-width: 380px;
   }
   .b-intro__form {
     width: 41%;
@@ -2267,10 +2267,6 @@ label.css-radio-label {
     height: 36px;
     font-size: 0.875rem;
   }
-  /*.b-intro__footer .b-intro__main{
-        position:relative;
-        height:78px;
-    }*/
   .b-intro__bg {
     position: absolute;
     top: 30%;
@@ -2289,6 +2285,12 @@ label.css-radio-label {
   }
 }
 
+@media screen and (min-width: 75em) {
+  .b-intro__main {
+    max-width: 1000px;
+  }
+}
+
 @media screen and (min-width: 90em) {
   .b-intro--has-form {
     padding-top: 170px;
@@ -2297,7 +2299,7 @@ label.css-radio-label {
     max-width: 1000px;
   }
   .b-intro__entry .g-big-text {
-    max-width: 370px;
+    max-width: 380px;
   }
   .b-intro__form .g-input, .b-intro__form .b-filter__select, .b-intro__form
   .b-filter__input {
