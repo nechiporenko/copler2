@@ -639,6 +639,53 @@
             checkCCSForm();
         };
 
+        // правила для формы в модальном окне BUSINESS PROCESS MODEL
+        //---------------------------------------------------------------------------------------
+        function checkBPMForm() {
+            var formRules = {
+                rules: {
+                    bpm_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    bpm_surname: {
+                        required: true,
+                        minlength: 2
+                    },
+                    bpm_mail: {
+                        required: true,
+                        email: true,
+                    },
+                    bpm_company: {
+                        required: true,
+                        minlength: 2,
+                    },
+                    bpm_msg: {
+                        required: true,
+                        minlength: 8,
+                    },
+                    bpm_details: {
+                        required: true,
+                        minlength: 2,
+                    },
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        //
+                        success: function () {
+                            modal.close('#bpm_form');
+                            modal.showThankYou();
+                        }
+                    });
+                    return false;
+                }
+            }
+            $('#bpm_form').validate($.extend(commonRules, formRules));
+        };
+        if ($('#bpm_form').length) {
+            checkBPMForm();
+        };
+
         //в этой функции используем метод valid - запустить ее последней!
         $('.js-form-validate').each(function () {//если в полях формы есть ошибки валидации - будем блокировать кнопку отправки
             var $form = $(this),

@@ -20,22 +20,23 @@ jQuery(document).ready(function ($) {
     //---------------------------------------------------------------------------------------
     (function () {
         var $header = $('.js-header'),
-            //isHeaderVisible = false,//флаг состояния
+            isHeaderVisible = false,//флаг состояния
             isScrollerVisible = false,
             $scroller = $('<button type="button" class="scroll-up-btn"><i class="icon-up"></i></button>'),
+            lastScrollTop = $.scrollY(),
             method = {};
 
         $('body').append($scroller);
 
-        //method.showHeader = function () {
-        //    $header.addClass('visible');
-        //    isHeaderVisible = true;
-        //};
+        method.showHeader = function () {
+            $header.addClass('visible');
+            isHeaderVisible = true;
+        };
 
-        //method.hideHeader = function () {
-        //    $header.removeClass('visible');
-        //    isHeaderVisible = false;
-        //};
+        method.hideHeader = function () {
+            $header.removeClass('visible');
+            isHeaderVisible = false;
+        };
 
         method.showScroller = function () {
             $scroller.show();
@@ -47,24 +48,44 @@ jQuery(document).ready(function ($) {
             isScrollerVisible = false;
         };
 
-        method.checkState = function () {
-            var fromTop = $.scrollY();//
-            //if (fromTop >= 100 && !isHeaderVisible) {
-            //    method.showHeader();
-            //} else if (fromTop < 100 && isHeaderVisible) {
-            //    method.hideHeader();
-            //};
+        method.checkState = function (top) {
+                if (top >= 100 && !isHeaderVisible) {
+                    method.showHeader();
+                } else if (top < 100 && isHeaderVisible) {
+                    method.hideHeader();
+                };
 
-            if (fromTop >= 500 && !isScrollerVisible) {
-                method.showScroller();
-            } else if (fromTop < 500 && isScrollerVisible) {
-                method.hideScroller();
-            };
+                if (top >= 500 && !isScrollerVisible) {
+                    method.showScroller();
+                } else if (top < 500 && isScrollerVisible) {
+                    method.hideScroller();
+                };
         };
 
-        method.checkState();
 
-        $(window).bind('scroll', method.checkState);
+        var raf = window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                window.oRequestAnimationFrame; //будем экономить ресурсы браузера
+
+
+        method.loop = function () {
+            var fromTop = $.scrollY();
+            if (lastScrollTop === fromTop) {
+                raf(method.loop);
+                return;
+            } else {
+                lastScrollTop = fromTop;
+                method.checkState(fromTop);
+                raf(method.loop);
+            }
+        };
+
+
+        
+        method.checkState(lastScrollTop);
+        method.loop();
 
         $scroller.on('click', function () {
             $('html, body').animate({ scrollTop: 0 }, 800);

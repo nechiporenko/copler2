@@ -42,6 +42,15 @@
             color:$primary;
             border-color:$primary;
         }
+
+        .b-process__img{
+            .st1{
+                fill:$primary;
+            }
+            .st2{
+                stroke:$primary;
+            }
+        }
     }
 }
 .b-process__thumb{

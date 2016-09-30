@@ -9,12 +9,11 @@
     z-index:1000;
     overflow:hidden;
     @extend .g-transition;
-    transition-property:bottom;
-    will-change:bottom;
-
+    transition-property:transform;
+    will-change:transform;
 
     &.visible{
-        bottom:0;
+        transform:translateY(-54px);
     }
 }
 
