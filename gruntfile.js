@@ -57,7 +57,8 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {//компилируем sass-файлы в src/css/unprefixed.css
-					'src/css/unprefixed.css': 'src/sass/main.scss'
+					'src/css/unprefixed.css': 'src/sass/main.scss',
+					'src/css/calc-unprefixed.css': 'src/sass/calc.scss'			
 				}
 			}
 		},
@@ -66,14 +67,17 @@ module.exports = function(grunt) {
 				browsers: [
 				  'last 2 version',
 				  'safari 6',
-				  'ie 9',
-				  'ios 6',
-				  'android 4'
+				  'ie >= 9',
+				  'and_chr >= 2.3'
 				]
 			},
 			dist: {
-				src: 'src/css/unprefixed.css',
-				dest: 'src/css/prefixed.css'
+				//src: 'src/css/unprefixed.css',
+				//dest: 'src/css/prefixed.css'
+				files: {
+					'src/css/prefixed.css' : 'src/css/unprefixed.css',
+					'src/css/calc-prefixed.css' : 'src/css/calc-unprefixed.css',
+				}
 			},
 		},
 		cssmin: {//сжимаем css
@@ -83,7 +87,8 @@ module.exports = function(grunt) {
 		  },
 		  target: {
 			files: {
-				'dist/css/app.min.css' : 'src/css/prefixed.css'
+				'dist/css/app.min.css' : 'src/css/prefixed.css',
+				'dist/css/calc.min.css' : 'src/css/calc-prefixed.css'
 			}
 		  }
 		},

@@ -1,10 +1,3 @@
-/*!
- * Copler
- * @author: 'Digital Force', http://digitalforce.ua
- * @version: 0.3.0
- * Copyright 2016.
- */
-
 // Place any jQuery/helper plugins in here.
 /*
  * verge 1.9.1+201402130803
@@ -16,7 +9,7 @@ jQuery.extend(verge);
 
 /*!
 Waypoints - 4.0.0
-Copyright  2011-2015 Caleb Troughton
+Copyright � 2011-2015 Caleb Troughton
 Licensed under the MIT license.
 https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 */
@@ -35,7 +28,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
 /*
 
- arcticModal  jQuery plugin
+ arcticModal � jQuery plugin
  Version: 0.3
  Author: Sergey Predvoditelev (sergey.predvoditelev@gmail.com)
  Company: Arctic Laboratory (http://arcticlab.ru/)

@@ -6,7 +6,7 @@
     position:fixed;
     padding-top:10px;
     left:0; bottom:-54px;
-    z-index:1000;
+    z-index:999;
     overflow:hidden;
     @extend .g-transition;
     transition-property:transform;

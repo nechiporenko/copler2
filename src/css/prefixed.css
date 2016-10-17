@@ -3969,7 +3969,7 @@ label.css-radio-label {
   padding-top: 10px;
   left: 0;
   bottom: -54px;
-  z-index: 1000;
+  z-index: 999;
   overflow: hidden;
   -webkit-transition-property: -webkit-transform;
           transition-property: transform;

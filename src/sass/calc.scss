@@ -1,0 +1,431 @@
+﻿@import "modules/_base.scss";
+/*Calculator grid*/
+$b-calc-grey:#afafaf;
+
+.b-calc{
+    width:100%;
+    margin:0 auto;
+    line-height:1;
+
+    @include media($tablet){
+        max-width:750px;
+    }
+
+    @include media($desktop){
+        max-width:1200px;
+    }
+}
+
+.b-calc-transition{
+    transition-duration:.2s;
+    transition-timing-function:ease-in;
+}
+
+.b-calc,
+.b-calc__list{
+    @include clearfix;
+}
+
+.b-calc-column{
+    float:left;
+    width:100%;
+    min-height:1px;
+    box-sizing:border-box;
+}
+
+.b-calc__col{
+    @extend .b-calc-column;
+}
+
+@include media($desktop){
+    .b-calc__col{
+        padding:0 10px;
+    }
+    .b-calc__col--side{
+        width:1*(100%)/3;
+
+        &:first-child{
+            width:0;
+            padding:0;
+        }
+        &:last-child{
+            padding-right:0;
+        }
+    }
+    .b-calc__col--main{
+        width:2*(100%)/3;
+        padding-left:0;
+    }
+}
+
+@include media($large){
+    .b-calc__col--side{
+        width:(275*100%)/1200;
+        &:first-child{
+            width:(275*100%)/1200;
+        }
+        &:last-child{
+            padding-right:10px;
+        }
+    }
+    .b-calc__col--main{
+        width:(650*100%)/1200;
+        padding-left:10px;
+    }
+}
+
+/*Calc main list*/
+.b-calc__list{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+$calc-gridder:8.25%;
+
+.b-calc__item{
+    @extend .b-calc-column;
+    position:relative;
+}
+
+.b-calc__item--btn{
+    @include media($mobile){
+        width:(100%-$calc-gridder)/2;
+        margin-right:$calc-gridder;
+
+        &:nth-child(2n){
+            margin-right:0;
+        }
+        &:nth-child(2n+1){
+            clear:left;
+        }
+    }
+
+    @include media($small){
+        width:(100%-$calc-gridder*2)/3;
+        &:nth-child(2n){
+            margin-right:$calc-gridder;
+        }
+        &:nth-child(2n+1){
+            clear:none;
+        }
+        &:nth-child(3n){
+            margin-right:0;
+        }
+        &:nth-child(3n+1){
+            clear:left;
+        }
+    }
+}
+
+.b-calc__block{
+    padding:12px 3px;
+    border:1px solid $primary;
+    box-sizing:border-box;
+    @extend .b-calc-transition;
+    background:#fff;
+    transition-property:background, box-shadow;
+    cursor:pointer;
+
+    &:hover{
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .active > &{
+        background:$primary;
+        box-shadow:none;
+
+        .b-calc__title{
+            color:#fff;
+        }
+    }
+}
+.b-calc__thumb{
+    height:100px;
+    position:relative;
+}
+.b-calc__title{
+    height:30px;
+    line-height:1.1;
+    overflow:hidden;
+    text-align:center;
+    font-size:rem(14px);
+    font-family:$font-medium;
+    color:$primary;
+    transition-property:color;
+    @extend .b-calc-transition;
+}
+
+/*Calc inner block*/
+.bcl{
+    padding:7px;
+    margin-bottom:$project-line-height;
+    border:3px solid $primary;
+    background:#fff;
+    @extend .b-calc-transition;
+    transition-property:box-shadow;
+    display:none;
+    visibility:visible;
+
+    &:hover{
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+.bcl__title{
+    display:block;
+    font-size:rem(14px);
+    color:$text-color;
+    font-family:$font-medium;
+    text-transform:uppercase;
+    line-height:1.2;
+}
+
+.bcl__close,
+.bcl__reset{
+    position:absolute;
+    right:6px;
+    border:none;
+    background:none;
+    padding:0;
+    outline:0;
+    cursor: pointer;
+}
+
+.bcl__close{
+    top:6px; 
+    font-size:rem(12px);
+    color:$border-color;
+    &:hover{
+        color:$primary;
+    }
+}
+
+.bcl__reset{
+    bottom:12px;
+    font-size:rem(14px);
+    color:$primary;
+    border-bottom:1px dotted $primary;
+    &:hover{
+        color:$text-color;
+        border-bottom-color:$text-color;
+    }
+}
+
+.bcl__list{
+    list-style-type:none;
+    padding:0;
+    margin: 0 -5px;
+    font-size:0;
+}
+.bcl__item{
+    display:inline-block;
+    width:50%;
+    padding:0 5px;
+    vertical-align:top;
+    font-size:rem(14px);
+    box-sizing:border-box;
+
+    @include media($mobile){
+        width: 1*(100%)/3;
+    }
+    @include media($tablet){
+        width:20%;
+    }
+}
+
+.bcl__inner{
+    padding:5px 5px 0;
+    margin-bottom:10px;
+    border:1px solid $b-calc-grey;
+    @extend .b-calc-transition;
+    transition-property:box-shadow, border-color;
+    background:#fff;
+
+    &:hover{
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    &.active{
+        border-color:$primary;
+        .bcl__subtitle{
+            color:$primary;
+        }
+    }
+}
+
+.bcl__wrap{
+    cursor:pointer;
+}
+.bcl__thumb{
+    height:68px;
+    position:relative;
+}
+.bcl__subtitle{
+   width:100%;
+   height:30px;
+   margin-bottom:5px;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   font-family:$font-medium;
+   font-size:rem(14px);
+   color:$b-calc-grey;
+   line-height:1;
+   text-align:center;
+   letter-spacing:-.5px;
+   @extend .b-calc-transition;
+   transition-property:color;
+}
+
+.bcl__entry{
+    margin:0 -5px;
+    padding:6px 5px 0;
+    background:$primary;
+    color:#fff;
+    display:none;
+    overflow:hidden;
+
+    .active > &{
+        display:block;
+    }
+}
+
+.bcl__row{
+    @include row();
+    margin:10px 0;
+
+    p{
+        margin:0 0 10px;
+    }
+
+    label.css-radio-label{
+        font-size:rem(14px);
+    }
+}
+
+.bcl__col{
+    @extend .b-calc-column;
+}
+
+.bcl__col--two-thirds{
+    width: 2*(100%-$grid-gutter*2)/3 + $grid-gutter;
+
+    input[type=checkbox].css-checkbox+label.css-label{
+        padding-left:18px;
+        background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAgMAAABiJsVCAAAADFBMVEUAAAD///////////84wDuoAAAAA3RSTlMAM1vypCmSAAAAHklEQVQI12P4////B4anoaEbGC4wMBSQRIC1gQ0AAGxnGNlOru52AAAAAElFTkSuQmCC) left 3px no-repeat;
+        color:#fff;
+        font-size:rem(14px);
+    }
+
+    input[type=checkbox].css-checkbox:checked + label.css-label,
+    label.css-label {
+        background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMAM1u3EQfmyVca9fDYj4F3ZSoCiegZugAAAElJREFUCNdjEEYBDMJMjHDABOQyMsABI24uBwcyl5FLAMplZWVg4GTjhSnmY+dkZWcWgnFZmNmYeViQjOLnFkQxmQWrvZiORAEA/wYE7N6SoMYAAAAASUVORK5CYII=) left 3px no-repeat;
+        color:#fff;
+    }
+}
+.bcl__col--one-third{
+    width:(100%-$grid-gutter*2)/3;
+    margin-left:$grid-gutter;
+
+    .g-input{
+        height:20px;
+        margin:0;
+        padding:0 5px;
+        font-size:rem(12px);
+        color:#fff;
+        border-color:#fff;
+        background:$primary;
+        text-align:center;
+
+        &:focus{
+            background:lighten($primary, 7%);
+        }
+    }
+}
+
+@include media($tablet){
+    .bcl__col--one{
+        width:(248*100%)/610;
+    }
+    .bcl__col--two{
+        width:((610-248)*100%)/610;
+    }
+}
+
+/*Calc Panel*/
+.bcl-panel{
+    padding:8px 14px;
+    margin-bottom:$project-line-height;
+    border:1px solid $primary;
+
+    hr{
+        margin:8px 0;
+    }
+
+    .g-input{
+        height:36px;
+        padding:0 10px;
+        font-size:rem(14px);
+    }
+}
+.bcl-panel__header{
+    position:relative;
+    margin-bottom:8px;
+    border-bottom:1px solid $border-color;
+}
+
+.bcl-panel__title{
+    font-size:rem(18px);
+    line-height:1;
+    color:$primary;
+    font-family:$font-medium;
+    padding-right:30px;
+}
+
+.bcl-panel__reset{
+    @extend .bcl__reset;
+    right:0;
+    bottom:7px;
+}
+.bcl-panel__inner{
+    padding:8px;
+    margin-bottom:8px;
+    border:1px solid $border-color;
+    background:#fff;
+    font-size:rem(13px);
+    line-height:1.4;
+
+    dl{
+        margin:0;
+        padding:0;
+        @include clearfix;
+    }
+    dt{
+        float:left;
+        width:70%;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+    }
+    dd{
+        float:left;
+        margin:0;
+        width:30%;
+        text-align:right;
+    }
+}
+
+.bcl-total{
+    overflow:hidden;
+    margin-bottom:$project-line-height;
+    font-family:$font-medium;
+    font-size:rem(18px);
+    color:$primary;
+}
+.bcl-total__title{
+    float:left;
+}
+.bcl-total__price{
+    float:right;
+}
