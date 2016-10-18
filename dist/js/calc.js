@@ -71,53 +71,59 @@
             return method;
         })(),
 
-        listBtnClick: function () { //клик по блокам - покажем / спрячем целевые блоки
+        listBtnClick: (function () { //клик по блокам - покажем / спрячем целевые блоки
             var msnr = $('.bcl__list'),
-                activeClass = 'active';
+                activeClass = 'active',
+                method = {};
 
-            msnr.masonry({ //натравим Masonry на внутренний список, чтобы добиться эффекта пятнашек при клике
-                itemSelector: '.bcl__item',
-                percentPosition: true
-            });
+           
 
-            $btn.on('click', function () {
-                var $el = $(this),
-                    index = $el.data('item');
-
-                if ($(this).hasClass('active')) {
-                    hideItem($el, index);
-                } else {
-                    hideAllItem();
-                    showItem($el, index);
-                };
-                view.stickyPanel.recalc();
-            });
-
-            function showItem(el, index) {
+            method.showItem = function(el, index) {
                 el.addClass(activeClass);
                 $target.filter('[data-item=' + index + ']').fadeIn();
                 msnr.masonry();
             };
 
-            function hideItem(el, index) {
+            method.hideItem = function(el, index) {
                 el.removeClass(activeClass);
                 $target.filter('[data-item=' + index + ']').hide();
             };
 
-            function hideAllItem() {
+            method.hideAllItem = function() {
                 $target.hide();
                 $btn.removeClass(activeClass);
             };
 
-            $target.on('click', '.bcl__close', function () {
-                hideAllItem();
-            });
+            method.init = function () {
+                msnr.masonry({ //натравим Masonry на внутренний список, чтобы добиться эффекта пятнашек при клике
+                    itemSelector: '.bcl__item',
+                    percentPosition: true
+                });
 
-            $('.bcl').on('click', '.bcl__wrap', function () {
-                $(this).parent().toggleClass(activeClass);
-                msnr.masonry();
-            });
-        },
+                $btn.on('click', function () {
+                    var $el = $(this),
+                        index = $el.data('item');
+
+                    if ($(this).hasClass('active')) {
+                        method.hideItem($el, index);
+                    } else {
+                        method.hideAllItem();
+                        method.showItem($el, index);
+                    };
+                    view.stickyPanel.recalc();
+                });
+
+                $target.on('click', '.bcl__close', function () {
+                    method.hideAllItem();
+                });
+
+                $('.bcl').on('click', '.bcl__wrap', function () {
+                    $(this).parent().toggleClass(activeClass);
+                    msnr.masonry();
+                });
+            };     
+            return method;
+        })(),
 
         stickyPanel: (function () {
             var $parent = $('.b-calc'),
@@ -184,7 +190,7 @@
 
         init: function () {
             this.sortList.init();
-            this.listBtnClick();
+            this.listBtnClick.init();
             this.stickyPanel.init();
         }
     };
@@ -215,6 +221,7 @@
                 $target.each(function () {
                     controller.resetBlock($(this));
                 });
+                view.listBtnClick.hideAllItem();
             });
         },
         init: function () {
