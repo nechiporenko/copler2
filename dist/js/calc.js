@@ -4,7 +4,7 @@
         $btn = $list.find('.b-calc__item--btn'),
         $target = $list.find('.b-calc__item--target');
 
-    /*============ VIEW ===============*/
+    /*============================================ VIEW =====================================================*/
     var view = {
         sortList: (function () { //будем сортировать главный список в зависимости от разрешения экрана таким образом, чтобы целевые блоки открывались на нужных рядах
             var count = $btn.length,
@@ -29,12 +29,15 @@
                     $btn.each(function () {
                         var num = parseInt($(this).data('item')),
                             $el = $target.filter('[data-item=' + num + ']');
-                        var content = $el.detach();
+                        
                         var targetNum = index * Math.ceil(num / index);
                         if (targetNum > count) {
                             targetNum = count;
-                        }
-                        $btn.filter('[data-item=' + targetNum + ']').after(content);
+                        };
+                        if (parseInt($el.prev('li').data('item')) != targetNum) {//если не в том порядке в каком нужно
+                            var content = $el.detach();
+                            $btn.filter('[data-item=' + targetNum + ']').after(content);
+                        }                     
                     });
                 };
             };
@@ -186,7 +189,41 @@
         }
     };
 
-    view.init();
 
+    /*======================================== CONTROLLER ===================================================*/
+    var controller = {
+        resetBlock: function (block) {
+            var $list = block.find('.bcl__list'),
+                    $chk = $list.find('input[type=checkbox]'),
+                    $input = $list.find('input[type=text]');
+            $chk.each(function () {
+                $(this).attr('checked', false);
+            });
+            $input.each(function () {
+                $(this).val(1);
+            });
+        },
+        resetBlockClick: function () {
+            $target.on('click', '.bcl__reset', function () {
+                var $block = $(this).parent('.bcl');
+                controller.resetBlock($block);
+            });
+            
+        },
+        allBlocksReset: function () {
+            $('.bcl-panel').on('click', '.bcl-panel__reset', function () {
+                $target.each(function () {
+                    controller.resetBlock($(this));
+                });
+            });
+        },
+        init: function () {
+            view.init();
+            this.resetBlockClick();
+            this.allBlocksReset();
+        }
+    };
+    
+    controller.init();
    
 });
