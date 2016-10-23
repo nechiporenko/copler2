@@ -71,12 +71,10 @@
             return method;
         })(),
 
-        listBtnClick: (function () { //клик по блокам - покажем / спрячем целевые блоки
+        clickList: (function () { //клик по блокам - покажем / спрячем целевые блоки
             var msnr = $('.bcl__list'),
                 activeClass = 'active',
                 method = {};
-
-           
 
             method.showItem = function(el, index) {
                 el.addClass(activeClass);
@@ -125,7 +123,49 @@
             return method;
         })(),
 
-        stickyPanel: (function () {
+        countInput: (function () {//валидация полей ввода кол-ва сотрудников (только целые числа >=1)
+            var $input = $('.js-count-input'),
+                method = {};
+
+            method.checkInput = function (el) {
+                var num = Math.round(el.val()),
+                    error = false;
+                if (isNaN(num)) {
+                    num = 1;
+                    error = true;
+                };
+                el.val(num);
+            };
+
+            method.showError = function (el) {//покажем что в поле была ошибка - на 2 сек. выделим поле красным
+                el.addClass('error');
+                setTimeout(function () {
+                    el.removeClass('error');
+                }, 2000);
+            };
+
+            method.init = function () {
+                $input.on('keydown', function (e) {//разрешим вводить только цифры
+                    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                        (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                        (e.keyCode >= 35 && e.keyCode <= 40)) {
+                        return;
+                    }
+                    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                        e.preventDefault();
+                    }
+                });
+
+                $input.on('blur', function () {
+                    var $el = $(this);
+                    method.checkInput($el);
+                });
+                //$input.on('blur', method.checkInput($(this)));
+            };
+            return method;
+        })(),
+
+        stickyPanel: (function () {//на десктопе будем фиксировать панель в сайдбаре при скролле
             var $parent = $('.b-calc'),
                 $panel = $('.bcl-panel'),
                 lastWinW = $.viewportW(),
@@ -190,7 +230,8 @@
 
         init: function () {
             this.sortList.init();
-            this.listBtnClick.init();
+            this.clickList.init();
+            this.countInput.init();
             this.stickyPanel.init();
         }
     };
@@ -221,7 +262,7 @@
                 $target.each(function () {
                     controller.resetBlock($(this));
                 });
-                view.listBtnClick.hideAllItem();
+                view.clickList.hideAllItem();
             });
         },
         init: function () {
