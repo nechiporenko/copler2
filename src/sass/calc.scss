@@ -291,6 +291,20 @@ $calc-gridder:8.25%;
     }
 }
 
+.bcl__data{
+    overflow:hidden;
+    font-size:rem(13px);
+    p{
+        margin:$project-line-height/2 0;
+        color:$b-calc-grey;
+    }
+
+    b, strong{
+        font-family:$font-bold;
+        font-weight:normal;
+    }
+}
+
 .bcl__row{
     @include row();
     margin:10px 0;

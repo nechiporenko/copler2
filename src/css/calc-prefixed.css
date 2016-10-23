@@ -309,6 +309,21 @@
   display: block;
 }
 
+.bcl__data {
+  overflow: hidden;
+  font-size: 0.8125rem;
+}
+
+.bcl__data p {
+  margin: 9px 0;
+  color: #afafaf;
+}
+
+.bcl__data b, .bcl__data strong {
+  font-family: "ClearSansBold";
+  font-weight: normal;
+}
+
 .bcl__row {
   display: block;
   margin: 10px 0;
