@@ -7,87 +7,108 @@
 
 
     /*=========================================== DATA ======================================================*/
-    var data = []; //в этом массиве будут храниться все выбранные значения (в нулевом элементе - общие для всего проекта (период, сервис, скидка))
+    var data = [], //в этом массиве будут храниться все выбранные значения (в нулевом элементе - общие для всего проекта (период, сервис, скидка))
+        sale = discountTable || []; //считываем таблицу скидок со страницы
 
 
     /*=========================================== MODEL =====================================================*/
     var model = {
         isInit: false,
-        time: 0,
-        timeName:'',
-        service: 0,
-        serviceName:'',
-        discount: 0,
-        total: 0,
-        countBlocks : 0,
+        time: 0, //период (1, 2, 3, 4, 5)
+        timeName:'', //название периода ('1 year', '2 years'...)
+        service: 0, //начальная стоимость сервиса
+        serviceName:'', //название сервис-плана ('Basic', 'Standart', ...)
+        serviceLevel: 0, //итоговая цена сервиса (начальная цена * общее кол-во специалистов)
+        discount: 0, //подсчитаем сумму скидки (применим только к serviceLevel !!!)
+        total: 0, //общая цена
+        countHeads: 0, //общее кол-во персонала
+        countBlocks : 0, //будем хранить закешированное кол-во целевых блоков
 
         initData: function () {//формируем массив данных
             model.getProjectTime();
             model.getProjectService();
-            var main = {
+            var main = { //в нулевом элементе массива будем хранить общие для проекта данные
                 'Time': model.time,
                 'TimeName': model.timeName,
-                'Service': model.service,
+                'Service': model.service, //начальная цена сервиса (за одного специалиста)
                 'ServiceName': model.serviceName,
-                'Discount': model.discount,
+                'ServiceLevel': model.serviceLevel,
+                'Discount': model.discount, //сумма скидки
+                'Heads': model.countHeads, //общее кол-во "нанятых" сотрудников - нужно для подсчета скидки
                 'Total': model.total
             };
             data.push(main);
 
-            $btn.each(function () {
+            $btn.each(function () {//индекс остальных элементов массива соответствует data-item целевого блока
                 var index = parseInt($(this).data('item')),
                     name = $(this).find('.b-calc__title').text().trim();
-                item = { 'Index': index, 'Name': name, 'Items': [], 'Price': 0 };
+                item = { 'Index': index, 'Name': name, 'Items': [], 'Price': 0, 'Heads':0 }; //в массив  Items запишем данные из дочерних блоков целевого блока
                 data.push(item);
                 model.countBlocks++;
             });
             model.isInit = true;
-            console.log(data);
         },
 
-        getProjectTime: function () {//меняем значение переменных периода
+        getProjectTime: function () {//определяем значение переменных периода
             var $el = $target.filter(':first').find('.js-time-radio').filter(':checked');
             model.time = $el.val();
             model.timeName = $el.next('label').text();
         },
 
-        getProjectService: function () {//меняем значения переменных сервиса
+        getProjectService: function () {//определяем значения переменных сервиса
             var $el = $target.filter(':first').find('.js-service-radio').filter(':checked');
             model.service = $el.val();
             model.serviceName = $el.next('label').text();
         },
 
-        recalcTotal: function () {
+        recalcTotal: function () { //подсчет итоговых значений
             model.total = 0;
-            var subtotal = 0;
-            for (var i = 1; i < model.countBlocks; i++) {
-                var arr = data[i].Items;
-                if (arr.length > 0) {
-                    subtotal = subtotal + parseInt(data[i].Price);
-                };
+            model.countHeads = 0;
+            model.serviceLevel = 0;
+            for (var i = 1; i <= model.countBlocks; i++) {
+                model.total = model.total + parseInt(data[i].Price);
+                model.countHeads = model.countHeads + parseInt(data[i].Heads);
             };
-            model.total = subtotal;
+            this.calcDiscount();
+            model.serviceLevel = model.service * model.countHeads;
+            model.total = model.total + Math.floor(model.serviceLevel * model.discount);
         },
 
-        writeMeta: function () {//запишем общие для всех целевых блоков значения в массив данных
+        calcDiscount: function () {
+            var discount = 0;
+            for (var i = sale.length - 1; i >= 0; i--) {
+                if (model.countHeads >= sale[i].min && model.countHeads <= sale[i].max) {
+                    discount = sale[i].discount[model.time - 1];
+                    break;
+                }
+            }
+            model.discount = (100 - discount) / 100;
+        },
+
+        writeMeta: function () {//запишем общие для всех целевых блоков значения в нулевой элемент массива данных
             if (model.isInit) {
                 data[0].Time = model.time;
                 data[0].TimeName = model.timeName;
                 data[0].Service = model.service;
                 data[0].ServiceName = model.serviceName;
+                data[0].ServiceLevel = model.serviceLevel;
+                data[0].Discount = model.discount;
+                data[0].Heads = model.countHeads;
                 data[0].Total = model.total;
             }
         },
 
-        recalcBlock: function (block) {
+        recalcBlock: function (block) {//пересчитаем целевой блок
             var index = parseInt(block.data('item')),
                 $item = block.find('.bcl__list').children('li'),
                 content = '',
                 arr = data[index].Items;
-            data[index].Price = 0;
-            arr.length = 0; //стерли старые данные
 
-            $item.each(function () {
+            data[index].Price = 0;//стерли старые данные
+            data[index].Heads = 0;
+            arr.length = 0; 
+
+            $item.each(function () {//проходим по всем дочерним блокам целевого блока
                 var $elem = $(this),
                     $check = $(this).find('input[type=checkbox]');
                 $check.each(function () {
@@ -103,6 +124,7 @@
                             'Count': count
                         });
                         data[index].Price = data[index].Price + price * count;
+                        data[index].Heads = data[index].Heads + count;
                     }
                 });
             });
@@ -180,7 +202,7 @@
             return method;
         })(),
 
-        clickList: (function () { //клик по блокам - покажем / спрячем целевые блоки
+        clickList: (function () { //клик по "родительским" блокам - покажем / спрячем целевые блоки
             var msnr = $('.bcl__list'),
                 activeClass = 'active',
                 method = {};
@@ -330,13 +352,14 @@
                 }
             };
             method.init = function () {
+                $panel.addClass('g-invisible');
                 method.check(lastWinW);
                 $(window).bind('resize', method.startResize);
             }
             return method;
         })(),
 
-        writeToBlock: function (block) {//выведем промежуточные данные в блок
+        writeToBlock: function (block) {//выведем промежуточные данные в целевой блок
             var content = '',
                 index = parseInt(block.data('item')),
                 arr = data[index].Items,
@@ -349,14 +372,20 @@
             block.find('.bcl__data').html(content);
         },
 
-        writeToPanel: function(){
+        writeToPanel: function () {//выведем итоговую информацию в панель сайдбара
+            if (model.total > 0) {
+                $panel.removeClass('g-invisible');
+            } else {
+                $panel.addClass('g-invisible');
+            }
+
             var $main_panel = $panel.find('.bcl-panel__inner--main dl'),
                 $plan_panel = $panel.find('.bcl-panel__inner--plan dl'),
                 $sale_panel = $panel.find('.bcl-panel__inner--sale dl'),
                 $total = $panel.find('.bcl-total__price');
             
             var main = '';
-            for (var i = 1; i < model.countBlocks; i++) {
+            for (var i = 1; i <= model.countBlocks; i++) {
                 var price = data[i].Price;
                 if (price > 0) {
                     main = main + '<dt>' + data[i].Name + '</dt><dd>' + price + '</dd>';
@@ -364,8 +393,12 @@
             }
             $main_panel.html(main);
 
-            var plan = '<dt>' + data[0].ServiceName + '</dt><dd>' + data[0].Service + '</dd>';
+            var plan = '<dt>' + model.serviceName + '</dt><dd>' + model.serviceLevel + '</dd>';
             $plan_panel.html(plan);
+
+            var discount = '<dt>Discount</dt><dd>-' + (model.serviceLevel - Math.floor(model.serviceLevel * model.discount)) + '</dd>';
+            $sale_panel.html(discount);
+
             $total.text(model.total);
         },
 
@@ -393,10 +426,10 @@
                         }
                     }
                 });
-                model.getProjectTime();
-                model.recalcTotal();
-                model.writeMeta();
-                view.writeToPanel();
+                model.getProjectTime();//записали новое значение времени в модель
+                model.recalcTotal(); //пересчитали итоговую сумму
+                model.writeMeta(); //записали данные в итоговый массив
+                view.writeToPanel(); //вывели новые значения в панель
             });
         },
 
@@ -413,10 +446,10 @@
                         }
                     }
                 });
-                model.getProjectService();
-                model.recalcTotal();
-                model.writeMeta();
-                view.writeToPanel();
+                model.getProjectService();//записали новое значение сервиса в модель
+                model.recalcTotal();//пересчитали итоговую сумму
+                model.writeMeta();//записали данные в итоговый массив
+                view.writeToPanel();//вывели новые значения в панель
             });
         },
 
@@ -424,11 +457,11 @@
             var $check = $target.find('.bcl__list').find('input[type=checkbox]');
             $check.on('change', function () {
                 var $block = $(this).parents('.bcl');
-                model.recalcBlock($block);
-                view.writeToBlock($block);
-                model.recalcTotal();
-                model.writeMeta();
-                view.writeToPanel();
+                model.recalcBlock($block);//пересчитали блок
+                view.writeToBlock($block);//вывели промежуточные данные в блок
+                model.recalcTotal();//пересчитали итоговую сумму
+                model.writeMeta();//записали данные в итоговый массив
+                view.writeToPanel();//вывели новые значения в панель
             });
         },
 
@@ -437,13 +470,13 @@
             $input.on('change', function () {
                 var $row = $(this).parents('.bcl__row'),
                     $check = $row.find('input[type=checkbox]');
-                if ($check.is(':checked')) {
+                if ($check.is(':checked')) {//если стоит галочка возле инпута
                     var $block = $row.parents('.bcl');
-                    model.recalcBlock($block);
-                    view.writeToBlock($block);
-                    model.recalcTotal();
-                    model.writeMeta();
-                    view.writeToPanel();
+                    model.recalcBlock($block);//пересчитали блок
+                    view.writeToBlock($block);//вывели промежуточные данные в блок
+                    model.recalcTotal();//пересчитали итоговую сумму
+                    model.writeMeta();//записали данные в итоговый массив
+                    view.writeToPanel();//вывели новые значения в панель
                 }
             });
         },

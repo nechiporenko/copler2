@@ -101,6 +101,41 @@
                 </header>
 
                 <!--Calculator-->
+                <script>
+                    var discountTable = [
+                        {
+                            'min': 0,
+                            'max': 5,
+                            'discount': [3, 5, 7, 9, 11]
+                        },
+                        {
+                            'min': 6,
+                            'max': 10,
+                            'discount': [5, 7, 9, 11, 13]
+                        },
+                        {
+                            'min': 11,
+                            'max': 19,
+                            'discount': [7, 9, 11, 13, 15]
+                        },
+                        {
+                            'min': 20,
+                            'max': 39,
+                            'discount': [9, 11, 13, 15, 17]
+                        },
+                        {
+                            'min': 40,
+                            'max': 59,
+                            'discount': [11, 13, 15, 17, 19]
+                        },
+                        {
+                            'min': 60,
+                            'max': 50000,
+                            'discount': [13, 15, 17, 19, 21]
+                        },
+                    ];
+                </script>
+
                 <div class="b-calc">
                     <aside class="b-calc__col b-calc__col--side"></aside>
                     <div class="b-calc__col b-calc__col--main">
@@ -1921,28 +1956,15 @@
                             </header>
 
                             <div class="bcl-panel__inner bcl-panel__inner--main">
-                                <dl>
-                                    <!--<dt>.NET Developer</dt>
-                                    <dd>1500</dd>
-                                    <dt>Java / J2EE Developer</dt>
-                                    <dd>1500</dd>
-                                    <dt>Database Development / Administration</dt>
-                                    <dd>2200</dd>-->
-                                </dl>
+                                <dl></dl>
                             </div>
                             
                             <div class="bcl-panel__inner bcl-panel__inner--plan">
-                                <dl>
-                                    <!--<dt>Basic</dt>
-                                    <dd>500</dd>-->
-                                </dl>
+                                <dl></dl>
                             </div>
 
                             <div class="bcl-panel__inner bcl-panel__inner--sale">
-                                <dl>
-                                    <!--<dt>Discount, %</dt>
-                                    <dd>23</dd>-->
-                                </dl>
+                                <dl></dl>
                             </div>
 
                             <hr />
