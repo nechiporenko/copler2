@@ -138,12 +138,45 @@ $calc-gridder:8.25%;
         .b-calc__title{
             color:#fff;
         }
+
+        .b-calc__img{
+            .st1{
+                fill:#fff;
+            }
+            .st2{
+                stroke:#fff;
+            }
+        }
     }
 }
 .b-calc__thumb{
     height:100px;
     position:relative;
 }
+
+.b-calc__img{
+    max-width:100px;
+    height:auto;
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%, -50%);
+
+    path{
+        @extend .b-calc-transition;
+        transition-property:fill, stroke;
+    }
+
+    .st0{
+        fill:none;
+    }
+    .st1{
+        fill:$primary;
+    }
+    .st2{
+        stroke:$primary;
+    }
+}
+
 .b-calc__title{
     height:30px;
     line-height:1.1;

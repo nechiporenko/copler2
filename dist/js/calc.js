@@ -1,4 +1,5 @@
 ﻿jQuery(document).ready(function ($) {
+    'use strict'
     /*===================================== GLOBAL VARIABLES ================================================*/
     var $list = $('.b-calc__list'), //список элементов
         $btn = $list.find('.b-calc__item--btn'), //родительские блоки (кнопки)
@@ -39,9 +40,10 @@
             };
             data.push(main);
 
-            $btn.each(function () {//индекс остальных элементов массива соответствует data-item целевого блока
+            $btn.each(function () {//индекс остальных элементов массива соответствует data-item целевого блока. ВАЖНО - data-item должны начинаться с 1 !!!!!
                 var index = parseInt($(this).data('item')),
-                    name = $(this).find('.b-calc__title').text().trim();
+                    name = $(this).find('.b-calc__title').text().trim(),
+                    item = {};
                 item = { 'Index': index, 'Name': name, 'Items': [], 'Price': 0, 'Heads':0 }; //в массив  Items запишем данные из дочерних блоков целевого блока
                 data.push(item);
                 model.countBlocks++;
@@ -101,12 +103,11 @@
         recalcBlock: function (block) {//пересчитаем целевой блок
             var index = parseInt(block.data('item')),
                 $item = block.find('.bcl__list').children('li'),
-                content = '',
-                arr = data[index].Items;
+                content = '';
 
             data[index].Price = 0;//стерли старые данные
             data[index].Heads = 0;
-            arr.length = 0; 
+            data[index].Items.length = 0;
 
             $item.each(function () {//проходим по всем дочерним блокам целевого блока
                 var $elem = $(this),
@@ -117,7 +118,7 @@
                             level = $(this).next('label').text(),
                             count = parseInt($(this).parents('.bcl__row').find('.js-count-input').val()),
                             position = $elem.find('.bcl__subtitle').text().trim();
-                        arr.push({
+                        data[index].Items.push({
                             'Position': position,
                             'Level': level,
                             'Price': price,
@@ -530,6 +531,22 @@
         }
     };
     
-    controller.init();
-   
+    controller.init();  //точка входа в приложение
+
+
+
+    /*======================================== SEND DATA ===================================================*/
+
+    //При нажатии на кнопку Send Quote в итоговой панели - отправим массив data на сервер
+    $panel.on('click', '.g-btn', function () {
+        var email = $('#sq_email').val(),
+            re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (re.test(email)) {
+            /// отправляем куда-то email, на который нужно будет прислать data
+        };
+        //отправляем куда-то данные калькулятора
+        //$.post("test.php", { json_string: JSON.stringify(data) });
+        //открываем форму в модальном окне, откуда получим остальные данные о пользователе
+        $panel.find('.js-modal-init').trigger('click');
+    });
 });

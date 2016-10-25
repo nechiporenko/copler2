@@ -686,6 +686,68 @@
             checkBPMForm();
         };
 
+        // проверим email (calculator page - итоговая панель в сайдбаре)
+        //---------------------------------------------------------------------------------------
+        function precheckSQForm() {
+            var formRules = {
+                rules: {
+                    sq_mail: {
+                        email: true
+                    }
+                },
+                submitHandler: function (form) {
+                    return false; //отправлять будем из файла calc.js
+                }
+            }
+            $('#sq_form_mail').validate($.extend(commonRules, formRules));
+        };
+        if ($('#sq_form_mail').length) {
+            precheckSQForm();
+        };
+
+        // правила для формы в модальном окне SEND QUOTE (calculator page)
+        //---------------------------------------------------------------------------------------
+        function checkSQForm() {
+            var formRules = {
+                rules: {
+                    sq_name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    sq_surname: {
+                        required: true,
+                        minlength: 2
+                    },
+                    sq_mail: {
+                        required: true,
+                        email: true,
+                    },
+                    sq_company: {
+                        required: true,
+                        minlength: 2,
+                    },
+                    sq_date: {
+                        regex: /^\d{2}\/\d{2}\/\d{4}$/
+                    }
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        //
+                        success: function () {
+                            modal.close('#sq_form');
+                            modal.showThankYou();
+                        }
+                    });
+                    return false;
+                }
+            }
+            $('#sq_form').validate($.extend(commonRules, formRules));
+        };
+        if ($('#sq_form').length) {
+            checkSQForm();
+        };
+
+
         //в этой функции используем метод valid - запустить ее последней!
         $('.js-form-validate').each(function () {//если в полях формы есть ошибки валидации - будем блокировать кнопку отправки
             var $form = $(this),
