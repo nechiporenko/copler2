@@ -1,0 +1,62 @@
+﻿@import "../../../modules/_base.scss";
+/*Contacts Dynamic Pages*/
+.b-cnt{
+    @extend .g-container__inner--medium;
+
+    input[type=radio].css-radio:checked + label.css-radio-label{color:$primary;}
+}
+.b-cnt__panel{
+    padding:$project-line-height 15px;
+    border:1px solid $border-color;
+    font-size:rem(16px);
+
+    @include media($desktop){
+        padding:$project-line-height 50px;
+    }
+}
+
+.b-cnt__panel + .b-cnt__panel{
+    border-top:none;
+}
+
+.b-cnt__title{
+    margin-bottom:$project-line-height;
+    font-size:rem(20px);
+    text-transform:uppercase;
+    text-align:center;
+}
+
+.b-cnt__title--alt{color:$primary;}
+
+.b-cnt__help{
+    width:180px;
+    margin:$project-line-height/2 auto;
+    padding-top:30px;
+    text-align:center;
+    font-size:rem(18px);
+    position:relative;
+    line-height:1.2;
+
+    &:before{
+        content:'';
+        display:block;
+        @include triangle(60px, $primary, up);
+        border-bottom-width:25px;
+        position:absolute;
+        top:0; left:50%;
+        margin-left:-30px;
+    }
+}
+
+.b-cnt__info{
+    @extend .b-cnt__panel;
+    margin:$project-line-height 0 3*$project-line-height;
+    border:none;
+    font-size:rem(18px);
+    text-align:center;
+}
+.b-cnt__wrap{
+    display:inline-block;
+    margin-bottom:$project-line-height;
+    text-align:left;
+}

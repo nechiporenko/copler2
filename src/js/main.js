@@ -805,6 +805,16 @@ jQuery(document).ready(function ($) {
             $('html,body').animate({ scrollTop: $(id).offset().top }, 800);
         }
     });
+
+    //
+    // Скролл по странице к нужному блоку при загрузке
+    //---------------------------------------------------------------------------------------
+    (function scrollToTargetBlock() {
+        var $target = $('.js-scroll-target').filter(':first');
+        if ($target.length) {
+            $('html,body').animate({ scrollTop: $target.offset().top - 90 }, 800);
+        }
+    })();
    
     //
     // Если браузер не знает о плейсхолдерах в формах

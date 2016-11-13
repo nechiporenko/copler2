@@ -293,7 +293,6 @@ label.css-radio-label {
     display:inline-block;
     @include font-size(16px);
     @include px2rem(line-height, 18px);
-    -webkit-touch-callout: none;
     @include user-select(none);
     color:$text-color;
 }

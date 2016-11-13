@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Copler - Contacts page</title>
+    @@include('templates/head.html')
+</head>
+<body class="page">
+    <!--header-->
+    @@include('templates/header-static.html')
+
+    <!--main content-->
+    <main class="page__content">
+
+        <!--page section-->
+        <section class="page__section">
+            <!--breadcrumbs-->
+            <div class="crumbs">
+                <ol class="crumbs__list">
+                    <li class="crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="index.html" class="crumbs__link" itemprop="url">
+                            <span itemprop="title">Home</span>
+                        </a>
+                    </li>
+                    <li class="crumbs__item">
+                        Contact us
+                    </li>
+                </ol>
+            </div>
+            <!--/breadcrumbs-->
+            <header class="page__header">
+                <span class="g-title">Contact Copler</span>
+                <p>Tell us about your issue so we can get you to the right people, as soon as possible</p>
+            </header>
+
+            <div class="g-container">
+               <div class="b-cnt">
+                   <section class="b-cnt__panel">
+                       <h5 class="b-cnt__title">1. You are</h5>
+                       <div class="g-row">
+                           <div class="g-col g-col--one-fourth">
+                               <p>
+                                   <input type="radio" class="css-radio" name="r01" id="r01-01" checked />
+                                   <label for="r01-01" class="css-radio-label">
+                                       a Customer
+                                       <br />
+                                       (Start up, SMB)
+                                   </label>
+                               </p>
+                           </div>
+                           <div class="g-col g-col--one-fourth">
+                               <p>
+                                   <input type="radio" class="css-radio" name="r01" id="r01-02" />
+                                   <label for="r01-02" class="css-radio-label">
+                                       a Customer
+                                       <br />
+                                       (Enterprice)
+                                   </label>
+                               </p>
+                           </div>
+                           <div class="g-col g-col--one-fourth">
+                               <p>
+                                   <input type="radio" class="css-radio" name="r01" id="r01-03" />
+                                   <label for="r01-03" class="css-radio-label">
+                                       a Partner
+                                   </label>
+                               </p>
+                           </div>
+                           <div class="g-col g-col--one-fourth">
+                               <p>
+                                   <input type="radio" class="css-radio" name="r01" id="r01-04" />
+                                   <label for="r01-04" class="css-radio-label">
+                                       Looking for Copler Office Location
+                                   </label>
+                               </p>
+                           </div>
+                       </div>
+                   </section>
+                   
+                   <section class="b-cnt__panel">
+                       <h5 class="b-cnt__title">2. You need help with</h5>
+                       <div class="g-row">
+                           <div class="g-col g-col--one-third">
+                               <p>Pre-Purchase</p>
+                               <p>
+                                   <input type="radio" class="css-radio" name="r02" id="r02-01" />
+                                   <label for="r02-01" class="css-radio-label">
+                                       Services
+                                   </label>
+                               </p>
+                               <p>
+                                   <input type="radio" class="css-radio" name="r02" id="r02-02" />
+                                   <label for="r02-02" class="css-radio-label">
+                                       Orders
+                                   </label>
+                               </p>
+                           </div>
+                           <div class="g-col g-col--one-third">
+                               <p>Post-Purchase</p>
+                               <p>
+                                   <input type="radio" class="css-radio" name="r02" id="r02-03" />
+                                   <label for="r02-03" class="css-radio-label">
+                                       Technical Support
+                                   </label>
+                               </p>
+                               <p>
+                                   <input type="radio" class="css-radio" name="r02" id="r02-04" />
+                                   <label for="r02-04" class="css-radio-label">
+                                       Orders, Billings or
+                                       <br />
+                                       Returns
+                                   </label>
+                               </p>
+                           </div>
+                           <div class="g-col g-col--one-third">
+                               <p>Other</p>
+                               <p>
+                                   <input type="radio" class="css-radio" name="r02" id="r02-05" />
+                                   <label for="r02-05" class="css-radio-label">
+                                       Copler Events
+                                   </label>
+                               </p>
+                           </div>
+                       </div>
+                   </section>
+
+                   <div class="b-cnt__panel">
+                       <div class="b-cnt__help">
+                           Select an option to see more specific contact information
+                       </div>
+                   </div>
+
+                   <section class="b-cnt__info">
+                       <h5 class="b-cnt__title b-cnt__title--alt">Copler</h5>
+                       <div class="g-row">
+                           <div class="g-col g-col--one-half">
+                               <div class="b-cnt__wrap">
+                                   <p>
+                                       <b>Corporate Headquarters</b>
+                                   </p>
+                                   4-a Verkhniy Val,
+                                   <br />
+                                   Kyiv, 0407
+                                   <br />
+                                   Ukraine
+                               </div>
+                           </div>
+                           <div class="g-col g-col--one-half">
+                               <div class="b-cnt__wrap">
+                                   <p>
+                                       <b>Contact us</b>
+                                   </p>
+                                   Customers and Partners:
+                                   <br />
+                                   +44 2034 554 189 or
+                                   <br />
+                                   +1 718 509 3086
+                               </div>
+                           </div>
+                       </div>
+                   </section>
+               </div><!--/.b-cnt-->
+            </div>
+
+            <!--prefooter-->
+            @@include('templates/prefooter.html')
+            
+
+            <!--true footer-->
+            @@include('templates/page-footer.html')
+        </section>
+
+        <!--modals-->
+        <div class="g-hidden">
+            @@include('templates/modals.html')
+        </div>
+        <!--/modals-->
+    </main>
+    <!--/main content-->
+
+    <!--scripts-->
+    @@include('templates/scripts.html')
+</body>
+</html>
